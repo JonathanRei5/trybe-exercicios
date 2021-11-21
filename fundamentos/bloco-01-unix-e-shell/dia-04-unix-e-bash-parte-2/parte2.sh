@@ -1,4 +1,4 @@
-esperar=0
+esperar=2
 
 echo "Navegando até a pasta \"unix_tests\""
 cd unix_tests
