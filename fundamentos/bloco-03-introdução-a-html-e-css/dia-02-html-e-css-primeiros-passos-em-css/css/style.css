@@ -1,0 +1,38 @@
+body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-family: sans-serif;
+    font-size: 65px;
+    color: orange;
+  }
+
+  ul {
+    background-color: aquamarine;
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 3em;
+  }
+
+  .cor-favorita {
+    background-color: lightblue;
+  }
+
+  #cor-fav-azul {
+    background-color: rgb(0, 0, 170);
+  }
+
+  #cor-fav-verde {
+    background-color: green;
+  }
+
+  #cor-fav-vermelho {
+    background-color: red;
+  }
