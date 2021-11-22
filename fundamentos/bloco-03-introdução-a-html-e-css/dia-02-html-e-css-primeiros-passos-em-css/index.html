@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <title>HTML</title>
-    <style>
-        h1 {
-          font-family: sans-serif;
-          font-size: 65px;
-          color: orange;
-        }
 
-        ul {
-          background-color: aquamarine;
-        }
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+    body {
+      font-size: 16px;
+    }
 
-        p {
-          font-weight: 600;
-        }
+    h1 {
+      font-family: sans-serif;
+      font-size: 65px;
+      color: orange;
+    }
 
-        .cor-favorita {
-          background-color: lightblue;
-        }
-    </style>
-  </head>
-  <body>
-    <h1>Exercícios 3.2</h1>
-    <p class="cor-favorita">Qual é a sua cor favorita?</p>
-    <ul class="cor-favorita">
-      <li>Amarelo</li>
-      <li>Vermelho</li>
-      <li>Marrom</li>
-    </ul>
-  </body>
+    ul {
+      background-color: aquamarine;
+      font-style: italic;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 3em;
+    }
+
+    .cor-favorita {
+      background-color: lightblue;
+    }
+
+    #cor-fav-azul {
+      background-color: rgb(0, 0, 170);
+    }
+
+    #cor-fav-verde {
+      background-color: green;
+    }
+
+    #cor-fav-vermelho {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Exercícios 3.2</h1>
+  <p class="cor-favorita">Qual é a sua cor favorita?</p>
+  <ul class="cor-favorita">
+    <li id="cor-fav-azul">Azul</li>
+    <li id="cor-fav-verde">Verde</li>
+    <li id="cor-fav-vermelho">Vermelho</li>
+  </ul>
+</body>
+
 </html>
