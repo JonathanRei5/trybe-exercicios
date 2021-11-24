@@ -26,3 +26,11 @@ li {
 li em {
     font-weight: bold;
 }
+
+.ling-programacao li:nth-of-type(-n+3) {
+    color: blue;
+}
+
+.ling-programacao li:nth-of-type(n+2):nth-of-type(-n+3) {
+    background-color: pink;
+}
