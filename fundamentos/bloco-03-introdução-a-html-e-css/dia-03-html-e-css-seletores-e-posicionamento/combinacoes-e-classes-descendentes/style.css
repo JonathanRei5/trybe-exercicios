@@ -34,3 +34,28 @@ li em {
 .ling-programacao li:nth-of-type(n+2):nth-of-type(-n+3) {
     background-color: pink;
 }
+
+a#stackoverflow:hover {
+    font-weight: bold;
+    color      : orange;
+}
+
+a#w3schools:hover {
+    font-weight: bold;
+    color      : green;
+}
+
+a#mdn:hover {
+    font-weight: bold;
+    color      : black;
+}
+
+a#devdocs:hover {
+    font-weight: bold;
+    color      : yellow;
+}
+
+a#betrybe:hover {
+    font-weight: bold;
+    color      : green;
+}
