@@ -34,3 +34,15 @@ h1 {
     width           : 300px;
     display         : inline-block;
 }
+
+.premios {
+    text-align: center;
+}
+
+.premios ul {
+    list-style: none;
+}
+
+.premios ul li {
+    display: inline;
+}
