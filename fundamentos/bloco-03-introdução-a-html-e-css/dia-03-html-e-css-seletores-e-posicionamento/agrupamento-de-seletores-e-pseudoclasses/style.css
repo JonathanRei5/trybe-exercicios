@@ -1,0 +1,12 @@
+h1, p {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+li:hover {
+    background-color: rgb(187, 187, 187);
+    font-family     : 'Courier New', Courier, monospace;
+}
