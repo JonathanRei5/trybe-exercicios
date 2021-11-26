@@ -1,5 +1,5 @@
-const a = 10000;
-const b = 10000;
+const a = 10;
+const b = 100;
 
 if (a > b)
     console.log(a + " é maior.");
