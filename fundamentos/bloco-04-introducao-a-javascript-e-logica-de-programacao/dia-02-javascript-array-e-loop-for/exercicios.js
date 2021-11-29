@@ -32,3 +32,12 @@ if (media > 20)
 else
     console.log("valor menor ou igual a 20");
 console.log(linha);
+
+// Exercício 5
+console.log("Exercício 5:");
+let maior = numbers[0];
+for (let i = 1; i < numbers.length; i += 1)
+    if (numbers[i] > maior)
+        maior = numbers[i];
+console.log("Maior valor = ", maior);
+console.log(linha);
