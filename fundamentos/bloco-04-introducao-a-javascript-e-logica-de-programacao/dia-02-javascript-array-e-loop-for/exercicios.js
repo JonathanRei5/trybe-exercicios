@@ -62,3 +62,11 @@ for (let i = 1; i < numbers.length; i += 1)
         menor = numbers[i];
 console.log("Menor valor = ", menor);
 console.log(linha);
+
+// Exercício 8
+console.log("Exercício 8:");
+let arr = [];
+for (let i = 1; i <= 25; i += 1)
+    arr.push(i);
+console.log(arr);
+console.log(linha);
