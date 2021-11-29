@@ -6,3 +6,11 @@ console.log("Exercício 1:");
 for (let number of numbers)
     console.log(number);
 console.log(linha);
+
+// Exercício 2
+console.log("Exercício 2:");
+let soma = 0;
+for (let number of numbers)
+    soma += number;
+console.log("Resultado da soma = " + soma);
+console.log(linha);
