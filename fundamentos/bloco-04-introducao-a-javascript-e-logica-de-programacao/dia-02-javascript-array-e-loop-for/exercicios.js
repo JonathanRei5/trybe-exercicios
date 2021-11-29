@@ -24,3 +24,11 @@ for (let number of numbers)
 media /= numbers.length;
 console.log("Resultado da média = " + media);
 console.log(linha);
+
+// Exercício 4
+console.log("Exercício 4:");
+if (media > 20)
+    console.log("valor maior que 20");
+else
+    console.log("valor menor ou igual a 20");
+console.log(linha);
