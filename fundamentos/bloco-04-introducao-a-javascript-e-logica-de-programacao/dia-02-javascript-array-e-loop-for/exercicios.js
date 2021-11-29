@@ -70,3 +70,12 @@ for (let i = 1; i <= 25; i += 1)
     arr.push(i);
 console.log(arr);
 console.log(linha);
+
+// Exercício 9
+console.log("Exercício 9:");
+let imprimir = "";
+for (let i = 0; i < arr.length - 1; i += 1)
+    imprimir += (arr[i] / 2) + ", ";
+imprimir += (arr[arr.length - 1] / 2);
+console.log(imprimir);
+console.log(linha);
