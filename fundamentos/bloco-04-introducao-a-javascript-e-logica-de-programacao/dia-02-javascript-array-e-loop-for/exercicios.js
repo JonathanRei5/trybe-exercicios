@@ -41,3 +41,15 @@ for (let i = 1; i < numbers.length; i += 1)
         maior = numbers[i];
 console.log("Maior valor = ", maior);
 console.log(linha);
+
+// Exercício 6
+console.log("Exercício 6:");
+let imparesTotais = 0;
+for (let number of numbers)
+    if (!((number % 2) === 0))
+        imparesTotais += 1;
+if (imparesTotais > 0)
+    console.log("O array contém " + imparesTotais + " valor(es) ímpar(es)");
+else
+    console.log("nenhum valor ímpar encontrado");
+console.log(linha);
