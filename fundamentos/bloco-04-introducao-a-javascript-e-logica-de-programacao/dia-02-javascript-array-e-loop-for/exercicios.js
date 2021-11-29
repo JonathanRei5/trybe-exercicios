@@ -53,3 +53,12 @@ if (imparesTotais > 0)
 else
     console.log("nenhum valor ímpar encontrado");
 console.log(linha);
+
+// Exercício 7
+console.log("Exercício 7:");
+let menor = numbers[0];
+for (let i = 1; i < numbers.length; i += 1)
+    if (numbers[i] < menor)
+        menor = numbers[i];
+console.log("Menor valor = ", menor);
+console.log(linha);
