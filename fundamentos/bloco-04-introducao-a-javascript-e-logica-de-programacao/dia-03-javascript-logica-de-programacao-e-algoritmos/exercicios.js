@@ -90,3 +90,24 @@ else {
     }
 }
 console.log(linha);
+
+// Exercício bônus 6
+console.log("Exercício bônus 6:");
+if (n < 1)
+    console.log("\"n\" precisa ser maior que 0");
+else if (n === 1)
+    console.log("O número 1 não é primo.");
+else {
+    let primo = true;
+    for (let i = 2; (i * i) <= n; i += 1) {
+        if ((n % i) === 0) {
+            primo = false;
+            break;
+        }
+    }
+    if (primo)
+        console.log("O número " + n + " é primo.");
+    else
+        console.log("O número " + n + " não é primo.");
+}
+console.log(linha);
