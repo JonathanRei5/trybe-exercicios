@@ -86,7 +86,7 @@ console.log("\nExercícios Bônus\n")
 function ordenar(array, crescente) {
     for (let i = 0; i < array.length; i += 1) {
         let ordenado = true;
-        for (let j = 1; j < (array.length - i); j++) {
+        for (let j = 1; j < (array.length - i); j += 1) {
             if (array[j - Number(!crescente)] < array[j - Number(crescente)]) {
                 let temp = array[j];
                 array[j] = array[j - 1];
@@ -97,18 +97,29 @@ function ordenar(array, crescente) {
         if (ordenado)
             break;
     }
-    return array;
 }
 
 //Exercício bônus 1
 console.log(linha);
 console.log("Exercício bônus 1:");
-let array = ordenar(numbers, true);
+let array = numbers.slice();
+ordenar(array, true);
 console.log(array);
 console.log(linha);
 
 //Exercício bônus 2
 console.log("Exercício bônus 2:");
-array = ordenar(numbers, false);
+array = numbers.slice();
+ordenar(array, false);
 console.log(array);
 console.log(linha);
+
+//Exercício bônus 3
+console.log("Exercício bônus 3:");
+array = [];
+if (numbers.length > 0) {
+    for (let i = 1; i < numbers.length; i += 1)
+        array.push(numbers[i] * numbers[i - 1])
+    array.push(numbers[numbers.length - 1] * 2);
+}
+console.log(array);
