@@ -1,6 +1,6 @@
 const linha = "------------------------------------------------------------------";
 
-let n = 5;
+let n = 9;
 
 // Exercício 1
 console.log(linha);
@@ -44,6 +44,24 @@ else {
             l += " ";
         for (let k = 0; k < i; k += 1)
             l += "*";
+        console.log(l);
+    }
+}
+console.log(linha);
+
+// Exercício 4
+console.log("Exercício 4:");
+if (n <= 2 || (n % 2) === 0)
+    console.log("\"n\" precisa ser maior que 2 e ímpar");
+else {
+    for (let i = 1; i <= n; i += 2) {
+        let l = "";
+        for (let j = 0; j < ((n - i) / 2); j += 1)
+            l += " ";
+        for (let k = 0; k < i; k += 1)
+            l += "*";
+        for (let m = 0; m < ((n - i) / 2); m += 1)
+            l += " ";
         console.log(l);
     }
 }
