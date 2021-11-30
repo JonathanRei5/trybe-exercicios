@@ -79,3 +79,30 @@ for (let i = 0; i < arr.length - 1; i += 1)
 imprimir += (arr[arr.length - 1] / 2);
 console.log(imprimir);
 console.log(linha);
+
+// Bônus
+console.log("\nExercícios Bônus\n")
+
+function ordenar(array, crescente) {
+    for (let i = 0; i < array.length; i += 1) {
+        let ordenado = true;
+        for (let j = 1; j < (array.length - i); j++) {
+            if (array[j - Number(!crescente)] < array[j - Number(crescente)]) {
+                let temp = array[j];
+                array[j] = array[j - 1];
+                array[j - 1] = temp;
+                ordenado = false;
+            }
+        }
+        if (ordenado)
+            break;
+    }
+    return array;
+}
+
+//Exercício bônus 1
+console.log(linha);
+console.log("Exercício bônus 1:");
+let array = ordenar(numbers, true);
+console.log(array);
+console.log(linha);
