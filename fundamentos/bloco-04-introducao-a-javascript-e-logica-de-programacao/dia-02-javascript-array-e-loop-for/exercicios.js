@@ -106,3 +106,9 @@ console.log("Exercício bônus 1:");
 let array = ordenar(numbers, true);
 console.log(array);
 console.log(linha);
+
+//Exercício bônus 2
+console.log("Exercício bônus 2:");
+array = ordenar(numbers, false);
+console.log(array);
+console.log(linha);
