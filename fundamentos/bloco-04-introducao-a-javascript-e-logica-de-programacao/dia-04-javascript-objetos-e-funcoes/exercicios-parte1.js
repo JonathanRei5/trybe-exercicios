@@ -11,3 +11,10 @@ console.log(linha);
 console.log("Exercício 1:\n");
 console.log("Bem-vinda, " + info.personagem);
 console.log(linha);
+
+// Exercício 2
+console.log(linha);
+console.log("Exercício 2:\n");
+info.recorrente = 'Sim';
+console.log(info);
+console.log(linha);
