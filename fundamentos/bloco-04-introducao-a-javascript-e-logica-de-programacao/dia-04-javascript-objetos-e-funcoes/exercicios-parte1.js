@@ -81,3 +81,8 @@ leitor.livrosFavoritos.push({
 });
 console.log("Novo livro adicionado.");
 console.log(linha);
+
+// Exercício 8
+console.log("Exercício 8:\n");
+console.log(leitor.nome + " tem " + leitor.livrosFavoritos.length + " livro(s) favorito(s).");
+console.log(linha);
