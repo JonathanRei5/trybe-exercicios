@@ -53,3 +53,21 @@ for (let key in info) {
     console.log(info[key] + " e " + info2[key]);
 }
 console.log(linha);
+
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas',
+    },
+  ],
+};
+
+// Exercício 6
+console.log("Exercício 6:\n");
+console.log("O livro favorito de " + leitor.nome + " " + leitor.sobrenome + " se chama \'" + leitor.livrosFavoritos[0].titulo + "\'");
+console.log(linha);
