@@ -11,7 +11,7 @@ let lastName = 'Silva';
 let age = 34;
 let medals = { golden: 2, silver: 3 };
 ```
-2. Acesse as chaves name , lastName e age e concatene as suas informações para imprimir no console uma mensagem no seguinte formato: "A jogadora Marta Silva tem 34 anos de idade".
+2. Acesse as chaves name, lastName e age e concatene as suas informações para imprimir no console uma mensagem no seguinte formato: "A jogadora Marta Silva tem 34 anos de idade".
 
 3. Adicione ao objeto a chave bestInTheWorld e atribua a esta chave um array contendo as datas em que a jogadora Marta foi considerada a melhor do mundo.
 ```
@@ -41,3 +41,83 @@ let car = {
   year: 2020
 };
 ```
+
+## Exercícios
+## Parte I - Objetos e For/In
+
+Usando o objeto abaixo, faça os exercícios a seguir:
+```javascript
+let info = {
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+};
+```
+
+1. Imprima no console uma mensagem de boas-vindas para a personagem acima, incluindo seu nome. Valor esperado no console:
+```
+Bem-vinda, Margarida
+```
+
+2. Insira no objeto uma nova propriedade com o nome de chave 'recorrente' e o valor 'Sim' e, em seguida, imprima o objeto no console. Valor esperado no console:
+```javascript
+{
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+  recorrente: 'Sim'
+}
+```
+
+3. Faça um for/in que mostre todas as chaves do objeto. Valor esperado no console:
+```
+personagem
+origem
+nota
+recorrente
+```
+
+4. Faça um novo for/in, mas agora mostre todos os valores das chaves do objeto. Valor esperado no console:
+```
+Margarida
+Pato Donald
+Namorada do personagem principal nos quadrinhos do Pato Donald
+Sim
+```
+
+5. Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: 'Tio Patinhas', 'Christmas on Bear Mountain, Dell's Four Color Comics #178', 'O último MacPatinhas', 'Sim'. Então, imprima os valores de cada objeto juntos de acordo com cada uma das chaves. Valor esperado no console:
+```
+Margarida e Tio Patinhas
+Pato Donald e Christmas on Bear Mountain, Dell's Four Color Comics #178
+Namorada do personagem principal nos quadrinhos do Pato Donald e O último MacPatinhas
+Ambos recorrentes // Atenção para essa última linha!
+```
+
+Usando o objeto abaixo, faça os exercícios a seguir:
+```javascript
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas',
+    },
+  ],
+};
+```
+
+6. Acesse as chaves nome, sobrenome e titulo, que está dentro da chave livrosFavoritos, e faça um console.log no seguinte formato: "O livro favorito de Julia Pessoa se chama 'O Pior Dia de Todos'".
+
+7. Adicione um novo livro favorito na chave livrosFavoritos , que é um array . Atribua a esta chave um objeto contendo as seguintes informações:
+```javascript
+{
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editor: 'Rocco',
+}
+```
+
+8. Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: "Julia tem 2 livros favoritos".
