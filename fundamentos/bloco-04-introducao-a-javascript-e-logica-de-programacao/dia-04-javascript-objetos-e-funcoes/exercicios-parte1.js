@@ -23,3 +23,9 @@ console.log("Exercício 3:\n");
 for (let key in info)
   console.log(key);
 console.log(linha);
+
+// Exercício 4
+console.log("Exercício 4:\n");
+for (let key in info)
+  console.log(info[key]);
+console.log(linha);
