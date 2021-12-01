@@ -13,8 +13,13 @@ console.log("Bem-vinda, " + info.personagem);
 console.log(linha);
 
 // Exercício 2
-console.log(linha);
 console.log("Exercício 2:\n");
 info.recorrente = 'Sim';
 console.log(info);
+console.log(linha);
+
+// Exercício 3
+console.log("Exercício 3:\n");
+for (let key in info)
+  console.log(key);
 console.log(linha);
