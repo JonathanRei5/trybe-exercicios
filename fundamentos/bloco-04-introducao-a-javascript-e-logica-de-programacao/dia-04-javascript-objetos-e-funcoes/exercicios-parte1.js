@@ -71,3 +71,13 @@ let leitor = {
 console.log("Exercício 6:\n");
 console.log("O livro favorito de " + leitor.nome + " " + leitor.sobrenome + " se chama \'" + leitor.livrosFavoritos[0].titulo + "\'");
 console.log(linha);
+
+// Exercício 7
+console.log("Exercício 7:\n");
+leitor.livrosFavoritos.push({
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editor: 'Rocco',
+});
+console.log("Novo livro adicionado.");
+console.log(linha);
