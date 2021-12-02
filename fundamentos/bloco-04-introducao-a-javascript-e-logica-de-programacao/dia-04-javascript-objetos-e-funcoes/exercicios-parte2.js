@@ -63,3 +63,23 @@ console.log("Array = " + arr);
 console.log("Índice do menor valor = " + indiceMenorValor(arr));
 
 console.log(linha);
+
+// Exercício 4
+console.log("Exercício 4:\n");
+
+function maiorNome(nomes) {
+  let nome = nomes[0];
+  let caracteresTotais = nome.length;
+  for (let i = 1; i < nomes.length; i += 1) {
+    if (nomes[i].length > caracteresTotais) {
+      nome = nomes[i];
+      caracteresTotais = nome.length;
+    }
+  }
+  return nome;
+}
+
+let nomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+console.log("Maior nome = " + maiorNome(nomes));
+
+console.log(linha);
