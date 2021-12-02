@@ -17,7 +17,28 @@ function verificaPalindromo(str) {
   return palindromo;
 }
 
-console.log("osso é palíndromo? " + verificaPalindromo("osso"));
-console.log("javascript é palíndromo? " + verificaPalindromo("javascript"));
+console.log("arara é palíndromo? " + verificaPalindromo("arara"));
+console.log("desenvolvimento é palíndromo? " + verificaPalindromo("desenvolvimento"));
+
+console.log(linha);
+
+// Exercício 2
+console.log("Exercício 2:\n");
+
+function indiceMaiorValor(arr) {
+  let maiorValor = arr[0];
+  let indice = 0;
+  for (let i = 1; i < arr.length; i += 1) {
+    if (arr[i] > maiorValor) {
+      maiorValor = arr[i];
+      indice = i;
+    }
+  }
+  return indice;
+}
+
+let arr = [2, 3, 6, 7, 10, 1];
+console.log("Array = " + arr);
+console.log("Índice do maior valor = " + indiceMaiorValor(arr));
 
 console.log(linha);
