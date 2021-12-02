@@ -119,3 +119,17 @@ let inteiro = verificarInteiroRepetitivo(inteiros);
 console.log("Array de inteiros = " + inteiros);
 console.log("O inteiro que mais se repete é o " + inteiro);
 console.log(linha);
+
+// Exercício 6
+console.log("Exercício 6:\n");
+
+function somatorio(n) {
+  let soma = 0;
+  for (let i = 1; i <= n; i += 1)
+    soma += i;
+  return soma;
+}
+
+let n = 5;
+console.log("O somatório de 1 até " + n + " é " + somatorio(n));
+console.log(linha);
