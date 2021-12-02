@@ -42,3 +42,24 @@ console.log("Array = " + arr);
 console.log("Índice do maior valor = " + indiceMaiorValor(arr));
 
 console.log(linha);
+
+// Exercício 3
+console.log("Exercício 3:\n");
+
+function indiceMenorValor(arr) {
+  let menorValor = arr[0];
+  let indice = 0;
+  for (let i = 1; i < arr.length; i += 1) {
+    if (arr[i] < menorValor) {
+      menorValor = arr[i];
+      indice = i;
+    }
+  }
+  return indice;
+}
+
+arr = [2, 4, 6, 7, 10, 0, -3];
+console.log("Array = " + arr);
+console.log("Índice do menor valor = " + indiceMenorValor(arr));
+
+console.log(linha);
