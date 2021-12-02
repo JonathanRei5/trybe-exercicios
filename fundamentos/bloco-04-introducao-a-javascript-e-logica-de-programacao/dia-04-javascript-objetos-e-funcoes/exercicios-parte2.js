@@ -83,3 +83,39 @@ let nomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 console.log("Maior nome = " + maiorNome(nomes));
 
 console.log(linha);
+
+// Exercício 5
+console.log("Exercício 5:\n");
+
+function verificarInteiroRepetitivo(arr) {
+  let repeticoesDeInteiros = {
+    valorInteiro: '',
+    vezesRepetido: 0
+  };
+
+  for (let inteiro of arr) {
+    if (repeticoesDeInteiros[inteiro] === undefined) {
+      repeticoesDeInteiros[inteiro] = 1;
+      if (repeticoesDeInteiros.vezesRepetido === 0) {
+        repeticoesDeInteiros.valorInteiro = inteiro;
+        repeticoesDeInteiros.vezesRepetido = 1;
+      }
+    }
+    else {
+      repeticoesDeInteiros[inteiro] += 1;
+      if (repeticoesDeInteiros[inteiro] > repeticoesDeInteiros.vezesRepetido) {
+        repeticoesDeInteiros.valorInteiro = inteiro;
+        repeticoesDeInteiros.vezesRepetido = repeticoesDeInteiros[inteiro];
+      }
+    }
+  }
+
+  return repeticoesDeInteiros.valorInteiro;
+}
+
+let inteiros = [2, 3, 2, 5, 8, 2, 3];
+let inteiro = verificarInteiroRepetitivo(inteiros);
+
+console.log("Array de inteiros = " + inteiros);
+console.log("O inteiro que mais se repete é o " + inteiro);
+console.log(linha);
