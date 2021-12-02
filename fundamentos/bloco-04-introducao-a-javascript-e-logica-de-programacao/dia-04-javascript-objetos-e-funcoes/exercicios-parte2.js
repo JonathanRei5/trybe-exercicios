@@ -133,3 +133,26 @@ function somatorio(n) {
 let n = 5;
 console.log("O somatório de 1 até " + n + " é " + somatorio(n));
 console.log(linha);
+
+// Exercício 7
+console.log("Exercício 7:\n");
+
+function verificaFimPalavra(palavra, final) {
+  if (final.length >= palavra)
+    return undefined;
+
+  let arrPalavra = palavra.split('').reverse();
+  let arrFinal = final.split('').reverse();
+
+  for (let i = 0; i < arrFinal.length; i += 1)
+    if (arrFinal[i] !== arrPalavra[i])
+      return false;
+
+  return true;
+}
+
+console.log("Verifica \'trybe\' e \'be\'");
+console.log("Retorno = " + verificaFimPalavra('trybe', 'be'));
+console.log("Verifica \'joaofernando\' e \'fernan\'");
+console.log("Retorno = " + verificaFimPalavra('joaofernando', 'fernan'));
+console.log(linha);
