@@ -59,3 +59,48 @@ let vector = [[1, 2], [3, 4, 5, 6], [7, 8, 9, 10]];
 console.log(pegarPares(vector));
 
 console.log(linha);
+
+// Exercício bônus 3
+console.log("Exercício bônus 3:\n");
+
+function calcularFrutas(frutas) {
+  let frutasTotais = {};
+  for (let i = 0; i < frutas.length; i += 1) {
+    if (frutasTotais[frutas[i]] === undefined) {
+      frutasTotais[frutas[i]] = 1;
+    } else {
+      frutasTotais[frutas[i]] += 1;
+    }
+  }
+  return frutasTotais;
+}
+
+const basket = [
+  'Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva', 'Laranja',
+  'Jaca', 'Pera', 'Melancia', 'Uva', 'Laranja', 'Melancia',
+  'Banana', 'Uva', 'Pera', 'Abacate', 'Laranja', 'Abacate',
+  'Banana', 'Melancia', 'Laranja', 'Laranja', 'Jaca', 'Uva',
+  'Banana', 'Uva', 'Laranja', 'Pera', 'Melancia', 'Uva',
+  'Jaca', 'Banana', 'Pera', 'Abacate', 'Melancia', 'Melancia',
+  'Laranja', 'Pera', 'Banana', 'Jaca', 'Laranja', 'Melancia',
+  'Abacate', 'Abacate', 'Pera', 'Melancia', 'Banana', 'Banana',
+  'Abacate', 'Uva', 'Laranja', 'Banana', 'Abacate', 'Uva',
+  'Uva', 'Abacate', 'Abacate', 'Melancia', 'Uva', 'Jaca',
+  'Uva', 'Banana', 'Abacate', 'Banana', 'Uva', 'Banana',
+  'Laranja', 'Laranja', 'Jaca', 'Jaca', 'Abacate', 'Jaca',
+  'Laranja', 'Melancia', 'Pera', 'Jaca', 'Melancia', 'Uva',
+  'Abacate', 'Jaca', 'Jaca', 'Abacate', 'Uva', 'Laranja',
+  'Pera', 'Melancia', 'Jaca', 'Pera', 'Laranja', 'Jaca',
+  'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
+  'Banana', 'Pera', 'Abacate', 'Uva',
+];
+let frutasTotais = calcularFrutas(basket);
+
+let mensagem = 'Sua cesta possui: ';
+for (let fruta in frutasTotais) {
+  mensagem += frutasTotais[fruta] + ' ' + fruta + 's, ';
+}
+mensagem = mensagem.substr(0, mensagem.length - 2);
+console.log(mensagem);
+
+console.log(linha);
