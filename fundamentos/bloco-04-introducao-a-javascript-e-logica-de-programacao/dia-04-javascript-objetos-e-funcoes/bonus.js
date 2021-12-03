@@ -147,3 +147,15 @@ let apartamento = moradores.blocoDois[1].apartamento;
 console.log('O morador do bloco 2 de nome ' + nome + ' ' + sobrenome + ' mora no ' + andar + 'º andar, apartamento ' + apartamento);
 
 console.log(linha);
+
+// Exercício bônus 5
+console.log("Exercício bônus 5:");
+
+for (let bloco in moradores) {
+  console.log('\nMoradores do ' + bloco + ':');
+  for (let morador of moradores[bloco]) {
+    console.log(morador.nome + ' ' + morador.sobrenome);
+  }
+}
+
+console.log(linha);
