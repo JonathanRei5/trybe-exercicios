@@ -62,7 +62,7 @@ Crie uma função que exiba o conteúdo de todas as tags <p> no console.
     function mudarTexto(texto) {
       document.getElementById('texto').innerText = texto;
     }
-    mudarTexto('Dois anos mais velho! :-) :-(');
+    mudarTexto('Dois anos mais velho! :-)');
 
     // Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
     function mudarCorQuadradoExterno(cor) {
@@ -81,6 +81,16 @@ Crie uma função que exiba o conteúdo de todas as tags <p> no console.
       document.getElementsByTagName('h1')[0].innerText = titulo;
     }
     alterarTitulo('Exercício 5.1 - JavaScript');
+
+    // Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    function alterarTextoParaMaiusculo(valorBool) {
+      if (valorBool) {
+        document.getElementById('texto').style.textTransform = 'uppercase';
+      } else {
+        document.getElementById('texto').style.textTransform = 'lowercase';
+      }
+    }
+    alterarTextoParaMaiusculo(true);
 
   </script>
 </body>
