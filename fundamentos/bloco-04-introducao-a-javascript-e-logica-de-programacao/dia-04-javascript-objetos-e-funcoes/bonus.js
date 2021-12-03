@@ -40,3 +40,22 @@ let romano = 'MMMCMXXXIII';
 console.log("Número romano = " + romano);
 console.log("Número arábico = " + romanoParaDecimal(romano));
 console.log(linha);
+
+// Exercício bônus 2
+console.log("Exercício bônus 2:\n");
+
+function pegarPares(vector) {
+  let arrayDePares = [];
+  for (let i = 0; i < vector.length; i += 1) {
+    for (let j = 0; j < vector[i].length; j += 1) {
+      if ((vector[i][j] % 2) === 0) {
+        arrayDePares.push(vector[i][j]);
+      }
+    }
+  }
+  return arrayDePares;
+}
+let vector = [[1, 2], [3, 4, 5, 6], [7, 8, 9, 10]];
+console.log(pegarPares(vector));
+
+console.log(linha);

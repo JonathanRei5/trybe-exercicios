@@ -186,3 +186,8 @@ Dicas:
 ```
    * Que tal criar um objeto que associe cada letra a um numeral para fácil consulta?
    * Atenção! Quando você tem um número pequeno à direita de um número grande, eles devem ser somados. Exemplo: XI = 10 + 1 = 11. No entanto, se o número pequeno está à esquerda de um número maior que ele, ele deve ser subtraído. Exemplo: IX = 10 - 1 = 9.
+
+2. Crie uma função chamada arrayOfNumbers que receberá a variável vector como parâmetro. Através de um loop for, percorra essa variável, busque os números pares e os adicione a um novo array que deverá ser retornado ao final pela pela função.
+```javascript
+let vector = [[1, 2], [3,4,5,6], [7,8,9,10]];
+```
