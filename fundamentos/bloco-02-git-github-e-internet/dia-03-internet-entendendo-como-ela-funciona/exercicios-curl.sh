@@ -42,5 +42,10 @@ sleep $esperar
 
 # Exercício 9
 echo -e "\n\nExercício 9: ------------------------------------------------------\n"
-curl -X POST -d "{"value": "panda"}" https://httpbin.org/anything
+curl -X POST -d '{"value": "panda"}' https://httpbin.org/anything
+sleep $esperar
+
+# Exercício 10
+echo -e "\n\nExercício 10: ------------------------------------------------------\n"
+curl -X POST -H "Content-Type: application/json" -d '{"value": "panda"}' https://httpbin.org/anything
 sleep $esperar
