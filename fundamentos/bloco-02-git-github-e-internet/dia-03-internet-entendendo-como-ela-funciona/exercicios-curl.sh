@@ -19,3 +19,8 @@ sleep $esperar
 echo -e "\n\nExercício 4: ------------------------------------------------------\n"
 curl https://httpbin.org/anything?value=panda
 sleep $esperar
+
+# Exercício 5
+echo -e "\n\nExercício 5: ------------------------------------------------------\n"
+curl -o robots.txt www.google.com/robots.txt
+sleep $esperar
