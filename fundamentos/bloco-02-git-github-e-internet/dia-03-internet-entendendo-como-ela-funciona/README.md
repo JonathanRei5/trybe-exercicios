@@ -13,3 +13,5 @@
 5. Requisite o arquivo robots.txt do google (www.google.com/robots.txt).
 
 6. Faça uma requisição GET para https://httpbin.org/anything e defina o cabeçalho ```User-Agent: elephant```.
+
+7. Faça uma requisição DELETE para https://httpbin.org/anything

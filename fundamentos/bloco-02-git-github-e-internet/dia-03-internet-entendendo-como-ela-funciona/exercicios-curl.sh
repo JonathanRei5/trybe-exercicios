@@ -29,3 +29,8 @@ sleep $esperar
 echo -e "\n\nExercício 6: ------------------------------------------------------\n"
 curl https://httpbin.org/anything -H "User-Agent: elephant"
 sleep $esperar
+
+# Exercício 7
+echo -e "\n\nExercício 7: ------------------------------------------------------\n"
+curl -X DELETE https://httpbin.org/anything
+sleep $esperar
