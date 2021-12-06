@@ -11,3 +11,5 @@
 4. Faça uma requisição GET para https://httpbin.org/anything, mas desta vez adicione alguns parâmetros de consulta (defina ```value=panda```).
 
 5. Requisite o arquivo robots.txt do google (www.google.com/robots.txt).
+
+6. Faça uma requisição GET para https://httpbin.org/anything e defina o cabeçalho ```User-Agent: elephant```.

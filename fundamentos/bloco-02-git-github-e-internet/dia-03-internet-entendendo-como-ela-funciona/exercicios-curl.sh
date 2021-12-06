@@ -24,3 +24,8 @@ sleep $esperar
 echo -e "\n\nExercício 5: ------------------------------------------------------\n"
 curl -o robots.txt www.google.com/robots.txt
 sleep $esperar
+
+# Exercício 6
+echo -e "\n\nExercício 6: ------------------------------------------------------\n"
+curl https://httpbin.org/anything -H "User-Agent: elephant"
+sleep $esperar
