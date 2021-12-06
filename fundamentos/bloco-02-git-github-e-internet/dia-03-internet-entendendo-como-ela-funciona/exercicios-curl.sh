@@ -39,3 +39,8 @@ sleep $esperar
 echo -e "\n\nExercício 8: ------------------------------------------------------\n"
 curl https://httpbin.org/anything -i
 sleep $esperar
+
+# Exercício 9
+echo -e "\n\nExercício 9: ------------------------------------------------------\n"
+curl -X POST -d "{"value": "panda"}" https://httpbin.org/anything
+sleep $esperar

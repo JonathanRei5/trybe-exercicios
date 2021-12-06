@@ -17,3 +17,9 @@
 7. Faça uma requisição DELETE para https://httpbin.org/anything
 
 8. Requisite https://httpbin.org/anything e também obtenha os cabeçalhos de resposta.
+
+9. Faça uma requisição POST para https://httpbin.org/anything com o corpo JSON
+
+```json
+{"value": "panda"}
+```
