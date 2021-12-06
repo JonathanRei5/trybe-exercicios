@@ -25,3 +25,5 @@
 ```
 
 10. Faça a mesma requisição POST do exercício anterior, mas defina o cabeçalho Content-Type como ```application/json``` (porque as requisições POST precisam ter um tipo de conteúdo que corresponda ao seu corpo). Observe o campo ```json``` na resposta para ver a diferença em relação ao anterior.
+
+11. Faça uma requisição GET para https://httpbin.org/anything e defina o cabeçalho ```Accept-Encoding: gzip``` (o que acontece? Por quê?).

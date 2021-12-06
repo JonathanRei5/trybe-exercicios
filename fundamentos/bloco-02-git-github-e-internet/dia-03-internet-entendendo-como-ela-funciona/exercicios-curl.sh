@@ -49,3 +49,9 @@ sleep $esperar
 echo -e "\n\nExercício 10: ------------------------------------------------------\n"
 curl -X POST -H "Content-Type: application/json" -d '{"value": "panda"}' https://httpbin.org/anything
 sleep $esperar
+
+# Exercício 11
+echo -e "\n\nExercício 11: ------------------------------------------------------\n"
+curl -H "Accept-Encoding: gzip" https://httpbin.org/anything
+sleep $esperar
+# Aconteceu nada porque o servidor não aceita esse formato de compressão
