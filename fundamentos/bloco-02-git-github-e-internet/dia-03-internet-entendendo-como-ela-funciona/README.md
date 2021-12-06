@@ -15,3 +15,5 @@
 6. Faça uma requisição GET para https://httpbin.org/anything e defina o cabeçalho ```User-Agent: elephant```.
 
 7. Faça uma requisição DELETE para https://httpbin.org/anything
+
+8. Requisite https://httpbin.org/anything e também obtenha os cabeçalhos de resposta.

@@ -34,3 +34,8 @@ sleep $esperar
 echo -e "\n\nExercício 7: ------------------------------------------------------\n"
 curl -X DELETE https://httpbin.org/anything
 sleep $esperar
+
+# Exercício 8
+echo -e "\n\nExercício 8: ------------------------------------------------------\n"
+curl https://httpbin.org/anything -i
+sleep $esperar
