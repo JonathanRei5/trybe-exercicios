@@ -7,3 +7,5 @@
 "httpbin.org/anything" irá analisar a requisição que você fez e retornar o que foi requisitado. O padrão do curl é fazer uma requisição GET.
 
 3. Faça uma requisição POST para https://httpbin.org/anything
+
+4. Faça uma requisição GET para https://httpbin.org/anything, mas desta vez adicione alguns parâmetros de consulta (defina ```value=panda```).
