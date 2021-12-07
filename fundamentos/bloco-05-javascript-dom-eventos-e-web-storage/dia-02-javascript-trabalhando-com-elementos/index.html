@@ -94,6 +94,26 @@
     elementoImg.src = 'https://picsum.photos/200';
     elementoImg.className = 'small-image';
     elementoSection2.appendChild(elementoImg);
+
+    // Exercícios 8
+    let elementoUl = document.createElement('ul');
+    elementoSection3.appendChild(elementoUl);
+    for (let i = 0; i < 10; i += 1) {
+      let elementoLi = document.createElement('li');
+      elementoUl.appendChild(elementoLi);
+    }
+    let elementosLi = document.getElementsByTagName('li');
+    elementosLi[0].innerText = 'Um';
+    elementosLi[1].innerText = 'Dois';
+    elementosLi[2].innerText = 'Três';
+    elementosLi[3].innerText = 'Quatro';
+    elementosLi[4].innerText = 'Cinco';
+    elementosLi[5].innerText = 'Seis';
+    elementosLi[6].innerText = 'Sete';
+    elementosLi[7].innerText = 'Oito';
+    elementosLi[8].innerText = 'Nove';
+    elementosLi[9].innerText = 'Dez';
+
   </script>
 </body>
 
