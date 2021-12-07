@@ -93,3 +93,9 @@ sleep $esperar
 echo -e "\n\nExercício 17: ------------------------------------------------------\n"
 curl -H 'chihuahua: dinossauro' -H 'ornitorrinco: tardigrado' -H 'panda: elefante' https://httpbin.org/anything
 sleep $esperar
+
+# Exercício 18
+echo -e "\n\nExercício 18: ------------------------------------------------------\n"
+curl https://httpbin.org/status/404 https://httpbin.org/status/200
+curl -i https://httpbin.org/status/404 https://httpbin.org/status/200
+sleep $esperar
