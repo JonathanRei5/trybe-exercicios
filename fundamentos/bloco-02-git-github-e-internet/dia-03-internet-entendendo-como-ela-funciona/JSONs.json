@@ -1,0 +1,16 @@
+{
+  "str1": "valor1",
+  "str2": "valor2",
+  "str3": "valor3",
+  "obj1": {
+    "str1": "valor1",
+    "num1": 1,
+    "num2": 2,
+    "bool1": true
+  },
+  "arr1": [
+    "valor1",
+    "valor2",
+    "valor3"
+  ]
+}
