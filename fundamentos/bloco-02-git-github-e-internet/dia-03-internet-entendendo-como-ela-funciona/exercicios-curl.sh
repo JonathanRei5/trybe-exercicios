@@ -104,3 +104,8 @@ sleep $esperar
 echo -e "\n\nExercício 19: ------------------------------------------------------\n"
 curl -u 'usuario123:senhasegura123' https://httpbin.org/anything
 sleep $esperar
+
+# Exercício 20
+echo -e "\n\nExercício 20: ------------------------------------------------------\n"
+curl -o twitter-es-ES.html -H 'Accept-Language: es-ES' https://twitter.com
+sleep $esperar
