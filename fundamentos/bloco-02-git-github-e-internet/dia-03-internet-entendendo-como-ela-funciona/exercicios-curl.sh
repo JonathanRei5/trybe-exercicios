@@ -60,3 +60,13 @@ sleep $esperar
 echo -e "\n\nExercício 12: ------------------------------------------------------\n"
 curl -X POST -H 'Content-Type: application/json' -d @JSONs.json https://httpbin.org/anything
 sleep $esperar
+
+# Exercício 13
+echo -e "\n\nExercício 13: ------------------------------------------------------\n"
+curl -H 'Accept: image/png' -o img/imagem-png.png https://httpbin.org/image
+curl -H 'Accept: image/jpeg' -o img/imagem-jpeg.jpeg https://httpbin.org/image
+curl -H 'Accept: image/webp' -o img/imagem-webp.webp https://httpbin.org/image
+curl -H 'Accept: image/svg+xml' -o img/imagem-svg-xml.xml https://httpbin.org/image
+curl -H 'Accept: image/svg+xml' -o img/imagem-svg-xml.svg https://httpbin.org/image
+curl -H 'Accept: image/*' -o img/imagem-all https://httpbin.org/image
+sleep $esperar

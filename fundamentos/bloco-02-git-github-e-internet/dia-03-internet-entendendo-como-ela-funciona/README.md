@@ -30,4 +30,22 @@
 
 12. Coloque vários JSON em um arquivo e, em seguida, faça uma requisição POST para https://httpbin.org/anything com o JSON nesse arquivo como o corpo.
 
+13. Faça uma requisição para https://httpbin.org/image e defina o cabeçalho ```Accept: image/png```. Salve a saída em um arquivo PNG e abra o arquivo em um visualizador de imagens. Tente a mesma coisa com diferentes cabeçalhos ```Accept:```.
+
+14. Faça uma requisição PUT para https://httpbin.org/anything
+
+15. Requisite https://httpbin.org/image/jpeg, salve-a em um arquivo e abra esse arquivo em seu editor de imagem.
+
+16. Requisite https://www.twitter.com. Você obterá uma resposta vazia. Também faça o curl mostrar os cabeçalhos de resposta e tente descobrir por que a resposta estava vazia.
+
+17. Faça qualquer requisição para https://httpbin.org/anything e apenas defina alguns cabeçalhos sem sentido (como ```panda: elephant```).
+
+18. Requisite https://httpbin.org/status/404 e https://httpbin.org/status/200. Solicite-os novamente e faça o curl mostrar os cabeçalhos de resposta.
+
+19. Requisite https://httpbin.org/anything e defina um nome de usuário e senha (com ```-u username:password```).
+
+20. Baixe a página inicial do Twitter (https://twitter.com) em espanhol, definindo o cabeçalho ```Accept-Language: es-ES```.
+
+21. Faça uma requisição para a API Stripe com o curl. (consulte https://stripe.com/docs/development para saber como, eles fornecem uma chave de API de teste). Tente fazer exatamente a mesma requisição para https://httpbin.org/anything.
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) do site [jvns.ca](https://jvns.ca/blog/2019/08/27/curl-exercises/)
