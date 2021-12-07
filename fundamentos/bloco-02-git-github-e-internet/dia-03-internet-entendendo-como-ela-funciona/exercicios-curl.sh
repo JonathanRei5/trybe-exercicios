@@ -88,3 +88,8 @@ sleep $esperar
 # A resposta estava vazia porque o twitter mudou de domínio
 # de www.twitter.com para twitter.com. O servidor retornou erro 301
 # avisando sobre a mudança.
+
+# Exercício 17
+echo -e "\n\nExercício 17: ------------------------------------------------------\n"
+curl -H 'chihuahua: dinossauro' -H 'ornitorrinco: tardigrado' -H 'panda: elefante' https://httpbin.org/anything
+sleep $esperar
