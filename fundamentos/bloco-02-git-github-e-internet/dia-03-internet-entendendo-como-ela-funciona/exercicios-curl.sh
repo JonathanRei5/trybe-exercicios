@@ -70,3 +70,8 @@ curl -H 'Accept: image/svg+xml' -o img/imagem-svg-xml.xml https://httpbin.org/im
 curl -H 'Accept: image/svg+xml' -o img/imagem-svg-xml.svg https://httpbin.org/image
 curl -H 'Accept: image/*' -o img/imagem-all https://httpbin.org/image
 sleep $esperar
+
+# Exercício 14
+echo -e "\n\nExercício 14: ------------------------------------------------------\n"
+curl -X PUT https://httpbin.org/anything
+sleep $esperar
