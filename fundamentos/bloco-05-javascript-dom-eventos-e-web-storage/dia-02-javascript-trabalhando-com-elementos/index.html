@@ -79,23 +79,23 @@
     elementoP.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, doloribus!';
     document.querySelector('.center-content').appendChild(elementoP);
 
-    // Exercícios 5
+    // Exercício 5
     let elementoSection2 = document.createElement('section');
     elementoSection2.className = 'left-content';
     elementoMain.appendChild(elementoSection2);
 
-    // Exercícios 6
+    // Exercício 6
     let elementoSection3 = document.createElement('section');
     elementoSection3.className = 'right-content';
     elementoMain.appendChild(elementoSection3);
 
-    // Exercícios 7
+    // Exercício 7
     let elementoImg = document.createElement('img');
     elementoImg.src = 'https://picsum.photos/200';
     elementoImg.className = 'small-image';
     elementoSection2.appendChild(elementoImg);
 
-    // Exercícios 8
+    // Exercício 8
     let elementoUl = document.createElement('ul');
     elementoSection3.appendChild(elementoUl);
     for (let i = 0; i < 10; i += 1) {
@@ -114,13 +114,16 @@
     elementosLi[8].innerText = 'Nove';
     elementosLi[9].innerText = 'Dez';
 
-    // Exercícios 9
+    // Exercício 9
     let elementosH3 = [null, null, null];
     for (let i = 0; i < 3; i += 1) {
       elementosH3[i] = document.createElement('h3');
       elementoMain.appendChild(elementosH3[i]);
       elementosH3[i].innerText = 'Eu sou o ' + (i + 1) + 'º h3';
     }
+
+    // Exercício 2.1
+    elementoH1.className = 'title';
 
   </script>
 </body>
