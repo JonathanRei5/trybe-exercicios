@@ -1,0 +1,1057 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "ch_3K46pe2eZvKYlo2C04TqsE2V",
+      "object": "charge",
+      "amount": 50,
+      "amount_captured": 0,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": null,
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "state": null
+        },
+        "email": null,
+        "name": null,
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": false,
+      "created": 1638895678,
+      "currency": "usd",
+      "customer": "cus_AJ6y9TsgwMryBy",
+      "description": "Invoice 9B6FEC4-9641",
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": "expired_card",
+      "failure_message": "Your card has expired.",
+      "fraud_details": {
+      },
+      "invoice": "in_1K31O82eZvKYlo2CAxVbx1oF",
+      "livemode": false,
+      "metadata": {
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "declined_by_network",
+        "reason": "expired_card",
+        "risk_level": "normal",
+        "risk_score": 34,
+        "seller_message": "The bank returned the decline code `expired_card`.",
+        "type": "issuer_declined"
+      },
+      "paid": false,
+      "payment_intent": "pi_3K46pe2eZvKYlo2C0lHmeX4x",
+      "payment_method": "card_19yUkd2eZvKYlo2CLbEQmC4z",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": null
+          },
+          "country": "CA",
+          "exp_month": 3,
+          "exp_year": 2018,
+          "fingerprint": "CzzwE1ax7qiHgw16",
+          "funding": "credit",
+          "installments": null,
+          "last4": "1881",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": null,
+      "receipt_number": null,
+      "receipt_url": null,
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46pe2eZvKYlo2C04TqsE2V/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": {
+        "id": "card_19yUkd2eZvKYlo2CLbEQmC4z",
+        "object": "card",
+        "address_city": null,
+        "address_country": null,
+        "address_line1": null,
+        "address_line1_check": null,
+        "address_line2": null,
+        "address_state": null,
+        "address_zip": null,
+        "address_zip_check": null,
+        "brand": "Visa",
+        "country": "CA",
+        "customer": "cus_AJ6y9TsgwMryBy",
+        "cvc_check": null,
+        "dynamic_last4": null,
+        "exp_month": 3,
+        "exp_year": 2018,
+        "fingerprint": "CzzwE1ax7qiHgw16",
+        "funding": "credit",
+        "last4": "1881",
+        "metadata": {
+        },
+        "name": null,
+        "tokenization_method": null
+      },
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "failed",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46ov2eZvKYlo2C15VgIkzU",
+      "object": "charge",
+      "amount": 24900,
+      "amount_captured": 24900,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46ov2eZvKYlo2C16QHwbLb",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "state": null
+        },
+        "email": null,
+        "name": "test@test.host",
+        "phone": null
+      },
+      "calculated_statement_descriptor": "STRIPE.COM",
+      "captured": true,
+      "created": 1638895633,
+      "currency": "usd",
+      "customer": "cus_KjZykpE29iAZFb",
+      "description": "Wrapbook Setup Fee for ABC Productions",
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 56,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": null,
+      "payment_method": "card_1K46or2eZvKYlo2ChhQ0gYNh",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": "pass"
+          },
+          "country": "US",
+          "exp_month": 12,
+          "exp_year": 2021,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "funding": "credit",
+          "installments": null,
+          "last4": "4242",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": null,
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46ov2eZvKYlo2C15VgIkzU/rcpt_KjZyXNfjzRKSSwP4aUuQJQ2AiC4DXcI",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46ov2eZvKYlo2C15VgIkzU/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": {
+        "id": "card_1K46or2eZvKYlo2ChhQ0gYNh",
+        "object": "card",
+        "address_city": null,
+        "address_country": null,
+        "address_line1": null,
+        "address_line1_check": null,
+        "address_line2": null,
+        "address_state": null,
+        "address_zip": null,
+        "address_zip_check": null,
+        "brand": "Visa",
+        "country": "US",
+        "customer": "cus_KjZykpE29iAZFb",
+        "cvc_check": "pass",
+        "dynamic_last4": null,
+        "exp_month": 12,
+        "exp_year": 2021,
+        "fingerprint": "Xt5EWLLDS7FJjR1c",
+        "funding": "credit",
+        "last4": "4242",
+        "metadata": {
+        },
+        "name": "test@test.host",
+        "tokenization_method": null
+      },
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46oA2eZvKYlo2C1DDFxgNK",
+      "object": "charge",
+      "amount": 84000,
+      "amount_captured": 84000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46oA2eZvKYlo2C1nhPYHiZ",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": "12022",
+          "state": null
+        },
+        "email": "outsourcer1.extention.te@gmail.com",
+        "name": "Outsourcer1",
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895597,
+      "currency": "usd",
+      "customer": null,
+      "description": "ConsolidatedBill",
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+        "order_id": "1048559203"
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 63,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46oA2eZvKYlo2C1epA0z2w",
+      "payment_method": "pm_1K46oK2eZvKYlo2CiL2cu0SN",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": "pass",
+            "cvc_check": "pass"
+          },
+          "country": "US",
+          "exp_month": 2,
+          "exp_year": 2022,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "funding": "credit",
+          "installments": null,
+          "last4": "4242",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": "outsourcer1.extention.te@gmail.com",
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46oA2eZvKYlo2C1DDFxgNK/rcpt_KjZyoj5Jqt70EYDsTe3VQLhF71NUSQZ",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46oA2eZvKYlo2C1DDFxgNK/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46nR2eZvKYlo2C0G2rGSdX",
+      "object": "charge",
+      "amount": 5000,
+      "amount_captured": 5000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46nR2eZvKYlo2C0kSJ9sqh",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": "12022",
+          "state": null
+        },
+        "email": "client.bill.te@gmail.com",
+        "name": "Tomas Anderson",
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895551,
+      "currency": "usd",
+      "customer": null,
+      "description": "Free Intro Consultation",
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+        "order_id": "1048559203"
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 42,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46nR2eZvKYlo2C09UHr2V5",
+      "payment_method": "pm_1K46nb2eZvKYlo2Cc8NqhLyu",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": "pass",
+            "cvc_check": "pass"
+          },
+          "country": "US",
+          "exp_month": 2,
+          "exp_year": 2022,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "funding": "credit",
+          "installments": null,
+          "last4": "4242",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": "client.bill.te@gmail.com",
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46nR2eZvKYlo2C0G2rGSdX/rcpt_KjZxaASbshXU2QoA2OFD9do1TXCF9QE",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46nR2eZvKYlo2C0G2rGSdX/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46nQ2eZvKYlo2C02UQYpSm",
+      "object": "charge",
+      "amount": 5000,
+      "amount_captured": 5000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46nQ2eZvKYlo2C0fDxj1tP",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": "12022",
+          "state": null
+        },
+        "email": "client.bill.te@gmail.com",
+        "name": "Tomas Anderson",
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895551,
+      "currency": "usd",
+      "customer": null,
+      "description": "Free Intro Consultation",
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+        "order_id": "1048559201"
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 17,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46nQ2eZvKYlo2C0fJkMt4Q",
+      "payment_method": "pm_1K46na2eZvKYlo2CeTX6hL57",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": "pass",
+            "cvc_check": "pass"
+          },
+          "country": "US",
+          "exp_month": 2,
+          "exp_year": 2022,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "funding": "credit",
+          "installments": null,
+          "last4": "4242",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": "client.bill.te@gmail.com",
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46nQ2eZvKYlo2C02UQYpSm/rcpt_KjZx89Z21PrssB1IxXsjbrCtO87ws9F",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46nQ2eZvKYlo2C02UQYpSm/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46mo2eZvKYlo2C1cjWoFP0",
+      "object": "charge",
+      "amount": 50,
+      "amount_captured": 0,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": null,
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "state": null
+        },
+        "email": null,
+        "name": null,
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": false,
+      "created": 1638895503,
+      "currency": "usd",
+      "customer": "cus_AJ6y9TsgwMryBy",
+      "description": "Invoice 9B6FEC4-9633",
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": "expired_card",
+      "failure_message": "Your card has expired.",
+      "fraud_details": {
+      },
+      "invoice": "in_1K31L62eZvKYlo2CEzQ3xCX5",
+      "livemode": false,
+      "metadata": {
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "declined_by_network",
+        "reason": "expired_card",
+        "risk_level": "normal",
+        "risk_score": 23,
+        "seller_message": "The bank returned the decline code `expired_card`.",
+        "type": "issuer_declined"
+      },
+      "paid": false,
+      "payment_intent": "pi_3K46mo2eZvKYlo2C1W0kMN0D",
+      "payment_method": "card_19yUkd2eZvKYlo2CLbEQmC4z",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": null
+          },
+          "country": "CA",
+          "exp_month": 3,
+          "exp_year": 2018,
+          "fingerprint": "CzzwE1ax7qiHgw16",
+          "funding": "credit",
+          "installments": null,
+          "last4": "1881",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": null,
+      "receipt_number": null,
+      "receipt_url": null,
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46mo2eZvKYlo2C1cjWoFP0/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": {
+        "id": "card_19yUkd2eZvKYlo2CLbEQmC4z",
+        "object": "card",
+        "address_city": null,
+        "address_country": null,
+        "address_line1": null,
+        "address_line1_check": null,
+        "address_line2": null,
+        "address_state": null,
+        "address_zip": null,
+        "address_zip_check": null,
+        "brand": "Visa",
+        "country": "CA",
+        "customer": "cus_AJ6y9TsgwMryBy",
+        "cvc_check": null,
+        "dynamic_last4": null,
+        "exp_month": 3,
+        "exp_year": 2018,
+        "fingerprint": "CzzwE1ax7qiHgw16",
+        "funding": "credit",
+        "last4": "1881",
+        "metadata": {
+        },
+        "name": null,
+        "tokenization_method": null
+      },
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "failed",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46lK2eZvKYlo2C1QB3Nz5I",
+      "object": "charge",
+      "amount": 15000,
+      "amount_captured": 15000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46lK2eZvKYlo2C1vIQQbWw",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": "12022",
+          "state": null
+        },
+        "email": "client.bill.te@gmail.com",
+        "name": "Tomas Anderson",
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895420,
+      "currency": "usd",
+      "customer": null,
+      "description": null,
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+        "order_id": "1048559198"
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 13,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46lK2eZvKYlo2C16RCcg9Q",
+      "payment_method": "pm_1K46lU2eZvKYlo2CfHR9hv8u",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": "pass",
+            "cvc_check": "pass"
+          },
+          "country": "US",
+          "exp_month": 2,
+          "exp_year": 2022,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "funding": "credit",
+          "installments": null,
+          "last4": "4242",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": "client.bill.te@gmail.com",
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46lK2eZvKYlo2C1QB3Nz5I/rcpt_KjZv2cwyE9jr1wvjC7WqsVbUVf6IkBR",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46lK2eZvKYlo2C1QB3Nz5I/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46lJ2eZvKYlo2C0ehQzt0b",
+      "object": "charge",
+      "amount": 5000,
+      "amount_captured": 5000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46lJ2eZvKYlo2C0dpIrpxT",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "state": null
+        },
+        "email": null,
+        "name": null,
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895410,
+      "currency": "nok",
+      "customer": null,
+      "description": null,
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 56,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46lJ2eZvKYlo2C0dotJ3K5",
+      "payment_method": "pm_1K46lJ2eZvKYlo2ChnIswJsX",
+      "payment_method_details": {
+        "card": {
+          "brand": "mastercard",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": null
+          },
+          "country": "US",
+          "exp_month": 12,
+          "exp_year": 2022,
+          "fingerprint": "RlX3qw4syW2i9fRI",
+          "funding": "debit",
+          "installments": null,
+          "last4": "8210",
+          "network": "mastercard",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": null,
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46lJ2eZvKYlo2C0ehQzt0b/rcpt_KjZv9LPau0Ur7yhCSru11WhjF9rcg68",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46lJ2eZvKYlo2C0ehQzt0b/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46lG2eZvKYlo2C00VJY4BD",
+      "object": "charge",
+      "amount": 5000,
+      "amount_captured": 5000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46lG2eZvKYlo2C0jggMwsd",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": null,
+          "state": null
+        },
+        "email": null,
+        "name": null,
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895406,
+      "currency": "nok",
+      "customer": null,
+      "description": null,
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 15,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46lG2eZvKYlo2C0a60rdjA",
+      "payment_method": "pm_1K46lG2eZvKYlo2CsJy5UkM3",
+      "payment_method_details": {
+        "card": {
+          "brand": "mastercard",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": null,
+            "cvc_check": null
+          },
+          "country": "US",
+          "exp_month": 12,
+          "exp_year": 2022,
+          "fingerprint": "RlX3qw4syW2i9fRI",
+          "funding": "debit",
+          "installments": null,
+          "last4": "8210",
+          "network": "mastercard",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": null,
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46lG2eZvKYlo2C00VJY4BD/rcpt_KjZvGpHUHSU6BqKRMASJJFmxdj9URKx",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46lG2eZvKYlo2C00VJY4BD/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    },
+    {
+      "id": "ch_3K46l22eZvKYlo2C0zfShx2p",
+      "object": "charge",
+      "amount": 4000,
+      "amount_captured": 4000,
+      "amount_refunded": 0,
+      "application": null,
+      "application_fee": null,
+      "application_fee_amount": null,
+      "balance_transaction": "txn_3K46l22eZvKYlo2C0ymtvbGk",
+      "billing_details": {
+        "address": {
+          "city": null,
+          "country": null,
+          "line1": null,
+          "line2": null,
+          "postal_code": "12022",
+          "state": null
+        },
+        "email": "client15.bill.te@gmail.com",
+        "name": "First15 Last15",
+        "phone": null
+      },
+      "calculated_statement_descriptor": "Stripe",
+      "captured": true,
+      "created": 1638895402,
+      "currency": "usd",
+      "customer": null,
+      "description": null,
+      "destination": null,
+      "dispute": null,
+      "disputed": false,
+      "failure_code": null,
+      "failure_message": null,
+      "fraud_details": {
+      },
+      "invoice": null,
+      "livemode": false,
+      "metadata": {
+        "order_id": "1048559198"
+      },
+      "on_behalf_of": null,
+      "order": null,
+      "outcome": {
+        "network_status": "approved_by_network",
+        "reason": null,
+        "risk_level": "normal",
+        "risk_score": 11,
+        "seller_message": "Payment complete.",
+        "type": "authorized"
+      },
+      "paid": true,
+      "payment_intent": "pi_3K46l22eZvKYlo2C0LC9NXEt",
+      "payment_method": "pm_1K46lB2eZvKYlo2C8S2UA8HS",
+      "payment_method_details": {
+        "card": {
+          "brand": "visa",
+          "checks": {
+            "address_line1_check": null,
+            "address_postal_code_check": "pass",
+            "cvc_check": "pass"
+          },
+          "country": "US",
+          "exp_month": 2,
+          "exp_year": 2022,
+          "fingerprint": "Xt5EWLLDS7FJjR1c",
+          "funding": "credit",
+          "installments": null,
+          "last4": "4242",
+          "network": "visa",
+          "three_d_secure": null,
+          "wallet": null
+        },
+        "type": "card"
+      },
+      "receipt_email": "client15.bill.te@gmail.com",
+      "receipt_number": null,
+      "receipt_url": "https://pay.stripe.com/receipts/acct_1032D82eZvKYlo2C/ch_3K46l22eZvKYlo2C0zfShx2p/rcpt_KjZv7Rfs7kmAsPv4AeoJ7lHAL2tzflR",
+      "refunded": false,
+      "refunds": {
+        "object": "list",
+        "data": [
+
+        ],
+        "has_more": false,
+        "total_count": 0,
+        "url": "/v1/charges/ch_3K46l22eZvKYlo2C0zfShx2p/refunds"
+      },
+      "review": null,
+      "shipping": null,
+      "source": null,
+      "source_transfer": null,
+      "statement_descriptor": null,
+      "statement_descriptor_suffix": null,
+      "status": "succeeded",
+      "transfer_data": null,
+      "transfer_group": null
+    }
+  ],
+  "has_more": true,
+  "url": "/v1/charges"
+}

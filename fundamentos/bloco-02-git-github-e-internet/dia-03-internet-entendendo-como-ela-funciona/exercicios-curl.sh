@@ -1,4 +1,4 @@
-esperar=0
+esperar=2
 
 # Exercício 1
 echo -e "Exercício 1: ------------------------------------------------------\n"
@@ -107,5 +107,11 @@ sleep $esperar
 
 # Exercício 20
 echo -e "\n\nExercício 20: ------------------------------------------------------\n"
-curl -o twitter-es-ES.html -H 'Accept-Language: es-ES' https://twitter.com
+curl -H 'Accept-Language: es-ES' https://twitter.com
+sleep $esperar
+
+# Exercício 21
+echo -e "\n\nExercício 21: ------------------------------------------------------\n"
+curl -o "stripe.json" -u 'sk_test_4eC39HqLyjWDarjtT1zdp7dc:' https://api.stripe.com/v1/charges
+curl -o "httpbin.json" -u 'sk_test_4eC39HqLyjWDarjtT1zdp7dc:' https://httpbin.org/anything
 sleep $esperar
