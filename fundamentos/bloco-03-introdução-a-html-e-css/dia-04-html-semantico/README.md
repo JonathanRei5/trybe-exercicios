@@ -122,3 +122,5 @@ Para uma melhor organização, faça commits a cada tarefa concluída. Vamos aos
 ```
 
 Obs: para esse exercício, é obrigatório fazer uso de, no mínimo, 6 elementos com as seguintes tags: header, nav, article, section, h1, h2, h3, aside, footer, table e img.
+
+### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)

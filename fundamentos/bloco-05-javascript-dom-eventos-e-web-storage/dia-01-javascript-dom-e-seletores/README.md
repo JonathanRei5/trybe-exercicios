@@ -1,4 +1,4 @@
-# Exercícios feitos na [Trybe](https://www.betrybe.com/)
+# Exercícios
 
 ## Funções de manipulação do DOM
 
@@ -69,3 +69,5 @@
   </body>
 </html>
 ```
+
+### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)

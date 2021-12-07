@@ -83,3 +83,5 @@
 Resultado: R$ 2.612,55.
 
 Dica: que tal identificar as alíquotas com variáveis de nomes explicativos?
+
+### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)

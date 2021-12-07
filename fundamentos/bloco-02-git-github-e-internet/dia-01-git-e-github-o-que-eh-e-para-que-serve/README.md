@@ -56,3 +56,5 @@ Agora que tal adicionar uma descrição do que é seu repositório no `README.md
 * Lembre-se de fazer um commit quando terminar de alterar os arquivos;
 * Depois do commit, faça sempre um push;
 * Confira as alterações no GitHub.
+
+### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)

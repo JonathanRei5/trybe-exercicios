@@ -81,3 +81,4 @@ E pra terminar com a energia óh, lá no alto, que tal aprender agora alguns com
 
 8. Execute o comando telnet towel.blinkenlights.nl e espere alguns segundos. Lembre-se que você tem mais exercícios para fazer! 😅
 
+### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
