@@ -99,3 +99,8 @@ echo -e "\n\nExercício 18: ----------------------------------------------------
 curl https://httpbin.org/status/404 https://httpbin.org/status/200
 curl -i https://httpbin.org/status/404 https://httpbin.org/status/200
 sleep $esperar
+
+# Exercício 19
+echo -e "\n\nExercício 19: ------------------------------------------------------\n"
+curl -u 'usuario123:senhasegura123' https://httpbin.org/anything
+sleep $esperar
