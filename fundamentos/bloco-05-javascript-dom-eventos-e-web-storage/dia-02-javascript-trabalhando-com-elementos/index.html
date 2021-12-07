@@ -114,6 +114,14 @@
     elementosLi[8].innerText = 'Nove';
     elementosLi[9].innerText = 'Dez';
 
+    // Exercícios 9
+    let elementosH3 = [null, null, null];
+    for (let i = 0; i < 3; i += 1) {
+      elementosH3[i] = document.createElement('h3');
+      elementoMain.appendChild(elementosH3[i]);
+      elementosH3[i].innerText = 'Eu sou o ' + (i + 1) + 'º h3';
+    }
+
   </script>
 </body>
 
