@@ -80,3 +80,11 @@ sleep $esperar
 echo -e "\n\nExercício 15: ------------------------------------------------------\n"
 curl -o img/imagem-jpeg2.jpeg https://httpbin.org/image/jpeg
 sleep $esperar
+
+# Exercício 16
+echo -e "\n\nExercício 16: ------------------------------------------------------\n"
+curl -i https://www.twitter.com
+sleep $esperar
+# A resposta estava vazia porque o twitter mudou de domínio
+# de www.twitter.com para twitter.com. O servidor retornou erro 301
+# avisando sobre a mudança.
