@@ -75,3 +75,8 @@ sleep $esperar
 echo -e "\n\nExercício 14: ------------------------------------------------------\n"
 curl -X PUT https://httpbin.org/anything
 sleep $esperar
+
+# Exercício 15
+echo -e "\n\nExercício 15: ------------------------------------------------------\n"
+curl -o img/imagem-jpeg2.jpeg https://httpbin.org/image/jpeg
+sleep $esperar
