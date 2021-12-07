@@ -1,4 +1,4 @@
-# Exercícios do site [jvns.ca](https://jvns.ca/blog/2019/08/27/curl-exercises/)
+# Exercícios
 
 1. Faça uma requisição para https://httpbin.org
 
@@ -27,3 +27,7 @@
 10. Faça a mesma requisição POST do exercício anterior, mas defina o cabeçalho Content-Type como ```application/json``` (porque as requisições POST precisam ter um tipo de conteúdo que corresponda ao seu corpo). Observe o campo ```json``` na resposta para ver a diferença em relação ao anterior.
 
 11. Faça uma requisição GET para https://httpbin.org/anything e defina o cabeçalho ```Accept-Encoding: gzip``` (o que acontece? Por quê?).
+
+12. Coloque vários JSON em um arquivo e, em seguida, faça uma requisição POST para https://httpbin.org/anything com o JSON nesse arquivo como o corpo.
+
+### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) do site [jvns.ca](https://jvns.ca/blog/2019/08/27/curl-exercises/)

@@ -55,3 +55,8 @@ echo -e "\n\nExercício 11: ----------------------------------------------------
 curl -H "Accept-Encoding: gzip" https://httpbin.org/anything
 sleep $esperar
 # Aconteceu nada porque o servidor não aceita esse formato de compressão
+
+# Exercício 12
+echo -e "\n\nExercício 12: ------------------------------------------------------\n"
+curl -X POST -H 'Content-Type: application/json' -d @JSONs.json https://httpbin.org/anything
+sleep $esperar
