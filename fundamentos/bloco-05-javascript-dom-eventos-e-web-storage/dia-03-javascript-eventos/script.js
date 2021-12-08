@@ -97,3 +97,12 @@ for (let i = 0; i < days.length; i += 1) {
   days[i].addEventListener('mouseover', zoonIn);
   days[i].addEventListener('mouseleave', zoonOut);
 }
+
+// Exercício 7:
+
+function addTask(task) {
+  const spamTask = document.createElement('spam');
+  spamTask.innerText = task;
+  const myTasks = document.getElementsByClassName('my-tasks')[0];
+  myTasks.appendChild(spamTask);
+}
