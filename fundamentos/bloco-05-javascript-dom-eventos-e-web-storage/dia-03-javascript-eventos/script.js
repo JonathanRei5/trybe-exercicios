@@ -69,3 +69,17 @@ btnHoliday.addEventListener('click', changeBGColor);
 const btnFriday = createButton('Sexta-feira');
 btnFriday.id = 'btn-friday';
 buttonsContainer.appendChild(btnFriday);
+
+// Exercício 5:
+
+function changeText() {
+  const liFriday = document.getElementsByClassName('friday');
+  for (let i = 0; i < liFriday.length; i += 1) {
+    if (liFriday[i].innerText !== 'Sexta-feira') {
+      liFriday[i].innerText = 'Sexta-feira';
+    } else {
+      liFriday[i].innerText = fridays[i];
+    }
+  }
+}
+btnFriday.addEventListener('click', changeText);
