@@ -46,5 +46,20 @@ function createButton(name) {
   button.id = 'btn-holiday';
   return button;
 }
+const button = createButton('Feriados');
 const buttonsContainer = document.getElementsByClassName('buttons-container')[0];
-buttonsContainer.appendChild(createButton('Feriados'));
+buttonsContainer.appendChild(button);
+
+// Exercício 3:
+
+function changeBGColor() {
+  const liHolidays = document.getElementsByClassName('holiday');
+  for (let i = 0; i < liHolidays.length; i += 1) {
+    if (liHolidays[i].style.backgroundColor !== 'rgb(170, 255, 170)') {
+      liHolidays[i].style.backgroundColor = 'rgb(170, 255, 170)';
+    } else {
+      liHolidays[i].style.backgroundColor = 'rgb(238,238,238)';
+    }
+  }
+}
+button.addEventListener('click', changeBGColor);
