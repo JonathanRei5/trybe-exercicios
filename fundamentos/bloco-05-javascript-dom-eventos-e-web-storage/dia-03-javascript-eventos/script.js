@@ -106,3 +106,15 @@ function addTask(task) {
   const myTasks = document.getElementsByClassName('my-tasks')[0];
   myTasks.appendChild(spamTask);
 }
+addTask('Teste');
+
+// Exercício 8:
+
+function addSubtitle(color) {
+  const divTask = document.createElement('div');
+  divTask.className = 'task';
+  divTask.style.backgroundColor = color;
+  const myTasks = document.getElementsByClassName('my-tasks')[0];
+  myTasks.appendChild(divTask);
+}
+addSubtitle('green');
