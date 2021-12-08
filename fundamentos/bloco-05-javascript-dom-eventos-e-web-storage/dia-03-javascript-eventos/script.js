@@ -83,3 +83,17 @@ function changeText() {
   }
 }
 btnFriday.addEventListener('click', changeText);
+
+// Exercício 6:
+
+function zoonIn(event) {
+  event.target.style.fontSize = '25px';
+}
+function zoonOut(event) {
+  event.target.style.fontSize = '20px';
+}
+const days = month.children;
+for (let i = 0; i < days.length; i += 1) {
+  days[i].addEventListener('mouseover', zoonIn);
+  days[i].addEventListener('mouseleave', zoonOut);
+}
