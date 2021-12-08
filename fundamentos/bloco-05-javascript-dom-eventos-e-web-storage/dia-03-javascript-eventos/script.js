@@ -43,12 +43,12 @@ addDayOfMonth(dezDaysList, month, holidays, fridays);
 function createButton(name) {
   let button = document.createElement('button');
   button.innerText = name;
-  button.id = 'btn-holiday';
   return button;
 }
-const button = createButton('Feriados');
+const btnHoliday = createButton('Feriados');
+btnHoliday.id = 'btn-holiday';
 const buttonsContainer = document.getElementsByClassName('buttons-container')[0];
-buttonsContainer.appendChild(button);
+buttonsContainer.appendChild(btnHoliday);
 
 // Exercício 3:
 
@@ -62,4 +62,10 @@ function changeBGColor() {
     }
   }
 }
-button.addEventListener('click', changeBGColor);
+btnHoliday.addEventListener('click', changeBGColor);
+
+// Exercício 4:
+
+const btnFriday = createButton('Sexta-feira');
+btnFriday.id = 'btn-friday';
+buttonsContainer.appendChild(btnFriday);
