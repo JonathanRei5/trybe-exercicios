@@ -118,3 +118,22 @@ function addSubtitle(color) {
   myTasks.appendChild(divTask);
 }
 addSubtitle('green');
+
+// Exercício 9:
+
+function addRemoveSelected(event) {
+  console.log('OI');
+  const divTask = event.target;
+  if (divTask.classList.contains('selected')) {
+    divTask.classList.remove('selected');
+  } else {
+    divTask.classList.add('selected');
+  }
+}
+const myTasksChildren = document.getElementsByClassName('my-tasks')[0].children;
+for (let i = 0; i < myTasksChildren.length; i += 1) {
+  const children = myTasksChildren[i];
+  if (children.tagName === 'DIV') {
+    children.addEventListener('click', addRemoveSelected);
+  }
+}
