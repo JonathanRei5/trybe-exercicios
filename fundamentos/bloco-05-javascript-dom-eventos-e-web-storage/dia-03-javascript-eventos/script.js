@@ -37,3 +37,14 @@ const holidays = [24, 25, 31];
 const fridays = [4, 11, 18, 25];
 const month = document.getElementById('days');
 addDayOfMonth(dezDaysList, month, holidays, fridays);
+
+// Exercício 2:
+
+function createButton(name) {
+  let button = document.createElement('button');
+  button.innerText = name;
+  button.id = 'btn-holiday';
+  return button;
+}
+const buttonsContainer = document.getElementsByClassName('buttons-container')[0];
+buttonsContainer.appendChild(createButton('Feriados'));
