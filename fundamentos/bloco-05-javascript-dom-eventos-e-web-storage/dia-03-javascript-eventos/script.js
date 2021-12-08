@@ -160,3 +160,20 @@ function changeColorDay(event) {
 for (let i = 0; i < days.length; i += 1) {
   days[i].addEventListener('click', changeColorDay);
 }
+
+// Bônus:
+
+function addCommitment() {
+  const taskInput = document.getElementById('task-input');
+  const value = taskInput.value;
+  if (value === '') {
+    window.alert('Informe um compromisso para ser adicionado.');
+  } else {
+    const li = document.createElement('li');
+    li.innerText = value;
+    const taskList = document.getElementsByClassName('task-list')[0];
+    taskList.appendChild(li);
+  }
+}
+const btnAdd = document.getElementById('btn-add');
+btnAdd.addEventListener('click', addCommitment);
