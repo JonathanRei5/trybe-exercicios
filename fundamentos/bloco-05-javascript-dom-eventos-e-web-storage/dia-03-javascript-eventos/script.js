@@ -122,7 +122,6 @@ addSubtitle('green');
 // Exercício 9:
 
 function addRemoveSelected(event) {
-  console.log('OI');
   const divTask = event.target;
   if (divTask.classList.contains('selected')) {
     divTask.classList.remove('selected');
@@ -136,4 +135,28 @@ for (let i = 0; i < myTasksChildren.length; i += 1) {
   if (children.tagName === 'DIV') {
     children.addEventListener('click', addRemoveSelected);
   }
+}
+
+// Exercício 10:
+
+function changeColorDay(event) {
+  const day = event.target;
+  let colorTask = 'rgb(119,119,119)';
+  for (let i = 0; i < myTasksChildren.length; i += 1) {
+    const children = myTasksChildren[i];
+    if (children.tagName === 'DIV') {
+      if (children.classList.contains('selected')) {
+        colorTask = children.style.backgroundColor;
+        break;
+      }
+    }
+  }
+  if (day.style.color !== colorTask) {
+    day.style.color = colorTask;
+  } else {
+    day.style.color = 'rgb(119,119,119)';
+  }
+}
+for (let i = 0; i < days.length; i += 1) {
+  days[i].addEventListener('click', changeColorDay);
 }
