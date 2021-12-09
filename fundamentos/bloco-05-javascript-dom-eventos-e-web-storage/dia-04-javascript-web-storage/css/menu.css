@@ -26,6 +26,7 @@
   padding: 10px;
   margin: 10px;
   background-color: grey;
+  border-radius: 5px;
   text-transform: uppercase;
   transform: translatex(150%);
   transition: transform 300ms linear;
@@ -39,15 +40,24 @@
   color: white;
 }
 
-.menu .menu_opcao{
+.menu_opcao{
   line-height: 30px;
   height: 30px;
   padding: 5px;
   margin: 5px 0px 5px 0px;
-  background-color: rgb(0, 200, 200);
+  background-color: rgb(0, 190, 190);
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.menu .menu_opcao:hover {
+.menu_opcao:hover {
+  padding: 3px;
+  border: white solid 2px;
+  background-color: rgb(0, 255, 255);
+}
+
+.menu_opcao_selecionada{
+  padding: 3px;
+  border: white solid 2px;
   background-color: rgb(0, 255, 255);
 }
