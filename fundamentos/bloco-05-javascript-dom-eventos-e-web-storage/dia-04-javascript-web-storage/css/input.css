@@ -1,0 +1,41 @@
+#input_conteiner{
+  position: fixed;
+  width: max-content;
+  background-color: grey;
+  margin: 5px;
+  padding: 4px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+#input_titulo{
+  position: relative;
+  top: 1px;
+  display: inline-block;
+}
+
+#input_fechar{
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding-top: 2px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 900;
+  font-size: large;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#input_botao{
+  padding: 3px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#input_conteiner input{
+  height: 20px;
+}
