@@ -1,4 +1,5 @@
 #input_conteiner{
+  display: none;
   position: fixed;
   width: max-content;
   background-color: grey;
