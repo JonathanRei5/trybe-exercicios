@@ -1,0 +1,67 @@
+#input_conteiner {
+  display: none;
+  position: fixed;
+  width: fit-content;
+  margin: 10px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgba(211, 211, 211, 0.8);
+  z-index: 2;
+  text-align: center;
+  font-weight: 900;
+  font-size:large;
+  pointer-events: none;
+}
+
+#input_conteiner div {
+  pointer-events: none;
+}
+
+#input_conteiner  * {
+  pointer-events: auto;
+}
+
+#input_descricao , #input , #input_botoes {
+  width: fit-content;
+  margin: 5px auto;
+}
+
+#input_conteiner input[type='number'] {
+  display: block;
+  width: 50%;
+  min-width: 50px;
+  margin: 0 auto;
+}
+
+#input_conteiner input[type='text'] {
+  display: block;
+  width: 80%;
+  min-width: 80px;
+  margin: 0 auto;
+}
+
+#input_botoes {
+  display: flex;
+  align-items: center;
+}
+
+#input_botao {
+  padding: 4px;
+  margin: 0 3px;
+  font-weight: 900;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#input_fechar {
+  width: 25px;
+  height: 25px;
+  margin: 0 3px;
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  cursor: pointer;
+}
