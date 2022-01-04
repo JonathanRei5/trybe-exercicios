@@ -25,7 +25,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 3-2: _HTML & CSS - Primeiros passos em CSS_
 - [X] 3-3: _HTML & CSS - Seletores e posicionamento_
 - [X] 3-4: _HTML Semântico_
-- [X] 3-5: _[Projeto - HTML & CSS](https://github.com/tryber/sd-019-a-project-lessons-learned/pull/60)_
+- [X] 3-5: _[Projeto - HTML & CSS](https://JonathanRei5.github.io/projetos/lessons-learned/)_
 
 ##### Bloco 4: Introdução - JavaScript
 
@@ -33,19 +33,19 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4-2: _JavaScript - Array e loop For_
 - [X] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [X] 4-4: _JavaScript - Objetos e funções_
-- [X] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-019-a-project-playground-functions/pull/67)_
+- [X] 4-5: _[Projeto - Playground Functions](https://github.com/JonathanRei5/trybe-projetos/tree/master/playground-functions)_
 
 ##### Bloco 5: Introdução - JavaScript - Projetos
 
 - [X] 5-1: _JavaScript - DOM e seletores_
 - [X] 5-2: _JavaScript - Trabalhando com elementos_
-- [ ] 5-3: _JavaScript - Eventos_
-- [ ] 5-4: _JavaScript - Web Storage_
-- [ ] 5-5: _[Projeto - Meme Generator]()_
-- [ ] 5-6: _[Projeto - Arte com Pixels]()_
-- [ ] 5-7: _[Projeto - Lista de tarefas]()_
-- [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
-- [ ] 5-7: _[Projeto - Carta Misteriosa]()_
+- [X] 5-3: _JavaScript - Eventos_
+- [X] 5-4: _JavaScript - Web Storage_
+- [X] 5-5: _[Projeto - Meme Generator](https://JonathanRei5.github.io/projetos/meme-generator/)_
+- [X] 5-6: _[Projeto - Arte com Pixels](https://JonathanRei5.github.io/projetos/pixels-art/)_
+- [X] 5-7: _[Projeto - Lista de tarefas](https://JonathanRei5.github.io/projetos/todo-list/)_
+- [X] 5-7: _[Projeto - Adivinhe a Cor](https://JonathanRei5.github.io/projetos/color-guess/)_
+- [X] 5-7: _[Projeto - Carta Misteriosa](https://JonathanRei5.github.io/projetos/mistery-letter/)_
 
 ##### Bloco 6: HTML & CSS avançado
 
