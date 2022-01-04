@@ -1,11 +1,12 @@
 * {
   margin: 0; 
   padding: 0;
-  font-family: Courier, sans-serif, Arial;
 }
 
 body{
-  padding-top: 50px;
+  padding-top: 60px;
+  font-family: sans-serif, Arial, Courier;
+  background-color: black;
 }
 
 #cabecalho {
@@ -16,9 +17,32 @@ body{
   background-color: grey;
 }
 
+a{
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: min-content;
+  padding: 5px;
+  margin: auto 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  background-color: grey;
+}
+
+a:hover {
+  background-color: black;
+}
+
 article {
   width: 80%;
   margin: auto;
+  font-size: 20px;
+  color: white;
 }
 
 p {
