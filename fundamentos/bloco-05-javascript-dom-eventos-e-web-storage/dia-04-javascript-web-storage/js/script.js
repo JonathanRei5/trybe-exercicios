@@ -19,31 +19,75 @@ function obterElementos() {
   input_fechar = document.getElementById('input_fechar');
 }
 
+// Obtem um objeto com as preferencias
+function obterPreferencias() {
+  const preferencias = window.localStorage.getItem('preferenciasDeEstilo');
+  if (preferencias === null) {
+    return null;
+  }
+  return JSON.parse(preferencias);
+}
+
+// Salva a preferência no armazenamento local
+function salvarPreferencia(chave, valor) {
+  let preferencias = obterPreferencias();
+  if (preferencias === null) {
+    preferencias = {};
+  }
+  preferencias[chave] = valor;
+  window.localStorage.setItem('preferenciasDeEstilo', JSON.stringify(preferencias));
+}
+
 // Objeto com as funções de alteração
 const funcoesAlterar = {
-  corFundo: function () {
+  corFundo: function (valor) {
+    if (valor !== undefined) {
+      document.body.style.backgroundColor = valor;
+      return;
+    }
     let input = input_conteiner.querySelector('#input input');
     document.body.style.backgroundColor = input.value;
+    salvarPreferencia(alterar, input.value);
   },
-  corTexto: function () {
-    let input = input_conteiner.querySelector('#input input');
+  corTexto: function (valor) {
     const article = document.getElementsByTagName('article')[0];
+    if (valor !== undefined) {
+      article.style.color = valor;
+      return;
+    }
+    let input = input_conteiner.querySelector('#input input');
     article.style.color = input.value;
+    salvarPreferencia(alterar, input.value);
   },
-  tamanhoFonte: function () {
-    let input = input_conteiner.querySelector('#input input');
+  tamanhoFonte: function (valor) {
     const article = document.getElementsByTagName('article')[0];
+    if (valor !== undefined) {
+      article.style.fontSize = valor;
+      return;
+    }
+    let input = input_conteiner.querySelector('#input input');
     article.style.fontSize = String(input.value).concat('px');
+    salvarPreferencia(alterar, String(input.value).concat('px'));
   },
-  espacoLinhas: function () {
-    let input = input_conteiner.querySelector('#input input');
+  espacoLinhas: function (valor) {
     const article = document.getElementsByTagName('article')[0];
+    if (valor !== undefined) {
+      article.style.lineHeight = valor;
+      return;
+    }
+    let input = input_conteiner.querySelector('#input input');
     article.style.lineHeight = String(input.value).concat('px');
+    salvarPreferencia(alterar, String(input.value).concat('px'));
   },
-  tipoFonte: function () {
-    let input = input_conteiner.querySelector('#input input');
+  tipoFonte: function (valor) {
     const article = document.getElementsByTagName('article')[0];
+    if (valor !== undefined) {
+      article.style.fontFamily = valor;
+      return;
+    }
+    let input = input_conteiner.querySelector('#input input');
     article.style.fontFamily = input.value;
+    salvarPreferencia(alterar, input.value);
   }
 }
 
@@ -54,6 +98,24 @@ const tiposInputs = {
   tamanhoFonte: { tipo: 'number', descricao: 'Tamanho da fonte (pixels)' },
   espacoLinhas: { tipo: 'number', descricao: 'Espaço entre linhas (pixels)' },
   tipoFonte: { tipo: 'text', descricao: 'Tipo da fonte' }
+}
+
+// Remove o input do conteiner
+function removerInput() {
+  let input = input_conteiner.querySelector('#input input');
+  if (input !== null) {
+    input_conteiner.querySelector('#input input').remove();
+  }
+}
+
+// Fecha o conteiner do input
+function fecharInput() {
+  const botaoSelecionado = document.querySelector('.menu_opcao.menu_opcao_selecionada');
+  if (botaoSelecionado !== null) {
+    botaoSelecionado.classList.remove('menu_opcao_selecionada');
+  }
+  removerInput();
+  input_conteiner.style.display = 'none';
 }
 
 // Abri e fecha o menu
@@ -67,11 +129,11 @@ function abrirFecharMenu() {
 
 // Altera o input de acordo com a opção selecionada
 function alterarInput() {
-  let input = input_conteiner.querySelector('#input');
-  let input_descricao = input_conteiner.querySelector('#input_descricao');
+  removerInput();
+  const input = input_conteiner.querySelector('#input');
+  const input_descricao = input_conteiner.querySelector('#input_descricao');
   input_descricao.textContent = tiposInputs[alterar].descricao;
-  input.innerHTML = '';
-  let novoInput = document.createElement('input');
+  const novoInput = document.createElement('input');
   novoInput.type = tiposInputs[alterar].tipo;
   input.appendChild(novoInput);
 }
@@ -91,18 +153,21 @@ function selecionarMenuOpcao(event) {
   }
 }
 
-// Fecha o input
-function fecharInput() {
-  const botaoSelecionado = document.querySelector('.menu_opcao.menu_opcao_selecionada');
-  if (botaoSelecionado !== null) {
-    botaoSelecionado.classList.remove('menu_opcao_selecionada');
-  }
-  input_conteiner.style.display = 'none';
-}
-
 // Faz a alteração selecionada
 function fazerAlteracao() {
   funcoesAlterar[alterar]();
+}
+
+// Carrega as preferências salvas
+function carregarPreferencia() {
+  let preferencias = obterPreferencias();
+  if (preferencias === null) {
+    return;
+  }
+  const chaveValor = Object.entries(preferencias);
+  for (let i = 0; i < chaveValor.length; i += 1) {
+    funcoesAlterar[chaveValor[i][0]](chaveValor[i][1]);
+  }
 }
 
 // Adiciona ouvintes nos elementos
@@ -116,3 +181,4 @@ function adicionarOuvintes() {
 // Inicia a aplicação
 obterElementos();
 adicionarOuvintes();
+carregarPreferencia();
