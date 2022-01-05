@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#formulario {
+  max-width: 500px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+#dados-pessoais{
+  margin-bottom: 20px;
+}
+
+fieldset {
+  padding: 10px;
+}
+
+#label-text, #label-estado {
+  display: flex;
+  box-sizing: border-box;
+  padding: 2px 5px 2px 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: text;
+}
+
+#label-estado {
+  cursor:default;
+}
+
+#label-estado span {
+  min-width: max-content;
+  margin-right: 5px;
+}
+
+#label-text span {
+  min-width: max-content;
+  margin-right: 5px;
+}
+
+input[type="text"], select{
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background-color: transparent;
+}
+
+option {
+  font-size: 15px;
+}
+
+#tipo-residencia {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor:default;
+}
+
+#tipo-residencia span{
+  display: block;
+  margin-bottom: 10px;
+}
+
+#tipo-residencia input[type="radio"] {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.label-radio {
+  cursor: pointer;
+  user-select: none;
+}
+
+#label-resumo-curriculo {
+  display: block;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  cursor: text;
+}
+
+#label-resumo-curriculo textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  outline: none;
+  margin-top: 5px;
+  font-size: 15px;
+  border: none;
+}
+
+#botoes {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  background-color: rgb(225, 225, 225);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgrey;
+}
