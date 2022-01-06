@@ -39,11 +39,11 @@
         </label>
         <span id="tipo-residencia"><span>Tipo de Residencia:</span>
           <label for="casa" class="label-radio">
-            <input type="radio" id="casa" name="tipo" value="casa" required> Casa
+            <input type="radio" id="casa" name="tipo-residencia" value="casa" required> Casa
           </label>
           <br>
           <label for="apartamento" class="label-radio">
-            <input type="radio" id="apartamento" name="tipo" value="apartamento"> Apartamento
+            <input type="radio" id="apartamento" name="tipo-residencia" value="apartamento"> Apartamento
           </label>
         </span>
       </fieldset>
@@ -66,10 +66,14 @@
       </fieldset>
 
       <div id="botoes">
-        <button type="submit">Enviar</button>
-        <button type="reset">Limpar</button>
+        <button type="submit" id="btnSubmit">Enviar</button>
+        <button type="reset" id="btnLimpar">Limpar</button>
       </div>
     </form>
+    <!--Mensagem de erro-->
+    <div id="mensagem-erro">
+      <div id="mensagem"></div>
+    </div>
   </section>
 
 </body>

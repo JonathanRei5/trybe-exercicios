@@ -6,6 +6,7 @@
 }
 
 #formulario {
+  position: relative;
   max-width: 500px;
   padding: 10px;
   margin: 20px auto;
@@ -27,6 +28,7 @@ fieldset {
   border: 1px solid black;
   border-radius: 20px;
   cursor: text;
+  font-weight: 600;
 }
 
 #label-estado {
@@ -38,6 +40,10 @@ fieldset {
   margin-right: 5px;
 }
 
+#label-estado #estado option {
+  background-color: white;
+}
+
 #label-text span {
   min-width: max-content;
   margin-right: 5px;
@@ -47,12 +53,8 @@ input[type="text"], select{
   width: 100%;
   border: none;
   outline: none;
-  font-size: 15px;
   background-color: transparent;
-}
-
-option {
-  font-size: 15px;
+  box-shadow: inset 0 0 0 1000px white;
 }
 
 #tipo-residencia {
@@ -66,6 +68,11 @@ option {
 #tipo-residencia span{
   display: block;
   margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#tipo-residencia label {
+  white-space: nowrap;
 }
 
 #tipo-residencia input[type="radio"] {
@@ -85,6 +92,7 @@ option {
   border: 1px solid #000000;
   border-radius: 10px;
   cursor: text;
+  font-weight: 600;
 }
 
 #label-resumo-curriculo textarea {
@@ -94,12 +102,11 @@ option {
   resize: vertical;
   outline: none;
   margin-top: 5px;
-  font-size: 15px;
   border: none;
 }
 
 #botoes {
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -107,15 +114,47 @@ button {
   display: inline-block;
   background-color: rgb(225, 225, 225);
   padding: 5px 10px;
-  margin: 0 5px;
+  margin: 5px;
   border: 1px solid black;
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 button:hover {
   background-color: lightgrey;
+}
+
+/* Mensagem de erro */
+#mensagem-erro {
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+#mensagem-erro::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-left: 10px solid transparent;
+  border-right: 10px  solid transparent;
+  border-bottom: 10px solid red;
+}
+
+#mensagem-erro #mensagem {
+  background: red;
+  padding: 3px 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.5);
 }
