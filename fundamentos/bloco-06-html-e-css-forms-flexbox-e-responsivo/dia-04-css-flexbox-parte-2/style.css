@@ -46,6 +46,7 @@ body {
 .main-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .movie-container {
@@ -79,6 +80,7 @@ body {
   flex-direction: column;
   margin: 20px;
   flex-basis: 350px;
+  flex-grow: 1;
 }
 
 .aside-container h3, h4 {
