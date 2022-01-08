@@ -14,13 +14,9 @@ body {
   display: flex;
 }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-}
-
 .menu-container {
   display: flex;
+  flex-basis: 500px;
 }
 
 .menu-container ul {
@@ -35,4 +31,10 @@ body {
   font-size: 1.3rem;
   list-style: none;
   margin-right: 10px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  flex-basis: 268px;
 }
