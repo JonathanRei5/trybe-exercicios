@@ -43,8 +43,24 @@ function verificarCPF(cpf) {
   return true;
 }
 
+// Retonar o máximo de dias no mês de acordo com o mês e ano
+function verificarDiaMaximoData(mes, ano) {
+  const numberAno = Number(ano);
+  const numberMes = Number(mes);
+  if (numberMes === 2) {
+    if (numberAno % 400 === 0 || (numberAno % 4 === 0 && numberAno % 100 !== 0)) {
+      return 29;
+    }
+    return 28;
+  }
+  if (numberMes <= 7) {
+    return 30 + (numberMes % 2);
+  }
+  return 30 + ((numberMes % 2 === 0) ? 1 : 0);
+}
+
 // Verifica o dia da data
-function verificarDiaData(dia) {
+function verificarDiaData(dia, mes, ano) {
   if (stringVazia(dia)) {
     window.alert('Insira um dia.');
     return false;
@@ -53,7 +69,7 @@ function verificarDiaData(dia) {
     window.alert('Insira apenas números no dia.');
     return false;
   }
-  if (Number(dia) < 1 || Number(dia) > 31) {
+  if (Number(dia) < 1 || Number(dia) > verificarDiaMaximoData(mes, ano)) {
     window.alert('O dia está incorreto.');
     return false;
   }
@@ -89,6 +105,10 @@ function verificarAnoData(ano) {
     window.alert('Insira apenas números no ano.');
     return false;
   }
+  if (Number(ano) < 1900) {
+    window.alert('Insira um ano apartir de 1900.');
+    return false;
+  }
 
   return true;
 }
@@ -102,13 +122,13 @@ function verificarData(data) {
     return false;
   }
 
-  if (!verificarDiaData(subData[0])) {
+  if (!verificarAnoData(subData[2])) {
     return false;
   }
   if (!verificarMesData(subData[1])) {
     return false;
   }
-  if (!verificarAnoData(subData[2])) {
+  if (!verificarDiaData(subData[0], subData[1], subData[2])) {
     return false;
   }
 
