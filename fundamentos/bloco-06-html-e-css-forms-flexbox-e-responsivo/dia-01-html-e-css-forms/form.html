@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário</title>
   <link rel="stylesheet" href="style/style.css">
+  <script src="script/validacoesFormulario.js" defer></script>
   <script src="script/script.js" defer></script>
 </head>
 
@@ -16,28 +17,29 @@
     <form action="" method="GET" enctype="application/x-www-form-urlencoded">
       <fieldset id="dados-pessoais">
         <legend>Dados pessoais</legend>
-        <label id="label-text" for="nome">
+        <label class="label-conteiner" for="nome">
           <span>Nome:</span><input type="text" maxlength="40" id="nome" name="nome" autofocus required>
         </label>
-        <label id="label-text" for="email">
+        <label class="label-conteiner" for="email">
           <span>E-mail:</span><input type="text" maxlength="50" id="email" name="email" required>
         </label>
-        <label id="label-text" for="cpf">
+        <label class="label-conteiner" for="cpf">
           <span>CPF:</span><input type="text" maxlength="11" id="cpf" name="cpf" required>
         </label>
-        <label id="label-text" for="endereco">
+        <label class="label-conteiner" for="endereco">
           <span>Endereco:</span><input type="text" maxlength="200" id="endereco" name="endereco" required>
         </label>
-        <label id="label-text" for="cidade">
+        <label class="label-conteiner" for="cidade">
           <span>Cidade:</span><input type="text" maxlength="28" id="cidade" name="cidade" required>
         </label>
-        <label id="label-estado" for="estado">
+        <label id="label-estado" class="label-conteiner" for="estado">
           <span>Estado:</span>
           <select name="estado" id="estado" required>
             <!--options inseridos pelo JavaScript-->
           </select>
+          &#9660
         </label>
-        <span id="tipo-residencia"><span>Tipo de Residencia:</span>
+        <div id="tipo-residencia"><span>Tipo de residencia:</span>
           <label for="casa" class="label-radio">
             <input type="radio" id="casa" name="tipo-residencia" value="casa" required> Casa
           </label>
@@ -45,7 +47,7 @@
           <label for="apartamento" class="label-radio">
             <input type="radio" id="apartamento" name="tipo-residencia" value="apartamento"> Apartamento
           </label>
-        </span>
+        </div>
       </fieldset>
 
       <fieldset>
@@ -53,19 +55,19 @@
         <label id="label-resumo-curriculo" for="resumo-curriculo">Resumo do currículo:
           <textarea name="resumo-curriculo" id="resumo-curriculo" maxlength="1000" required></textarea>
         </label>
-        <label id="label-text" for="cargo">
+        <label class="label-conteiner" for="cargo">
           <span>Cargo:</span><input type="text" maxlength="40" id="cargo" name="cargo" required>
         </label>
-        <label id="label-text" for="descricao-cargo">
+        <label class="label-conteiner" for="descricao-cargo">
           <span>Descrição:</span><input type="text" maxlength="500" id="descricao-cargo" name="descricao-cargo"
             required>
         </label>
-        <label id="label-text" for="data-inicio">
+        <label class="label-conteiner" for="data-inicio">
           <span>Início:</span><input type="text" id="data-inicio" name="data-inicio" required>
         </label>
       </fieldset>
 
-      <div id="botoes">
+      <div id="botoes-conteiner">
         <button type="submit" id="btnSubmit">Enviar</button>
         <button type="reset" id="btnLimpar">Limpar</button>
       </div>
