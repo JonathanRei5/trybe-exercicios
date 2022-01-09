@@ -148,8 +148,24 @@ button:hover {
 
 #mensagem-erro #mensagem {
   background: red;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+}
+
+/* Destaca campo inválido */
+.destacarCampo {
+  border-color: transparent !important;
+  outline: 3px solid red;
+  animation: tremer alternate 150ms linear infinite;
+}
+
+@keyframes tremer {
+  from {
+    transform: translateX(-3px);
+  }
+  to {
+    transform: translateX(3px);
+  }
 }

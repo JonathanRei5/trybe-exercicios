@@ -67,12 +67,15 @@ function verificarRadios() {
   return false;
 }
 
-// Remove a mensagem de erro
-function removerMensagemDeErro(event) {
-  if (event.target !== BTN_SUBMIT) {
-    MENSAGEM_ERRO.style.display = 'none';
-    window.clearTimeout(idTimeout);
-    document.removeEventListener('click', removerMensagemDeErro);
+let idTimeoutCampoInvalido;
+// Remove destaque de um campo
+function removeDestaqueCampo(event) {
+  if (event === undefined || event.target !== BTN_SUBMIT) {
+    const campo = document.querySelector('.destacarCampo');
+    campo.classList.remove('destacarCampo');
+    document.removeEventListener('click', removeDestaqueCampo);
+    document.removeEventListener('input', removeDestaqueCampo);
+    window.clearTimeout(idTimeoutCampoInvalido);
   }
 }
 
@@ -80,12 +83,31 @@ function removerMensagemDeErro(event) {
 function destacarCampoInvalido(campo) {
   campo.focus();
   campo.scrollIntoView();
+  campo.classList.add('destacarCampo');
+
+  document.addEventListener('click', removeDestaqueCampo);
+  document.addEventListener('input', removeDestaqueCampo);
+
+  window.clearTimeout(idTimeoutCampoInvalido);
+  idTimeoutCampoInvalido = window.setTimeout(() => {
+    removeDestaqueCampo();
+  }, 5000);
+}
+
+let idTimeout;
+// Remove a mensagem de erro
+function removerMensagemDeErro(event) {
+  if (event === undefined || event.target !== BTN_SUBMIT) {
+    MENSAGEM_ERRO.style.display = 'none';
+    window.clearTimeout(idTimeout);
+    document.removeEventListener('click', removerMensagemDeErro);
+    document.removeEventListener('input', removerMensagemDeErro);
+  }
 }
 
 // Insere uma mensagem de erro abaixo do elemento
-let idTimeout;
-function inserirMensagemDeErro(elemento, mensagem, tempo) {
-  const bottom = elemento.offsetTop + elemento.offsetHeight;
+function inserirMensagemDeErro(elemento, mensagem, tempo, distancia) {
+  const bottom = elemento.offsetTop + elemento.offsetHeight + distancia;
 
   MENSAGEM_ERRO.style.display = 'block';
   MENSAGEM_ERRO.style.top = String(bottom).concat('px');
@@ -95,10 +117,11 @@ function inserirMensagemDeErro(elemento, mensagem, tempo) {
 
   window.clearTimeout(idTimeout);
   idTimeout = window.setTimeout(() => {
-    MENSAGEM_ERRO.style.display = 'none';
+    removerMensagemDeErro();
   }, tempo);
 
   document.addEventListener('click', removerMensagemDeErro);
+  document.addEventListener('input', removerMensagemDeErro);
 }
 
 // Verifica se os campos do formulário estão vazios
@@ -106,7 +129,7 @@ function verificarCamposVazios() {
   for (const campo in CAMPOS_FORMULARIO) {
     if (CAMPOS_FORMULARIO[campo].id === undefined) {
       if (!verificarRadios()) {
-        inserirMensagemDeErro(CAMPOS_FORMULARIO[campo][0].parentElement.parentElement, 'Selecione uma das opções', 5000);
+        inserirMensagemDeErro(CAMPOS_FORMULARIO[campo][0].parentElement.parentElement, 'Selecione uma das opções', 5000, 4);
         return false;
       }
       continue;
@@ -117,7 +140,7 @@ function verificarCamposVazios() {
       if (CAMPOS_FORMULARIO[campo].id === 'estado') {
         mensagem = 'Selecione um item da lista';
       }
-      inserirMensagemDeErro(CAMPOS_FORMULARIO[campo].parentElement, mensagem, 5000);
+      inserirMensagemDeErro(CAMPOS_FORMULARIO[campo].parentElement, mensagem, 5000, 4);
       return false;
     }
   }
@@ -132,15 +155,15 @@ function verificarInputs(event) {
     return;
   }
   if (!verificarEmail(CAMPOS_FORMULARIO.IMPUT_EMAIL.value)) {
-    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_EMAIL);
+    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_EMAIL.parentElement);
     return;
   }
   if (!verificarCPF(CAMPOS_FORMULARIO.IMPUT_CPF.value)) {
-    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_CPF);
+    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_CPF.parentElement);
     return;
   }
   if (!verificarData(CAMPOS_FORMULARIO.IMPUT_INICIO.value)) {
-    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_INICIO);
+    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_INICIO.parentElement);
     return;
   }
 }
