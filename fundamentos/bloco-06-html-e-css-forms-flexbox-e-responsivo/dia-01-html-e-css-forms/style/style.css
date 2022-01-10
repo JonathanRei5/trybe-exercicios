@@ -5,14 +5,17 @@
   font-size: 16px;
 }
 
+body {
+  padding: 10px;
+}
+
 #formulario {
   position: relative;
   max-width: 500px;
-  padding: 10px;
   margin: 20px auto;
 }
 
-#dados-pessoais{
+#dados-pessoais {
   margin-bottom: 20px;
 }
 
@@ -45,7 +48,7 @@ fieldset {
   background-color: white;
 }
 
-input[type="text"], select{
+input[type="text"], select {
   width: 100%;
   border: none;
   outline: none;
@@ -60,7 +63,7 @@ input[type="text"], select{
   cursor:default;
 }
 
-#tipo-residencia span{
+#tipo-residencia span {
   display: block;
   margin-bottom: 10px;
   font-weight: 600;
@@ -100,6 +103,15 @@ input[type="text"], select{
   border: none;
 }
 
+.label-conteiner:hover,
+.label-conteiner:hover *,
+#tipo-residencia:hover,
+#label-resumo-curriculo:hover,
+#label-resumo-curriculo:hover * {
+  background-color: rgb(230, 230, 230);
+  box-shadow: inset 0 0 0 1000px rgb(230, 230, 230);
+}
+
 #botoes-conteiner {
   margin-top: 15px;
   text-align: center;
@@ -113,12 +125,52 @@ button {
   border: 1px solid black;
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
+  opacity: 0.8;
 }
 
 button:hover {
-  background-color: lightgrey;
+  opacity: 1;
+}
+
+#btnSubmit {
+  background-color: rgb(170, 255, 70);
+}
+
+#btnLimpar {
+  background-color: rgb(255, 80, 80);
+}
+
+/* Consolidado dos dados */
+#dados-consolidados {
+  margin: 0 auto 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 480px;
+}
+
+#dados-consolidados h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#dados-consolidados #dados {
+  margin: 0 auto;
+  min-height: 50px;
+}
+
+#dados-consolidados #dados div {
+  margin: 15px 0;
+  padding: 0 10px;
+  border-bottom: 1px solid black;
+}
+
+#dados-consolidados #dados div span {
+  margin-right: 10px;
+  font-weight: 600;
 }
 
 /* Mensagem de erro */

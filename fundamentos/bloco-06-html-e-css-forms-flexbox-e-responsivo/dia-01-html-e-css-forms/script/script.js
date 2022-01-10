@@ -1,4 +1,11 @@
 // Elementos HTML
+const DADOS_CONSOLIDADOS = document.querySelector('#dados-consolidados');
+const FORMULARIO = document.getElementById('formulario');
+const BTN_SUBMIT = document.getElementById('btnSubmit');
+const BTN_LIMPAR = document.getElementById('btnLimpar');
+const MENSAGEM_ERRO = document.getElementById('mensagem-erro');
+const MENSAGEM_ERRO_TEXTO = document.getElementById('mensagem');
+
 const CAMPOS_FORMULARIO = {
   IMPUT_NOME: document.getElementById('nome'),
   IMPUT_EMAIL: document.getElementById('email'),
@@ -12,10 +19,6 @@ const CAMPOS_FORMULARIO = {
   IMPUT_DESCRICAO: document.getElementById('descricao-cargo'),
   IMPUT_INICIO: document.getElementById('data-inicio')
 }
-
-const BTN_SUBMIT = document.getElementById('btnSubmit');
-const MENSAGEM_ERRO = document.getElementById('mensagem-erro');
-const MENSAGEM_ERRO_TEXTO = document.getElementById('mensagem');
 
 // Adiciona os estados no elemento select
 function adicionarEstados() {
@@ -59,12 +62,12 @@ function adicionarEstados() {
   }
 }
 
-// Verifica se algum radio foi selecionado
-function verificarRadios() {
+// Retorna o valor do radio selecionado ou null se nenhum foi selecionado
+function pegarValorRadio() {
   for (const radio of CAMPOS_FORMULARIO.IMPUT_RESIDENCIA) {
-    if (radio.checked) return true;
+    if (radio.checked) return radio.value;
   }
-  return false;
+  return null;
 }
 
 let idTimeoutCampoInvalido;
@@ -128,7 +131,7 @@ function inserirMensagemDeErro(elemento, mensagem, tempo, distancia) {
 function verificarCamposVazios() {
   for (const campo in CAMPOS_FORMULARIO) {
     if (CAMPOS_FORMULARIO[campo].id === undefined) {
-      if (!verificarRadios()) {
+      if (pegarValorRadio() === null) {
         inserirMensagemDeErro(CAMPOS_FORMULARIO[campo][0].parentElement.parentElement, 'Selecione uma das opções', 5000, 4);
         return false;
       }
@@ -146,6 +149,62 @@ function verificarCamposVazios() {
   }
 
   return true;
+}
+
+// Formata o CPF
+function formatarCPF(cpf) {
+  let ret = cpf.substring(0, 3).concat('.');
+  ret = ret.concat(cpf.substring(3, 6).concat('.'));
+  ret = ret.concat(cpf.substring(6, 9).concat('-'));
+  ret = ret.concat(cpf.substring(9, 11));
+  return ret;
+}
+
+// Formata a data
+function formatarData(data) {
+  let subData = data.split('/');
+  subData[0] = ('0'.concat(subData[0])).slice(-2);
+  subData[1] = ('0'.concat(subData[1])).slice(-2);
+  return subData.toString().replace(/,/g, '/');
+}
+
+// Insere os dados consolidados
+function inserirDados(elementoPai, descricao, dado) {
+  const span = document.createElement('span');
+  span.textContent = descricao;
+  const div = document.createElement('div');
+  div.appendChild(span);
+  let texto = document.createTextNode(dado);
+  div.appendChild(texto);
+  elementoPai.appendChild(div);
+}
+
+//Mostra os dados consolidados
+function mostrarDados() {
+  const dados = document.querySelector('#dados-consolidados #dados');
+  dados.innerHTML = '';
+  // Nome
+  inserirDados(dados, 'Nome:', CAMPOS_FORMULARIO.IMPUT_NOME.value);
+  // E-mail
+  inserirDados(dados, 'E-mail:', CAMPOS_FORMULARIO.IMPUT_EMAIL.value);
+  // CPF
+  inserirDados(dados, 'CPF:', formatarCPF(CAMPOS_FORMULARIO.IMPUT_CPF.value));
+  // Endereço
+  inserirDados(dados, 'Endereço:', CAMPOS_FORMULARIO.IMPUT_ENDERECO.value);
+  // Cidade
+  inserirDados(dados, 'Cidade:', CAMPOS_FORMULARIO.IMPUT_CIDADE.value);
+  // Estado
+  inserirDados(dados, 'Estado:', CAMPOS_FORMULARIO.SELECT_ESTADO.value);
+  // Tipo de residência
+  inserirDados(dados, 'Tipo de residência:', pegarValorRadio());
+  // Resumo do currículo
+  inserirDados(dados, 'Resumo do currículo:', CAMPOS_FORMULARIO.TEXTAREA_RESUMO.value);
+  // Cargo
+  inserirDados(dados, 'Cargo:', CAMPOS_FORMULARIO.IMPUT_CARGO.value);
+  // Descrição do cargo
+  inserirDados(dados, 'Descrição do cargo:', CAMPOS_FORMULARIO.IMPUT_DESCRICAO.value);
+  // Início do cargo
+  inserirDados(dados, 'Início do cargo:', formatarData(CAMPOS_FORMULARIO.IMPUT_INICIO.value));
 }
 
 // Faz as verificações dos campos do formulário
@@ -166,11 +225,19 @@ function verificarInputs(event) {
     destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_INICIO.parentElement);
     return;
   }
+  mostrarDados();
+}
+
+// Limpa os dados mostrados
+function limparDados() {
+  const dados = document.querySelector('#dados-consolidados #dados');
+  dados.innerHTML = '';
 }
 
 // Adiciona ouvintes nos elementos
 function adicionarOuvintes() {
   BTN_SUBMIT.addEventListener('click', verificarInputs);
+  BTN_LIMPAR.addEventListener('click', limparDados);
 }
 
 adicionarOuvintes();
