@@ -5,3 +5,103 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+body {
+  padding-top: 60px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+  z-index: 1000;
+}
+
+header p {
+  text-align: center;
+  flex-grow: 1;
+}
+
+nav {
+  height: fit-content;
+}
+
+nav label {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  background-image: url(icon/menu.png);
+  user-select: none;
+  cursor: pointer;
+}
+
+nav input:checked ~ ul {
+  display: block;
+}
+
+nav ul {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  margin: 0 10px;
+  padding: 0;
+  border: 1px solid black;
+  background-color: white;
+}
+
+nav ul li {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+  user-select: none;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li a{
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+.container {
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: x-large;
+}
+
+h2 {
+  font-size: large;
+  margin: 10px 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+footer {
+  background-color: rgb(230, 230, 230);
+  padding: 10px;
+}
+
+footer p {
+  margin-bottom: 0;
+}
