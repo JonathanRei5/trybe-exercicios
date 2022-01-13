@@ -17,9 +17,14 @@
   <button id='button'>Somar</button>
   <p id='result'></p>
   <script>
-    const valoresPreenchidos = (val1, val2) => {
+    const verificarValoresPreenchidos = (val1, val2) => {
       if (val1 === '' || val2 === '') {
         throw new Error('Preencha os dois valores!');
+      }
+    }
+    const verificarNumero = (num1, num2) => {
+      if (isNaN(num1) || isNaN(num2)) {
+        throw new Error('Os valores devem ser números!');
       }
     }
 
@@ -27,8 +32,13 @@
       const value1 = document.getElementById('value1').value;
       const value2 = document.getElementById('value2').value;
       try {
-        valoresPreenchidos(value1, value2);
-        const result = parseInt(value1) + parseInt(value2);
+        verificarValoresPreenchidos(value1, value2);
+        const num1 = parseInt(value1, 10);
+        const num2 = parseInt(value2, 10);
+
+        verificarNumero(num1, num2);
+        const result = num1 + num2;
+
         document.getElementById('result').innerHTML = `Resultado: ${result}`;
         document.getElementById('value1').value = '';
         document.getElementById('value2').value = '';
