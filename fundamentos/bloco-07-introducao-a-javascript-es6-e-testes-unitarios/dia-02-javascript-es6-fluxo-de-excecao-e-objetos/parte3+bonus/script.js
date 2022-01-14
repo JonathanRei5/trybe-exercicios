@@ -105,3 +105,24 @@ const totalEstudantePorAula = (licoes, materia) => {
 const aula = 'Matemática';
 const estudantesPorAula = totalEstudantePorAula(allLessons, aula);
 console.log(`${estudantesPorAula} estudantes assistiram às aulas de ${aula}`);
+
+// Exercício Bônus 2  ----------------------------------------------------------------
+console.log('\nExercício Bônus 2 -------------------------------------------------\n');
+
+const criarRelatorio = (licoes, professor) => {
+  const relatorio = {
+    professor: professor,
+    aulas: [],
+    estudantes: 0
+  };
+
+  Object.keys(licoes).forEach(chave => {
+    if (licoes[chave].professor === professor) {
+      relatorio.aulas.push(licoes[chave].materia);
+      relatorio.estudantes += licoes[chave].numeroEstudantes
+    }
+  });
+
+  return relatorio;
+};
+console.log(criarRelatorio(allLessons, 'Maria Clara'));
