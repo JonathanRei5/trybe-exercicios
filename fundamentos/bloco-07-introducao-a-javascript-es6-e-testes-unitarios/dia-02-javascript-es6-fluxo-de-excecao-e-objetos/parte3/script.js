@@ -69,3 +69,9 @@ const totalEstudante = (lessons) => {
 };
 
 console.log(`O total de estudantes é ${totalEstudante(allLessons)}`);
+
+// Exercício 7 ----------------------------------------------------------------
+console.log('\nExercício 7 -------------------------------------------------\n');
+
+const obterValorPeloNumero = (objeto, numero) => Object.values(objeto)[numero];
+console.log(obterValorPeloNumero(lesson1, 0));
