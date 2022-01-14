@@ -42,3 +42,12 @@ const tamanhoObjeto = (objeto) => Object.keys(lesson1).length;
 console.log(`O tamanho do objeto lesson1 é ${tamanhoObjeto(lesson1)}`);
 console.log(`O tamanho do objeto lesson2 é ${tamanhoObjeto(lesson2)}`);
 console.log(`O tamanho do objeto lesson3 é ${tamanhoObjeto(lesson3)}`);
+
+// Exercício 4 ----------------------------------------------------------------
+console.log('\nExercício 4 -------------------------------------------------\n');
+
+const listarValores = (objeto) => {
+  const valores = Object.values(objeto);
+  valores.forEach((valor) => { console.log(valor); });
+};
+listarValores(lesson1);
