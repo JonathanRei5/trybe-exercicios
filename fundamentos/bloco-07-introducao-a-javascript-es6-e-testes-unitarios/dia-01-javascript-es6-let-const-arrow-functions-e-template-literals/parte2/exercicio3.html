@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contar Clicks</title>
+</head>
+
+<body>
+
+  <button id="botao">CLICK</button>
+  <p id="clicks">0</p>
+
+  <script>
+    let clickCount = 0;
+    const btn = document.getElementById('botao').addEventListener('click', () => {
+      clickCount += 1;
+      document.getElementById('clicks').innerHTML = clickCount;
+    });
+  </script>
+
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+
+    body {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      color: white;
+      background-color: black;
+      font-size: xx-large;
+    }
+
+    #botao {
+      padding: 10px 50px;
+      box-shadow: 0 0 5px white;
+      border: none;
+      border-radius: 50px;
+      background-color: white;
+      color: black;
+      font-size: x-large;
+      cursor: pointer;
+    }
+
+    #botao:active {
+      background-color: lightgray;
+    }
+  </style>
+
+</body>
+
+</html>
