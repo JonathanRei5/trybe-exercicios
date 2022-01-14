@@ -88,3 +88,20 @@ const verificarPar = (objeto, chave, valor) => {
 
 console.log(verificarPar(lesson3, 'turno', 'noite'));
 console.log(verificarPar(lesson3, 'materia', 'Maria Clara'));
+
+// Exercício Bônus 1  ----------------------------------------------------------------
+console.log('\nExercício Bônus 1 -------------------------------------------------\n');
+
+const totalEstudantePorAula = (licoes, materia) => {
+  let total = 0;
+  Object.keys(licoes).forEach(chave => {
+    if (licoes[chave].materia === materia) {
+      total += licoes[chave].numeroEstudantes
+    }
+  });
+  return total;
+};
+
+const aula = 'Matemática';
+const estudantesPorAula = totalEstudantePorAula(allLessons, aula);
+console.log(`${estudantesPorAula} estudantes assistiram às aulas de ${aula}`);
