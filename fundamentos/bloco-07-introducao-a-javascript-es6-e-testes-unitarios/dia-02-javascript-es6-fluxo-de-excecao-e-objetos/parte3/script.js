@@ -58,3 +58,14 @@ console.log('\nExercício 5 -------------------------------------------------\n'
 const allLessons = Object.assign({}, { lesson1 }, { lesson2 }, { lesson3 });
 
 console.log(allLessons);
+
+// Exercício 6 ----------------------------------------------------------------
+console.log('\nExercício 6 -------------------------------------------------\n');
+
+const totalEstudante = (lessons) => {
+  let total = 0;
+  Object.keys(lessons).forEach(chave => { total += lessons[chave].numeroEstudantes });
+  return total;
+};
+
+console.log(`O total de estudantes é ${totalEstudante(allLessons)}`);
