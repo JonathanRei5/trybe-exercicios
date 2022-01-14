@@ -75,3 +75,16 @@ console.log('\nExercício 7 -------------------------------------------------\n'
 
 const obterValorPeloNumero = (objeto, numero) => Object.values(objeto)[numero];
 console.log(obterValorPeloNumero(lesson1, 0));
+
+// Exercício 8 ----------------------------------------------------------------
+console.log('\nExercício 8 -------------------------------------------------\n');
+
+const verificarPar = (objeto, chave, valor) => {
+  if (Object.keys(objeto).includes(chave) && objeto[chave] === valor) {
+    return true;
+  }
+  return false;
+};
+
+console.log(verificarPar(lesson3, 'turno', 'noite'));
+console.log(verificarPar(lesson3, 'materia', 'Maria Clara'));
