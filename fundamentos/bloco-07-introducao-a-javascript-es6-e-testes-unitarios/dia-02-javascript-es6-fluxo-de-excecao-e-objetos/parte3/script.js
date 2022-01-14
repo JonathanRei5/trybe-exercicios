@@ -51,3 +51,10 @@ const listarValores = (objeto) => {
   valores.forEach((valor) => { console.log(valor); });
 };
 listarValores(lesson1);
+
+// Exercício 5 ----------------------------------------------------------------
+console.log('\nExercício 5 -------------------------------------------------\n');
+
+const allLessons = Object.assign({}, { lesson1 }, { lesson2 }, { lesson3 });
+
+console.log(allLessons);
