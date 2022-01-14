@@ -24,3 +24,12 @@ console.log('\nExercício 1 -------------------------------------------------\n'
 const adicionarPar = (objeto, chave, valor) => { objeto[chave] = valor; };
 adicionarPar(lesson2, 'turno', 'noite');
 console.log(lesson2);
+
+// Exercício 2 ----------------------------------------------------------------
+console.log('\nExercício 2 -------------------------------------------------\n');
+
+const listarChaves = (objeto) => {
+  const chaves = Object.keys(objeto);
+  chaves.forEach((chave) => { console.log(chave); });
+};
+listarChaves(lesson1);
