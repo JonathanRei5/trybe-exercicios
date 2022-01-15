@@ -3,8 +3,13 @@ const { encode, decode } = require('./encode_decode');
 describe(`A função encode recebe uma string e altera as letras a,e,i,o e u por 1,2,3,4 e 5 respectivamente.
 A função decode recebe uma string e altera os números 1,2,3,4 e 5 por a,e,i,o e u respectivamente.`,
   () => {
-    it('Testa se encode e decode existem e são do tipo function.', () => {
-      expect(typeof encode === 'function' && typeof decode === 'function').toBe(true);
+    it('Testa se encode e decode são definidas.', () => {
+      expect(encode).toBeDefined();
+      expect(decode).toBeDefined();
+    });
+    it('Testa se encode e decode são funções.', () => {
+      expect(typeof encode === 'function').toBe(true);
+      expect(typeof decode === 'function').toBe(true);
     });
     it('Ao chamar encode("a, e, i, o, u") deve retornar "1, 2, 3, 4, 5"', () => {
       expect(encode('a, e, i, o, u')).toBe('1, 2, 3, 4, 5');
