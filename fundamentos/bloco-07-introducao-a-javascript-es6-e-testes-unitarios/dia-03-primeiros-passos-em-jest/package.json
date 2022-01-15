@@ -1,0 +1,15 @@
+{
+  "name": "dia-03-primeiros-passos-em-jest",
+  "version": "1.0.0",
+  "description": "Praticando a implementação de testes",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Jonathan Reis",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
