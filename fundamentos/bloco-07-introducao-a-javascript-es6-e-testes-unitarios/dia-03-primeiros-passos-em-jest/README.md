@@ -45,7 +45,7 @@ function myRemove(arr, item) {
 // implemente seus testes aqui
 ```
 
-3. A função myFizzBuzz(num) recebe um número num e retorna "fizzbuzz" se o número for divisível por 3 e 5 , retorna "fizz" se for divisível apenas por 3 , retorna "buzz" se divisível apenas por 5 , retorna o próprio número caso não seja divisível por 3 ou 5 e retorna false caso num não seja um número
+3. A função myFizzBuzz(num) recebe um número num e retorna "fizzbuzz" se o número for divisível por 3 e 5, retorna "fizz" se for divisível apenas por 3, retorna "buzz" se divisível apenas por 5, retorna o próprio número caso não seja divisível por 3 ou 5 e retorna false caso num não seja um número
    1. Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado
    2. Faça uma chamada com um número divisível por 3 e verifique se o retorno é o esperado
    3. Faça uma chamada com um número divisível por 5 e verifique se o retorno é o esperado
@@ -64,12 +64,12 @@ function myFizzBuzz(num) {
 // implemente seus testes aqui
 ```
 
-No Bloco 4 você desenvolveu um projeto para testar os seus conhecimentos em Javascript e lógica de programação: o Playground functions . Nos exercícios a seguir, você irá trabalhar com os testes para algumas funções que você criou! Aproveite para refatorá-las e usar ~~todos~~ os recursos que já aprendemos até aqui, como as Higher Order Functions e as features do Javascript ES6.
+No Bloco 4 você desenvolveu um projeto para testar os seus conhecimentos em Javascript e lógica de programação: o Playground functions. Nos exercícios a seguir, você irá trabalhar com os testes para algumas funções que você criou! Aproveite para refatorá-las e usar ~~todos~~ os recursos que já aprendemos até aqui, como as Higher Order Functions e as features do Javascript ES6.
 
 4. Para as funções encode e decode crie os seguintes testes em Jest:
    1. Teste se encode e decode são funções;
    2. Para a função encode teste se as vogais a, e, i, o, u são convertidas em 1, 2, 3, 4 e 5, respectivamente;
-   3. Para a função decode teste se os números 1, 2, 3, 4 e 5 são convertidos nas vogais a, e, i, o, u , respectivamente;
+   3. Para a função decode teste se os números 1, 2, 3, 4 e 5 são convertidos nas vogais a, e, i, o, u, respectivamente;
    4. Teste se as demais letras/números não são convertidos para cada caso;
    5. Teste se a string que é retornada pelas funções têm o mesmo número de caracteres que a string passada como parâmetro.<br><br>
 
@@ -173,7 +173,7 @@ describe('Testa a função hydrate', () => {
    * A função;
    * Os testes para essa função;
 
-Considere os dados abaixo. Você deve criar uma função que receba dois parâmetros: o id do funcionário e a informação disponível sobre ele ( firstName , lastName , specialities ). Você também deverá criar os testes para essa função. Sua função deverá então retornar os resultados da busca pelo id para aquele funcionário e a informação consultada. Caso o id não conste no quadro de funcionários, sua função deve retornar o erro "ID não identificada" . Se a informação que se quer acessar não existir, a função deve retornar o erro "Informação indisponível" .
+Considere os dados abaixo. Você deve criar uma função que receba dois parâmetros: o id do funcionário e a informação disponível sobre ele ( firstName, lastName, specialities ). Você também deverá criar os testes para essa função. Sua função deverá então retornar os resultados da busca pelo id para aquele funcionário e a informação consultada. Caso o id não conste no quadro de funcionários, sua função deve retornar o erro "ID não identificada". Se a informação que se quer acessar não existir, a função deve retornar o erro "Informação indisponível".
 
 ```javascript
 // Dados
