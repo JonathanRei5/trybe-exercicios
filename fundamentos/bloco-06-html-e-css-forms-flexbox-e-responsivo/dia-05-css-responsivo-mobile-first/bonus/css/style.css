@@ -1,0 +1,119 @@
+body {
+    padding         : 0px;
+    margin          : 0px;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color          : black;
+}
+
+h1 {
+    margin          : 0px;
+    padding         : 20px;
+    background-color: rgb(200, 200, 200);
+    text-align      : center;
+}
+
+main {
+    background-color: rgb(200, 200, 200);
+    width           : 95%;
+    margin          : 10px auto 10px auto;
+    padding         : 10px;
+    border-radius   : 20px;
+}
+
+main>h2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+nav>ul {
+    padding         : 10px;
+    background-color: rgb(200, 200, 200);
+    width           : 95%;
+    border-radius   : 20px;
+    margin          : 10px auto 0px auto;
+}
+
+nav>ul li {
+    list-style      : none;
+    display         : inline-block;
+    background-color: rgb(150, 255, 255);
+    padding         : 10px;
+    border-radius   : 20px;
+}
+
+nav>ul li:hover {
+    background-color: blue;
+}
+
+section {
+    background-color: rgb(170, 170, 170);
+    border-radius   : 20px;
+    padding         : 0px 0px 0px 0px;
+    margin          : 20px auto;
+}
+
+section>h3 {
+    background-color: rgb(150, 255, 255);
+    margin          : 0px;
+    border-radius   : 20px 20px 0px 0px;
+    padding         : 10px;
+}
+
+#classificacao-tabela {
+    text-align: center;
+    margin    : auto;
+    width     : max-content;
+}
+
+p {
+    margin: 10px;
+}
+
+.img-legenda {
+    padding: 10px;
+}
+
+img {
+    width: 40%;
+}
+
+#fontes {
+    margin : 0px;
+    width  : max-content;
+    padding: 5px 0px 5px 30px;
+}
+
+#fontes li {
+    margin : 5px 0px 5px 0px;
+    padding: 0px;
+}
+
+#fontes li a {
+    text-decoration: none;
+    color          : black;
+}
+
+aside {
+    text-align: center;
+}
+
+aside iframe {
+    border-style : solid;
+    border-color : rgb(170, 170, 170);
+    border-width : 10px;
+    border-radius: 20px;
+}
+
+footer {
+    text-align      : center;
+    background-color: rgb(200, 200, 200);
+    padding         : 5px;
+}
+
+footer a:hover {
+    background-color: rgb(150, 255, 255);
+}
