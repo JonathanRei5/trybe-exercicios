@@ -21,6 +21,7 @@ function addDayOfMonth(days, month, holidays, fridays) {
   for (let i = 0; i < days.length; i += 1) {
     const day = days[i];
     const dayOfMonth = document.createElement('li');
+    dayOfMonth.style.userSelect = 'none';
     dayOfMonth.innerText = day;
     dayOfMonth.classList.add('day');
     if (holidays.indexOf(day) > -1) {
@@ -42,6 +43,7 @@ addDayOfMonth(dezDaysList, month, holidays, fridays);
 
 function createButton(name) {
   let button = document.createElement('button');
+  button.style.cursor = 'pointer';
   button.innerText = name;
   return button;
 }
@@ -87,13 +89,14 @@ btnFriday.addEventListener('click', changeText);
 // Exercício 6:
 
 function zoonIn(event) {
-  event.target.style.fontSize = '25px';
+  event.target.style.transform = 'scale(1.7)';
 }
 function zoonOut(event) {
-  event.target.style.fontSize = '20px';
+  event.target.style.transform = 'scale(1)';
 }
 const days = month.children;
 for (let i = 0; i < days.length; i += 1) {
+  days[i].style.cursor = 'pointer';
   days[i].addEventListener('mouseover', zoonIn);
   days[i].addEventListener('mouseleave', zoonOut);
 }
@@ -101,60 +104,68 @@ for (let i = 0; i < days.length; i += 1) {
 // Exercício 7:
 
 function addTask(task) {
-  const spamTask = document.createElement('spam');
-  spamTask.innerText = task;
+  const spanTask = document.createElement('span');
+  spanTask.style.display = 'block';
+  spanTask.innerText = task;
   const myTasks = document.getElementsByClassName('my-tasks')[0];
-  myTasks.appendChild(spamTask);
+  myTasks.appendChild(spanTask);
+  return spanTask;
 }
-addTask('Teste');
 
 // Exercício 8:
 
-function addSubtitle(color) {
+function addLabel(task, color) {
   const divTask = document.createElement('div');
   divTask.className = 'task';
   divTask.style.backgroundColor = color;
-  const myTasks = document.getElementsByClassName('my-tasks')[0];
-  myTasks.appendChild(divTask);
+  divTask.style.cursor = 'pointer';
+  divTask.style.width = '20px';
+  divTask.style.height = '20px';
+  divTask.addEventListener('mouseover', zoonIn);
+  divTask.addEventListener('mouseleave', zoonOut);
+  task.appendChild(divTask);
 }
-addSubtitle('green');
+addLabel(addTask('Projetos'), 'green');
+addLabel(addTask('Exercícios'), 'red');
+addLabel(addTask('Aulas'), 'blue');
 
 // Exercício 9:
 
+const labelShadow = '0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)';
+
 function addRemoveSelected(event) {
   const divTask = event.target;
+  const taskSelected = document.querySelector('.selected');
+  if (taskSelected !== null && taskSelected !== divTask) {
+    taskSelected.classList.remove('selected');
+    taskSelected.style.boxShadow = labelShadow;
+  }
   if (divTask.classList.contains('selected')) {
-    divTask.classList.remove('selected');
+    divTask.classList.remove('selected')
+    divTask.style.boxShadow = labelShadow;
   } else {
-    divTask.classList.add('selected');
+    divTask.classList.add('selected')
+    divTask.style.boxShadow = `${labelShadow},0 0 20px 8px black`;
   }
 }
-const myTasksChildren = document.getElementsByClassName('my-tasks')[0].children;
-for (let i = 0; i < myTasksChildren.length; i += 1) {
-  const children = myTasksChildren[i];
-  if (children.tagName === 'DIV') {
-    children.addEventListener('click', addRemoveSelected);
-  }
+const myTasks = document.getElementsByClassName('task');
+for (let i = 0; i < myTasks.length; i += 1) {
+  myTasks[i].addEventListener('click', addRemoveSelected);
 }
 
 // Exercício 10:
 
 function changeColorDay(event) {
   const day = event.target;
-  let colorTask = 'rgb(119,119,119)';
-  for (let i = 0; i < myTasksChildren.length; i += 1) {
-    const children = myTasksChildren[i];
-    if (children.tagName === 'DIV') {
-      if (children.classList.contains('selected')) {
-        colorTask = children.style.backgroundColor;
-        break;
-      }
-    }
-  }
-  if (day.style.color !== colorTask) {
-    day.style.color = colorTask;
-  } else {
+  const taskSelected = document.querySelector('.selected');
+  if (taskSelected === null) {
     day.style.color = 'rgb(119,119,119)';
+  }
+  else if (day.style.color === taskSelected.style.backgroundColor) {
+    day.style.color = 'rgb(119,119,119)';
+  }
+  else {
+    day.style.color = taskSelected.style.backgroundColor;
   }
 }
 for (let i = 0; i < days.length; i += 1) {
@@ -163,17 +174,36 @@ for (let i = 0; i < days.length; i += 1) {
 
 // Bônus:
 
+const taskInput = document.getElementById('task-input');
 function addCommitment() {
-  const taskInput = document.getElementById('task-input');
   const value = taskInput.value;
   if (value === '') {
     window.alert('Informe um compromisso para ser adicionado.');
   } else {
     const li = document.createElement('li');
     li.innerText = value;
+    li.style.borderBottom = '1px solid black';
+    li.style.marginBottom = '10px';
     const taskList = document.getElementsByClassName('task-list')[0];
     taskList.appendChild(li);
+    taskInput.value = '';
   }
 }
+taskInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    addCommitment();
+  }
+});
 const btnAdd = document.getElementById('btn-add');
 btnAdd.addEventListener('click', addCommitment);
+btnAdd.style.cursor = 'pointer';
+
+// Alterações no layout
+
+const inputContainer = document.querySelector('.input-container');
+const taskListContainer = document.querySelector('.task-list-container');
+const hr = document.createElement('hr');
+hr.style.margin = '10px 0';
+
+inputContainer.appendChild(hr);
+inputContainer.appendChild(taskListContainer);
