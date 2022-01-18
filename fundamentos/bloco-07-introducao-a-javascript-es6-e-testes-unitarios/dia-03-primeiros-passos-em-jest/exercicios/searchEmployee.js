@@ -48,9 +48,10 @@ const professionalBoard = [
 const searchEmployee = (id, detail) => {
   const ids = professionalBoard.map(funcionario => funcionario.id);
   const indexID = ids.indexOf(id);
-  if (indexID === -1) return 'ID não identificada';
+  if (indexID === -1) throw new Error('ID não identificada');
   const funcionario = professionalBoard[indexID];
-  return (funcionario[detail] === undefined) ? 'Informação indisponível' : funcionario[detail];
+  if (funcionario[detail] === undefined) throw new Error('Informação indisponível');
+  return funcionario[detail];
 };
 
 module.exports = searchEmployee;
