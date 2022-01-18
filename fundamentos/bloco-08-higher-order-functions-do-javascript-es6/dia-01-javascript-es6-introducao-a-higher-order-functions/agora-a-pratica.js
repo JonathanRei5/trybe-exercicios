@@ -30,3 +30,36 @@ const drawResult = (betNumber, verify) => {
 };
 
 console.log(drawResult(2, checkNumber));
+
+// Exercício 3
+console.log(`\nExercício 3: -----------------------------------------------------------------------\n`);
+
+const verifyAnswers = (rightAnswers, studentAnswers) => {
+  let count = 0;
+  for (let i = 0; i < rightAnswers.length; i += 1) {
+    if (studentAnswers[i] === 'N.A') {
+      continue;
+    }
+    if (studentAnswers[i] === rightAnswers[i]) {
+      count += 1;
+    } else {
+      count -= 0.5;
+    }
+  }
+  return count;
+};
+
+const answersResult = (rightAnswers, studentAnswers, verifyAnswers) => {
+  if (!Array.isArray(rightAnswers) || !Array.isArray(studentAnswers)) {
+    throw new Error('rightAnswers e studentAnswers devem ser um array');
+  }
+  if (rightAnswers.length !== studentAnswers.length) {
+    throw new Error('rightAnswers e studentAnswers devem ter o mesmo tamanho');
+  }
+  return verifyAnswers(rightAnswers, studentAnswers);
+};
+
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+const result = answersResult(RIGHT_ANSWERS, STUDENT_ANSWERS, verifyAnswers);
+console.log(`A pontuação é ${result}`);
