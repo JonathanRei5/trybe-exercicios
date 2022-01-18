@@ -18,3 +18,15 @@ const newEmployees = (callback) => {
 };
 
 console.log(newEmployees(newPerson));
+
+// Exercício 2
+console.log(`\nExercício 2: -----------------------------------------------------------------------\n`);
+
+const checkNumber = (drawNumber, betNumber) => drawNumber === betNumber;
+
+const drawResult = (betNumber, verify) => {
+  const drawNumber = Math.floor(Math.random() * 5) + 1;
+  return verify(drawNumber, betNumber) ? 'Parabéns você ganhou' : 'Tente novamente';
+};
+
+console.log(drawResult(2, checkNumber));
