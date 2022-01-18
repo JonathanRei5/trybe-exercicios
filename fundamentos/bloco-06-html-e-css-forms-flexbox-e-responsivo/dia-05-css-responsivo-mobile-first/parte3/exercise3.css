@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+}
+
+#header {
+  background: #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+#header h1 {
+  margin: 0;
+}
+
+#navigation {
+  background: #333;
+}
+
+#navigation ul {
+  width: fit-content;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#navigation ul li {
+  list-style-type: none;
+  display: flex;
+  margin: 0 2px;
+}
+
+#navigation li a {
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+#navigation li a:hover {
+  background: #383;
+}
+
+#content-container {
+  width: 100%;
+  background: #FFF;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  padding: 20px 0;
+  margin: 0 0 0 4%;
+}
+
+#content h2 {
+  margin: 0;
+}
+
+#aside {
+  width: 33%;
+  padding: 0;
+  margin: 0 3% 0 4%;
+}
+
+#aside h3 {
+  margin: 5px;
+}
+
+#footer {
+  background: #ccc;
+  text-align: right;
+  padding: 20px;
+  height: 1%;
+  text-align: center;
+}
+
+@media print {
+  #header, #navigation, #footer {
+    display: none;
+  }
+
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  
+  #aside {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 0;
+    font-size: 14px;
+  }
+
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: max-content;
+  }
+  
+  #aside {
+    display: none;
+  }
+
+  #content {
+    width: auto;
+    margin: 0;
+    padding: 5px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #navigation {
+    margin: 80px 5px 5px;
+  }
+  
+  #navigation ul {
+    flex-flow: column nowrap;
+    margin: 0;
+    width: 100%;
+  }
+
+  #navigation ul li {
+    margin: 0;
+  }
+
+  #navigation li a {
+    border: none;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  #content {
+    width: auto;
+    margin: 0;
+    padding: 10px;
+    align-items: center;
+  }
+
+  #aside {
+    margin: 0;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  #container {
+    max-width: 1400px;
+  }
+
+  #content-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  #content {
+    align-items: center;
+  }
+
+  #aside {
+    width: fit-content;
+    margin-top: 20px;
+  }
+}

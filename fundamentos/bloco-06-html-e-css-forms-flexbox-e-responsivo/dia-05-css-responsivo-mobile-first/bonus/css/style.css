@@ -1,0 +1,246 @@
+body {
+  padding         : 0px;
+  margin          : 0px;
+  background-color: black;
+  font-size       : 19px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color          : black;
+}
+
+h1 {
+  margin          : 0px;
+  padding         : 20px;
+  background-color: rgb(200, 200, 200);
+  text-align      : center;
+}
+
+main {
+  background-color: rgb(200, 200, 200);
+  width           : 95%;
+  margin          : 10px auto 10px;
+  padding         : 10px;
+  border-radius   : 20px;
+}
+
+main>h2 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+nav>ul {
+  padding         : 10px;
+  background-color: rgb(200, 200, 200);
+  width           : 95%;
+  border-radius   : 20px;
+  margin          : 10px auto 0px auto;
+  display         : flex;
+  justify-content : center;
+}
+
+nav>ul li {
+  list-style      : none;
+  background-color: rgb(150, 255, 255);
+  border-radius   : 20px;
+  margin          : 2px;
+}
+
+nav li a {
+  display       : block;
+  padding       : 10px;
+  text-align    : center;
+  text-transform: uppercase;
+  font-weight   : 500;
+}
+
+nav>ul li:hover {
+  background-color: blue;
+}
+
+nav li:hover a {
+  color: white;
+}
+
+section {
+  background-color: rgb(170, 170, 170);
+  border-radius   : 20px;
+  padding         : 0;
+  margin          : 20px auto;
+}
+
+section>h3 {
+  background-color: rgb(150, 255, 255);
+  margin          : 0px;
+  border-radius   : 20px 20px 0px 0px;
+  padding         : 10px;
+}
+
+#classificacao-tabela {
+  text-align: center;
+  margin    : auto;
+  padding   : 5px 5px 25px;
+  width     : fit-content;
+}
+
+#classificacao-tabela table {
+  margin      : auto;
+  border-top  : 1px solid black;
+  border-right: 1px solid black;
+  border-left : 1px solid black;
+}
+
+#classificacao-tabela tbody tr {
+  display        : flex;
+  flex-flow      : row wrap;
+  justify-content: center;
+  border-bottom  : 1px solid black;
+}
+
+#classificacao-tabela tr th {
+  padding: 0 5px;
+}
+
+p {
+  margin: 10px;
+}
+
+.img-legenda {
+  padding   : 10px;
+  text-align: center;
+}
+
+img {
+  width: 500px;
+}
+
+#fontes {
+  margin : 0px;
+  width  : max-content;
+  padding: 5px 0px 5px 30px;
+}
+
+#fontes li {
+  margin : 5px 0px 5px 0px;
+  padding: 0px;
+}
+
+#fontes li a {
+  text-decoration: none;
+  color          : black;
+}
+
+aside {
+  text-align: center;
+}
+
+aside iframe {
+  border       : 10px solid rgb(170, 170, 170);
+  border-radius: 20px;
+  box-sizing   : content-box;
+}
+
+footer {
+  text-align      : center;
+  background-color: rgb(200, 200, 200);
+  padding         : 20px;
+}
+
+footer a {
+  padding-right      : 25px;
+  background-image   : url('../img/icon/external-link.png');
+  background-repeat  : no-repeat;
+  background-position: right;
+  font-weight        : 700;
+}
+
+footer a:hover {
+  background-color: rgb(150, 255, 255);
+}
+
+@media screen and (max-width: 575px) {
+
+  main,
+  nav>ul,
+  img {
+    width: 100%;
+  }
+
+  main {
+    padding: 10px 0;
+  }
+
+  aside iframe {
+    width        : 98%;
+    height       : 280px;
+    margin-bottom: 10px;
+    border       : none;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+
+  img {
+    width: 85%;
+  }
+
+  iframe {
+    width : 90%;
+    height: 315px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  img {
+    width: 75%;
+  }
+
+  iframe {
+    width : 80%;
+    height: 350px;
+  }
+
+  main {
+    padding: 10px 50px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  img {
+    width: 600px;
+  }
+
+  iframe {
+    width : 645px;
+    height: 360px;
+  }
+
+  main {
+    padding: 10px 100px;
+  }
+}
+
+@media print {
+
+  nav,
+  aside,
+  footer {
+    display: none;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  img {
+    width: 400px;
+  }
+}
