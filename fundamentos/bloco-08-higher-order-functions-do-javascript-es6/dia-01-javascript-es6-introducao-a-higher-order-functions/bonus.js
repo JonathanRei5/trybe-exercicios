@@ -47,10 +47,9 @@ function dragonDamage() {
   return Math.round(Math.random() * (dragon.strength - 15)) + 15
 }
 
-console.log(dragonDamage());
-console.log(warriorDamage());
-console.log(mageDamage());
-
 const gameActions = {
-  // Crie as HOFs neste objeto.
+  warriorTurn: (damage) => {
+    warrior.damage = damage();
+    dragon.healthPoints -= warrior.damage;
+  },
 };
