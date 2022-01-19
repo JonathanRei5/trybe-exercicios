@@ -3,21 +3,29 @@
   padding: 0;
 }
 
-body{
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   padding-top: 60px;
+  margin: 0 auto;
   font-family: sans-serif, Arial, Courier;
   background-color: black;
+  max-width: 1400px;
 }
 
 #cabecalho {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 50px;
   background-color: grey;
 }
 
-a{
+a {
   display: inline-block;
   position: absolute;
   left: 0;
@@ -39,17 +47,30 @@ a:hover {
 }
 
 article {
-  width: 80%;
+  width: 750px;
   margin: auto;
   font-size: 20px;
   color: white;
+  text-align: justify;
 }
 
 p {
   padding: 10px;
 }
 
-h1, h2{
+h1, h2 {
   padding: 10px;
   text-align: center;
+}
+
+@media screen and (max-width: 575px) {
+  article {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  article {
+    width: 100%;
+  }
 }

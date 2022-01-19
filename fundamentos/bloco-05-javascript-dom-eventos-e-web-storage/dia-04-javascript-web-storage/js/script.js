@@ -68,6 +68,7 @@ const funcoesAlterar = {
     let input = input_conteiner.querySelector('#input input');
     article.style.fontSize = String(input.value).concat('px');
     salvarPreferencia(alterar, String(input.value).concat('px'));
+    input.value = '';
   },
   espacoLinhas: function (valor) {
     const article = document.getElementsByTagName('article')[0];
@@ -78,6 +79,7 @@ const funcoesAlterar = {
     let input = input_conteiner.querySelector('#input input');
     article.style.lineHeight = String(input.value).concat('px');
     salvarPreferencia(alterar, String(input.value).concat('px'));
+    input.value = '';
   },
   tipoFonte: function (valor) {
     const article = document.getElementsByTagName('article')[0];
@@ -88,6 +90,7 @@ const funcoesAlterar = {
     let input = input_conteiner.querySelector('#input input');
     article.style.fontFamily = input.value;
     salvarPreferencia(alterar, input.value);
+    input.value = '';
   }
 }
 
@@ -135,7 +138,14 @@ function alterarInput() {
   input_descricao.textContent = tiposInputs[alterar].descricao;
   const novoInput = document.createElement('input');
   novoInput.type = tiposInputs[alterar].tipo;
+  novoInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      fazerAlteracao();
+    }
+  });
+  novoInput.min = 1;
   input.appendChild(novoInput);
+  novoInput.focus();
 }
 
 // Seleciona o botão no menu e abri o input
