@@ -52,4 +52,15 @@ const gameActions = {
     warrior.damage = damage();
     dragon.healthPoints -= warrior.damage;
   },
+
+  mageTurn: (damage) => {
+    const mageInfo = damage();
+    mage.mana -= mageInfo.mana;
+    if (isNaN(mageInfo.damage)) {
+      mage.damage = 0;
+    } else {
+      mage.damage = mageInfo.damage;
+    }
+    dragon.healthPoints -= mage.damage;
+  },
 };
