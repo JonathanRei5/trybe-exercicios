@@ -2,7 +2,25 @@ const mage = {
   healthPoints: 130,
   intelligence: 45,
   mana: 125,
-  damage: undefined,
+  damage: function () {
+    const mageInfo = {
+      mana: 0,
+      damage: 0,
+    };
+
+    if (this.mana < 15) {
+      mageInfo.damage = 'Não possui mana suficiente';
+    } else {
+      mageInfo.mana = 15;
+      const maxDamage = this.intelligence * 2;
+      mageInfo.damage = Math.round(Math.random() * (maxDamage - this.intelligence));
+      mageInfo.damage += this.intelligence;
+
+      this.mana -= 15;
+    }
+
+    return mageInfo;
+  },
 };
 
 const warrior = {
@@ -25,5 +43,14 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
-console.log(dragon.damage());
-console.log(warrior.damage());
+console.log('Dragon damage:', dragon.damage());
+console.log('Warrior damage:', warrior.damage());
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
+console.log('Mage damage:', mage.damage(), ' | Mana = ', mage.mana);
