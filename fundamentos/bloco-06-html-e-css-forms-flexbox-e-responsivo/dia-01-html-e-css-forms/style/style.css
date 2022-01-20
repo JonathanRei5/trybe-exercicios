@@ -28,7 +28,7 @@ fieldset {
   align-items: center;
   box-sizing: border-box;
   padding: 2px 5px 2px 10px;
-  margin: 10px 0;
+  margin: 0 0 10px;
   border: 1px solid black;
   border-radius: 20px;
   cursor: text;
@@ -40,8 +40,15 @@ fieldset {
   margin-right: 5px;
 }
 
+#span-externo {
+  display: none;
+  font-weight: 600;
+  margin-left: 12px;
+  margin-bottom: 2px;
+}
+
 #label-estado {
-  cursor:default;
+  cursor: default;
 }
 
 #label-estado #estado option {
@@ -53,6 +60,8 @@ input[type="text"], select {
   border: none;
   outline: none;
   box-shadow: inset 0 0 0 1000px white;
+  appearance: none;
+  padding-left: 5px;
 }
 
 #tipo-residencia {
@@ -143,7 +152,7 @@ button:hover {
   background-color: rgb(255, 80, 80);
 }
 
-/* Consolidado dos dados */
+/* Dados consolidados */
 #dados-consolidados {
   margin: 0 auto 20px;
   padding: 10px;
@@ -160,17 +169,22 @@ button:hover {
 #dados-consolidados #dados {
   margin: 0 auto;
   min-height: 50px;
+  overflow-x: scroll;
 }
 
 #dados-consolidados #dados div {
-  margin: 15px 0;
+  width: 100%;
+  min-width: fit-content;
   padding: 0 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
   border-bottom: 1px solid black;
 }
 
 #dados-consolidados #dados div span {
   margin-right: 10px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Mensagem de erro */
@@ -219,5 +233,19 @@ button:hover {
   }
   to {
     transform: translateX(3px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label span {
+    display: none;
+  }
+
+  #span-externo {
+    display: block;
+  }
+
+  #dados-consolidados #dados div span {
+    display: block;
   }
 }

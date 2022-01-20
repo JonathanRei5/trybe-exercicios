@@ -17,25 +17,31 @@
     <form action="" method="GET" enctype="application/x-www-form-urlencoded">
       <fieldset id="dados-pessoais">
         <legend>Dados pessoais</legend>
+        <span id="span-externo">Nome:</span>
         <label class="label-conteiner" for="nome">
           <span>Nome:</span><input type="text" maxlength="40" id="nome" name="nome" autofocus required>
         </label>
+        <span id="span-externo">E-mail:</span>
         <label class="label-conteiner" for="email">
           <span>E-mail:</span><input type="text" maxlength="50" id="email" name="email" required>
         </label>
+        <span id="span-externo">CPF:</span>
         <label class="label-conteiner" for="cpf">
           <span>CPF:</span><input type="text" maxlength="11" id="cpf" name="cpf" required>
         </label>
+        <span id="span-externo">Endereço:</span>
         <label class="label-conteiner" for="endereco">
           <span>Endereço:</span><input type="text" maxlength="200" id="endereco" name="endereco" required>
         </label>
+        <span id="span-externo">Cidade:</span>
         <label class="label-conteiner" for="cidade">
           <span>Cidade:</span><input type="text" maxlength="28" id="cidade" name="cidade" required>
         </label>
+        <span id="span-externo">Estado:</span>
         <label id="label-estado" class="label-conteiner" for="estado">
           <span>Estado:</span>
           <select name="estado" id="estado" required>
-            <!--options inseridos pelo JavaScript-->
+            <!--options inseridas pelo JavaScript-->
           </select>
           &#9660
         </label>
@@ -55,13 +61,16 @@
         <label id="label-resumo-curriculo" for="resumo-curriculo">Resumo do currículo:
           <textarea name="resumo-curriculo" id="resumo-curriculo" maxlength="1000" required></textarea>
         </label>
+        <span id="span-externo">Cargo:</span>
         <label class="label-conteiner" for="cargo">
           <span>Cargo:</span><input type="text" maxlength="40" id="cargo" name="cargo" required>
         </label>
+        <span id="span-externo">Descrição:</span>
         <label class="label-conteiner" for="descricao-cargo">
           <span>Descrição:</span><input type="text" maxlength="500" id="descricao-cargo" name="descricao-cargo"
             required>
         </label>
+        <span id="span-externo">Início:</span>
         <label class="label-conteiner" for="data-inicio">
           <span>Início:</span><input type="text" id="data-inicio" name="data-inicio" required>
         </label>
