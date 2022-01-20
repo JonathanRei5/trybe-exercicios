@@ -171,8 +171,10 @@ function formatarData(data) {
 // Insere os dados consolidados
 function inserirDados(elementoPai, descricao, dado) {
   const span = document.createElement('span');
+  span.className = 'fw-bolder mx-2 text-nowrap';
   span.textContent = descricao;
   const div = document.createElement('div');
+  div.className = 'border border-top-0 border-start-0 border-end-0 border-bottom-1 border-dark px-1 mb-2';
   div.appendChild(span);
   let texto = document.createTextNode(dado);
   div.appendChild(texto);
