@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="script/validacoesFormulario.js" defer></script>
+  <script src="script/script.js" defer></script>
+</head>
+
+<body>
+
+  <section id="formulario">
+    <form action="" method="GET" enctype="application/x-www-form-urlencoded">
+      <fieldset id="dados-pessoais">
+        <legend>Dados pessoais</legend>
+        <span id="span-externo">Nome:</span>
+        <label class="label-conteiner" for="nome">
+          <span>Nome:</span><input type="text" maxlength="40" id="nome" name="nome" autofocus required>
+        </label>
+        <span id="span-externo">E-mail:</span>
+        <label class="label-conteiner" for="email">
+          <span>E-mail:</span><input type="text" maxlength="50" id="email" name="email" required>
+        </label>
+        <span id="span-externo">CPF:</span>
+        <label class="label-conteiner" for="cpf">
+          <span>CPF:</span><input type="text" maxlength="11" id="cpf" name="cpf" required>
+        </label>
+        <span id="span-externo">Endereço:</span>
+        <label class="label-conteiner" for="endereco">
+          <span>Endereço:</span><input type="text" maxlength="200" id="endereco" name="endereco" required>
+        </label>
+        <span id="span-externo">Cidade:</span>
+        <label class="label-conteiner" for="cidade">
+          <span>Cidade:</span><input type="text" maxlength="28" id="cidade" name="cidade" required>
+        </label>
+        <span id="span-externo">Estado:</span>
+        <label id="label-estado" class="label-conteiner" for="estado">
+          <span>Estado:</span>
+          <select name="estado" id="estado" required>
+            <!--options inseridas pelo JavaScript-->
+          </select>
+          &#9660
+        </label>
+        <div id="tipo-residencia"><span>Tipo de residência:</span>
+          <label for="casa" class="label-radio">
+            <input type="radio" id="casa" name="tipo-residencia" value="Casa" required> Casa
+          </label>
+          <br>
+          <label for="apartamento" class="label-radio">
+            <input type="radio" id="apartamento" name="tipo-residencia" value="Apartamento"> Apartamento
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Último emprego</legend>
+        <label id="label-resumo-curriculo" for="resumo-curriculo">Resumo do currículo:
+          <textarea name="resumo-curriculo" id="resumo-curriculo" maxlength="1000" required></textarea>
+        </label>
+        <span id="span-externo">Cargo:</span>
+        <label class="label-conteiner" for="cargo">
+          <span>Cargo:</span><input type="text" maxlength="40" id="cargo" name="cargo" required>
+        </label>
+        <span id="span-externo">Descrição:</span>
+        <label class="label-conteiner" for="descricao-cargo">
+          <span>Descrição:</span><input type="text" maxlength="500" id="descricao-cargo" name="descricao-cargo"
+            required>
+        </label>
+        <span id="span-externo">Início:</span>
+        <label class="label-conteiner" for="data-inicio">
+          <span>Início:</span><input type="text" id="data-inicio" name="data-inicio" required>
+        </label>
+      </fieldset>
+
+      <div id="botoes-conteiner">
+        <button type="submit" id="btnSubmit">Enviar</button>
+        <button type="reset" id="btnLimpar">Limpar</button>
+      </div>
+    </form>
+    <!--Mensagem de erro-->
+    <div id="mensagem-erro">
+      <div id="mensagem"></div>
+    </div>
+  </section>
+
+  <section id="dados-consolidados">
+    <h2>Seus Dados</h2>
+    <div id="dados"></div>
+  </section>
+
+</body>
+
+</html>
