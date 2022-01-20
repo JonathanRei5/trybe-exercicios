@@ -241,10 +241,7 @@ button:hover {
     display: none;
   }
 
-  #span-externo {
-    display: block;
-  }
-
+  #span-externo,
   #dados-consolidados #dados div span {
     display: block;
   }
