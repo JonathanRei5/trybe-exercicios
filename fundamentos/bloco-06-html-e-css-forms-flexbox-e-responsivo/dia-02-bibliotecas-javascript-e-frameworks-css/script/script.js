@@ -19,6 +19,15 @@ const CAMPOS_FORMULARIO = {
   IMPUT_DESCRICAO: document.getElementById('descricao-cargo'),
   IMPUT_INICIO: document.getElementById('data-inicio')
 }
+CAMPOS_FORMULARIO.IMPUT_INICIO.DatePickerX.init({
+  format: 'dd/mm/yyyy',
+  weekDayLabels: ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+  mondayFirst: false,
+  shortMonthLabels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  singleMonthLabels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  todayButtonLabel: 'Hoje',
+  clearButtonLabel: 'Limpar',
+});
 
 // Adiciona os estados no elemento select
 function adicionarEstados() {
@@ -221,10 +230,6 @@ function verificarInputs(event) {
   }
   if (!verificarCPF(CAMPOS_FORMULARIO.IMPUT_CPF.value)) {
     destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_CPF.parentElement);
-    return;
-  }
-  if (!verificarData(CAMPOS_FORMULARIO.IMPUT_INICIO.value)) {
-    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_INICIO.parentElement);
     return;
   }
   mostrarDados();
