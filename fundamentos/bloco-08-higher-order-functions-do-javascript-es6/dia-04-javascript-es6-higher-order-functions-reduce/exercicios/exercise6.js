@@ -14,7 +14,8 @@ function average(numbersArray) {
 function studentAverage(students, grades) {
   return students.map((student, index) => (
     {
-      [student]: average(grades[index]),
+      name: student,
+      average: average(grades[index]),
     }
   ));
 }
