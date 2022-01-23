@@ -7,62 +7,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário</title>
   <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style/style.css">
-  <script src="script/validacoesFormulario.js" defer></script>
-  <script src="script/script.js" defer></script>
   <link rel="stylesheet" href="DatePickerX-master/dist/css/DatePickerX.min.css">
-  <script src="DatePickerX-master/dist/js/DatePickerX.min.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="DatePickerX-master/dist/js/DatePickerX.min.js" defer></script>
+  <script src="JustValidate/dist/just-validate.production.min.js" defer></script>
+  <script src="script/script.js" defer></script>
 </head>
 
 <body class="p-1">
 
   <section id="formulario" class="container mt-4 position-relative">
-    <form action="" method="GET" enctype="application/x-www-form-urlencoded">
+    <form id="form" action="" method="GET" enctype="application/x-www-form-urlencoded">
       <fieldset class="border border-2 border-dark p-2 mb-3">
         <legend class="float-none w-auto">Dados pessoais</legend>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Nome:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="nome">
           <span class="d-none d-sm-inline fw-bolder">Nome:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            maxlength="40" id="nome" name="nome" autofocus required>
+            maxlength="40" id="nome" name="nome" autofocus>
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">E-mail:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="email">
           <span class="d-none d-sm-inline text-nowrap fw-bolder">E-mail:</span><input type="text"
-            class="w-100 border-0 p-0 mx-2" maxlength="50" id="email" name="email" required>
+            class="w-100 border-0 p-0 mx-2" maxlength="50" id="email" name="email">
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">CPF:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="cpf">
           <span class="d-none d-sm-inline fw-bolder">CPF:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            maxlength="11" id="cpf" name="cpf" required>
+            maxlength="11" id="cpf" name="cpf">
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Endereço:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="endereco">
           <span class="d-none d-sm-inline fw-bolder">Endereço:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            maxlength="200" id="endereco" name="endereco" required>
+            maxlength="200" id="endereco" name="endereco">
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Cidade:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="cidade">
           <span class="d-none d-sm-inline fw-bolder">Cidade:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            maxlength="28" id="cidade" name="cidade" required>
+            maxlength="28" id="cidade" name="cidade">
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Estado:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="estado">
           <span class="d-none d-sm-inline fw-bolder">Estado:</span>
-          <select class="w-100 border-0 bg-white p-0 mx-2" name="estado" id="estado" required>
+          <select class="w-100 border-0 bg-white p-0 mx-2" name="estado" id="estado">
             <!--options inseridas pelo JavaScript-->
           </select>
         </label>
 
-        <div class=" border border-2 border-dark p-2 mb-2" id="tipo-residencia">
+        <div class="border border-2 border-dark p-2 mb-2" id="tipo-residencia">
           <span class="mb-2 d-block fw-bolder">Tipo de residência:</span>
           <label for="casa" class="text-nowrap">
-            <input type="radio" id="casa" name="tipo-residencia" value="Casa" required> Casa
+            <input type="radio" id="casa" name="tipo-residencia" value="Casa"> Casa
           </label>
           <br>
           <label for="apartamento" class="text-nowrap">
@@ -75,28 +75,28 @@
         <legend class="float-none w-auto">Último emprego</legend>
         <label class="d-block border border-2 border-dark mb-2 p-2" id="label-resumo-curriculo" for="resumo-curriculo">
           <span class="fw-bolder">Resumo do currículo:</span>
-          <textarea class="d-block w-100 border-0" name="resumo-curriculo" id="resumo-curriculo" maxlength="1000"
-            required></textarea>
+          <textarea class="d-block w-100 border-0" name="resumo-curriculo" id="resumo-curriculo"
+            maxlength="1000"></textarea>
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Cargo:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1" for="cargo">
           <span class="d-none d-sm-inline fw-bolder">Cargo:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            maxlength="40" id="cargo" name="cargo" required>
+            maxlength="40" id="cargo" name="cargo">
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Descrição:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1"
           for="descricao-cargo">
           <span class="d-none d-sm-inline fw-bolder">Descrição:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            maxlength="500" id="descricao-cargo" name="descricao-cargo" required>
+            maxlength="500" id="descricao-cargo" name="descricao-cargo">
         </label>
 
         <span class="d-block d-sm-none px-2 fw-bolder">Início:</span>
         <label class="d-flex align-items-center w-100 border border-2 border-dark rounded-pill mb-2 p-1"
           for="data-inicio">
           <span class="d-none d-sm-inline fw-bolder">Início:</span><input type="text" class="w-100 border-0 p-0 mx-2"
-            id="data-inicio" name="data-inicio" required>
+            id="data-inicio" name="data-inicio">
         </label>
       </fieldset>
 

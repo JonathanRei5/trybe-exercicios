@@ -21,7 +21,7 @@ const CAMPOS_FORMULARIO = {
 }
 CAMPOS_FORMULARIO.IMPUT_INICIO.DatePickerX.init({
   format: 'dd/mm/yyyy',
-  weekDayLabels: ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+  weekDayLabels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
   mondayFirst: false,
   shortMonthLabels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
   singleMonthLabels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
@@ -136,30 +136,6 @@ function inserirMensagemDeErro(elemento, mensagem, tempo, distancia) {
   document.addEventListener('input', removerMensagemDeErro);
 }
 
-// Verifica se os campos do formulário estão vazios
-function verificarCamposVazios() {
-  for (const campo in CAMPOS_FORMULARIO) {
-    if (CAMPOS_FORMULARIO[campo].id === undefined) {
-      if (pegarValorRadio() === null) {
-        inserirMensagemDeErro(CAMPOS_FORMULARIO[campo][0].parentElement.parentElement, 'Selecione uma das opções', 5000, 4);
-        return false;
-      }
-      continue;
-    }
-
-    if (stringVazia(CAMPOS_FORMULARIO[campo].value)) {
-      let mensagem = 'Preencha este campo';
-      if (CAMPOS_FORMULARIO[campo].id === 'estado') {
-        mensagem = 'Selecione um item da lista';
-      }
-      inserirMensagemDeErro(CAMPOS_FORMULARIO[campo].parentElement, mensagem, 5000, 4);
-      return false;
-    }
-  }
-
-  return true;
-}
-
 // Formata o CPF
 function formatarCPF(cpf) {
   let ret = cpf.substring(0, 3).concat('.');
@@ -167,14 +143,6 @@ function formatarCPF(cpf) {
   ret = ret.concat(cpf.substring(6, 9).concat('-'));
   ret = ret.concat(cpf.substring(9, 11));
   return ret;
-}
-
-// Formata a data
-function formatarData(data) {
-  let subData = data.split('/');
-  subData[0] = ('0'.concat(subData[0])).slice(-2);
-  subData[1] = ('0'.concat(subData[1])).slice(-2);
-  return subData.toString().replace(/,/g, '/');
 }
 
 // Insere os dados consolidados
@@ -215,25 +183,187 @@ function mostrarDados() {
   // Descrição do cargo
   inserirDados(dados, 'Descrição do cargo:', CAMPOS_FORMULARIO.IMPUT_DESCRICAO.value);
   // Início do cargo
-  inserirDados(dados, 'Início do cargo:', formatarData(CAMPOS_FORMULARIO.IMPUT_INICIO.value));
+  inserirDados(dados, 'Início do cargo:', CAMPOS_FORMULARIO.IMPUT_INICIO.DatePickerX.getValue());
+}
+
+// Verifica se o CPF é válido
+function cpfValido(cpf) {
+  let numerosCpf = cpf.replace(/\D+/g, '');
+  numerosCpf = Array.from(numerosCpf).map((numero) => Number(numero));
+
+  if (numerosCpf.length !== 11) {
+    return false;
+  }
+  const numerosIguais = numerosCpf.every((numero) => numero === numerosCpf[0]);
+  if (numerosIguais) {
+    return false;
+  }
+
+  const digitosIniciais = numerosCpf.slice(0, numerosCpf.length - 2);
+  const digitosVerificadores = numerosCpf.slice(-2);
+
+  let calculo1 = digitosIniciais.reduce(
+    (acc, numero, index) => acc + (numero * (10 - index)), 0
+  );
+  calculo1 = (calculo1 * 10) % 11;
+  calculo1 = (calculo1 === 10) ? 0 : calculo1;
+  if (calculo1 !== digitosVerificadores[0]) {
+    return false;
+  }
+
+  let calculo2 = digitosIniciais.reduce(
+    (acc, numero, index) => acc + (numero * (11 - index)), 0
+  ) + (digitosVerificadores[0] * 2);
+  calculo2 = (calculo2 * 10) % 11;
+  calculo2 = (calculo2 === 10) ? 0 : calculo2;
+  if (calculo2 !== digitosVerificadores[1]) {
+    return false;
+  }
+
+  return true;
+}
+
+// Retorna o primeiro campo inválido do formulário
+function obterCampoInvalido(fields, groupFields) {
+  let campoInvalido = Object.keys(fields).find((campo) => {
+    if (!fields[campo].isValid) {
+      return true;
+    }
+    return false;
+  });
+
+  if (campoInvalido) {
+    return {
+      campo: fields[campoInvalido].elem.parentElement,
+      mensagemErro: fields[campoInvalido].errorMessage,
+    }
+  }
+
+  campoInvalido = Object.keys(groupFields).find((campos) => {
+    if (!groupFields[campos].isValid) {
+      return true;
+    }
+    return false;
+  });
+
+  if (campoInvalido) {
+    return {
+      campo: groupFields[campoInvalido].groupElem,
+      mensagemErro: groupFields[campoInvalido].errorMessage,
+    }
+  }
+
+  return undefined;
 }
 
 // Faz as verificações dos campos do formulário
-function verificarInputs(event) {
-  event.preventDefault();
-  if (!verificarCamposVazios()) {
-    return;
-  }
-  if (!verificarEmail(CAMPOS_FORMULARIO.IMPUT_EMAIL.value)) {
-    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_EMAIL.parentElement);
-    return;
-  }
-  if (!verificarCPF(CAMPOS_FORMULARIO.IMPUT_CPF.value)) {
-    destacarCampoInvalido(CAMPOS_FORMULARIO.IMPUT_CPF.parentElement);
-    return;
-  }
-  mostrarDados();
-}
+const validate = new window
+  .JustValidate('#form', {
+    errorLabelStyle: {
+      display: 'none',
+    },
+  })
+  // Verificação do Nome
+  .addField('#nome', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  // Verificação do E-mail
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Preencha corretamente o E-mail.',
+    }
+  ])
+  // Verificação do CPF
+  .addField('#cpf', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    },
+    {
+      rule: 'minLength',
+      value: 11,
+      errorMessage: 'O CPF deve conter 11 dígitos.',
+    },
+    {
+      rule: 'number',
+      errorMessage: 'Insira apenas números no CPF.',
+    },
+    {
+      validator: cpfValido,
+      errorMessage: 'CPF inválido.',
+    }
+  ])
+  // Verificação do Endereço
+  .addField('#endereco', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  // Verificação da Cidade
+  .addField('#cidade', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  // Verificação do Estado
+  .addField('#estado', [
+    {
+      rule: 'required',
+      errorMessage: 'Selecione um item da lista.',
+    }
+  ])
+  // Verificação do Tipo de residencia
+  .addRequiredGroup('#tipo-residencia', 'Selecione uma das opções.')
+  // Verificação do Resumo do currículo
+  .addField('#resumo-curriculo', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  // Verificação do Cargo
+  .addField('#cargo', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  // Verificação da Descrição do cargo
+  .addField('#descricao-cargo', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  // Verificação da Data de início
+  .addField('#data-inicio', [
+    {
+      rule: 'required',
+      errorMessage: 'Preencha este campo.',
+    }
+  ])
+  .onFail(function () {
+    const campoInvalido = obterCampoInvalido(this.fields, this.groupFields);
+    inserirMensagemDeErro(
+      campoInvalido.campo,
+      campoInvalido.mensagemErro,
+      5000,
+      4
+    );
+  })
+  .onSuccess(() => {
+    mostrarDados();
+  });
 
 // Limpa os dados mostrados
 function limparDados() {
@@ -241,11 +371,7 @@ function limparDados() {
   dados.innerHTML = '';
 }
 
-// Adiciona ouvintes nos elementos
-function adicionarOuvintes() {
-  BTN_SUBMIT.addEventListener('click', verificarInputs);
-  BTN_LIMPAR.addEventListener('click', limparDados);
-}
+// Adiciona ouvinte no elemento
+BTN_LIMPAR.addEventListener('click', limparDados);
 
-adicionarOuvintes();
 adicionarEstados();
