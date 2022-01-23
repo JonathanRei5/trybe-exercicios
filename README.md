@@ -6,20 +6,20 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 
 O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
 
-## Fundamentos do Desenvolvimento Web :hourglass_flowing_sand:
+## [Fundamentos do Desenvolvimento Web :hourglass_flowing_sand:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos)
 
-##### Bloco 1: Introdução - Unix & Shell
+##### [Bloco 1: Introdução - Unix & Shell](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-01-unix-e-shell)
 
 - [X] 1-3: _Unix & Shell- Part 1_
 - [X] 1-4: _Unix & Shell- Part 2_
 
-##### Bloco 2: Git & GitHub
+##### [Bloco 2: Git & GitHub](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-02-git-github-e-internet)
 
 - [X] 2-1: _O que é e para que serve?_
 - [X] 2-2: _Entendendo os comandos_
 - [X] 2-3: _Internet - Entendendo como ela funciona_
 
-##### Bloco 3: Introdução - HTML & CSS
+##### [Bloco 3: Introdução - HTML & CSS](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-03-introducao-a-html-e-css)
 
 - [X] 3-1: _HTML & CSS - Estruturas de página_
 - [X] 3-2: _HTML & CSS - Primeiros passos em CSS_
@@ -27,7 +27,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 3-4: _HTML Semântico_
 - [X] 3-5: _[Projeto - HTML & CSS](https://JonathanRei5.github.io/projetos/lessons-learned/)_
 
-##### Bloco 4: Introdução - JavaScript
+##### [Bloco 4: Introdução - JavaScript](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-04-introducao-a-javascript-e-logica-de-programacao)
 
 - [X] 4-1: _JavaScript - Primeiros passos_
 - [X] 4-2: _JavaScript - Array e loop For_
@@ -35,7 +35,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4-4: _JavaScript - Objetos e funções_
 - [X] 4-5: _[Projeto - Playground Functions](https://github.com/JonathanRei5/trybe-projetos/tree/master/playground-functions)_
 
-##### Bloco 5: Introdução - JavaScript - Projetos
+##### [Bloco 5: Introdução - JavaScript - Projetos](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-05-javascript-dom-eventos-e-web-storage)
 
 - [X] 5-1: _JavaScript - DOM e seletores_
 - [X] 5-2: _JavaScript - Trabalhando com elementos_
@@ -47,27 +47,27 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-7: _[Projeto - Adivinhe a Cor](https://JonathanRei5.github.io/projetos/color-guess/)_
 - [X] 5-7: _[Projeto - Carta Misteriosa](https://JonathanRei5.github.io/projetos/mistery-letter/)_
 
-##### Bloco 6: HTML & CSS avançado
+##### [Bloco 6: HTML & CSS avançado](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-06-html-e-css-forms-flexbox-e-responsivo)
 
-- [ ] 6-1: _HTML & CSS - Forms_
-- [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
-- [ ] 6-3: _CSS Flexbox - Part 1_
-- [ ] 6-4: _CSS Flexbox - Part 2_
-- [ ] 6-5: _CSS Responsivo - Mobile First_
-- [ ] 6-6: _[Projeto - Página inicial do Facebook]()_
+- [X] 6-1: _HTML & CSS - Forms_
+- [X] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
+- [X] 6-3: _CSS Flexbox - Part 1_
+- [X] 6-4: _CSS Flexbox - Part 2_
+- [X] 6-5: _CSS Responsivo - Mobile First_
+- [X] 6-6: _[Projeto - Trybewarts](https://JonathanRei5.github.io/projetos/trybewarts)_
 
-##### Bloco 7: JavaScript ES6 & Testes Unitários
+##### [Bloco 7: JavaScript ES6 & Testes Unitários](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-07-introducao-a-javascript-es6-e-testes-unitarios)
 
-- [ ] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
-- [ ] 7-2: _JavaScript ES6 - Objects_
-- [ ] 7-3: _Testes unitários em JavaScript_
-- [ ] 7-4: _[Projeto - JavaScript Testes Unitários]()_
+- [X] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
+- [X] 7-2: _JavaScript ES6 - Objects_
+- [X] 7-3: _Testes unitários em JavaScript com Jest_
+- [X] 7-4: _[Projeto - JavaScript Testes Unitários](https://github.com/JonathanRei5/trybe-projetos/tree/master/js-unit-tests)_
 
-##### Bloco 8: JavaScript ES6
+##### [Bloco 8: JavaScript ES6](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-08-higher-order-functions-do-javascript-es6)
 
-- [ ] 8-1: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
-- [ ] 8-2: _JavaScript ES6 - Higher Order Functions - map e filter_
-- [ ] 8-3: _JavaScript ES6 - Higher Order Functions - reduce_
+- [X] 8-1: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
+- [X] 8-2: _JavaScript ES6 - Higher Order Functions - map e filter_
+- [X] 8-3: _JavaScript ES6 - Higher Order Functions - reduce_
 - [ ] 8-4: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
 - [ ] 8-5: _[Projeto - Zoo functions]()_
 
