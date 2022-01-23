@@ -30,6 +30,43 @@ function verificarEmail(email) {
   return true;
 }
 
+// Verifica se o CPF é válido
+function cpfValido(cpf) {
+  let numerosCpf = cpf.replace(/\D+/g, '');
+  numerosCpf = Array.from(numerosCpf).map((numero) => Number(numero));
+
+  if (numerosCpf.length !== 11) {
+    return false;
+  }
+  const numerosIguais = numerosCpf.every((numero) => numero === numerosCpf[0]);
+  if (numerosIguais) {
+    return false;
+  }
+
+  const digitosIniciais = numerosCpf.slice(0, numerosCpf.length - 2);
+  const digitosVerificadores = numerosCpf.slice(-2);
+
+  let calculo1 = digitosIniciais.reduce(
+    (acc, numero, index) => acc + (numero * (10 - index)), 0
+  );
+  calculo1 = (calculo1 * 10) % 11;
+  calculo1 = (calculo1 === 10) ? 0 : calculo1;
+  if (calculo1 !== digitosVerificadores[0]) {
+    return false;
+  }
+
+  let calculo2 = digitosIniciais.reduce(
+    (acc, numero, index) => acc + (numero * (11 - index)), 0
+  ) + (digitosVerificadores[0] * 2);
+  calculo2 = (calculo2 * 10) % 11;
+  calculo2 = (calculo2 === 10) ? 0 : calculo2;
+  if (calculo2 !== digitosVerificadores[1]) {
+    return false;
+  }
+
+  return true;
+}
+
 // Verifica se o CPF está correto
 function verificarCPF(cpf) {
   if (/[^0-9]/g.test(cpf)) {
@@ -38,6 +75,10 @@ function verificarCPF(cpf) {
   }
   if (cpf.length !== 11) {
     window.alert('O CPF deve conter 11 dígitos.');
+    return false;
+  }
+  if (!cpfValido(cpf)) {
+    window.alert('CPF inválido.');
     return false;
   }
   return true;
