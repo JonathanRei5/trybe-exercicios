@@ -71,9 +71,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 8-4: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
 - [X] 8-5: _[Projeto - Zoo functions](https://github.com/JonathanRei5/trybe-projetos/tree/master/zoo-functions)_
 
-##### Bloco 9: Assincronicidade & Callbacks
+##### [Bloco 9: Assincronicidade & Callbacks](https://github.com/JonathanRei5/trybe-exercicios/tree/main/fundamentos/bloco-09-javascript-e-testes-assincronos)
 
-- [ ] 9-1: _JavaScript Assíncrono e Callbacks_
+- [X] 9-1: _JavaScript Assíncrono e Callbacks_
 - [ ] 9-2: _JavaScript Promises_
 - [ ] 9-3: _[Projeto - Carrinho de Compras]()_
 
