@@ -1,5 +1,13 @@
 const API_URL = 'https://api.coincap.io/v2/assets';
 
+const fetchUsdToBrl = async (usdPrice) => {
+  let brlPrice;
+  await fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/brl.min.json')
+    .then(response => response.json())
+    .then(({ brl }) => { brlPrice = usdPrice * brl });
+  return brlPrice;
+}
+
 const showError = (error) => {
   const pricesList = document.getElementById('prices-list');
   pricesList.textContent = error;
@@ -12,11 +20,21 @@ const showPrices = (prices) => {
   pricesList.appendChild(rowHead);
   prices
     .filter((price, index) => (index < 10))
-    .forEach(({ id, symbol, priceUsd }) => {
+    .forEach(({ id, symbol, priceUsd }, index) => {
+
       const row = document.createElement('tr');
-      const price = `$: ${Number(priceUsd).toFixed(2).replace('.', ',')}`;
-      row.innerHTML = `<td>${id} (${symbol})</td><td>${price}</td>`;
       pricesList.appendChild(row);
+
+      fetchUsdToBrl(priceUsd)
+        .then((convertedPrice) => {
+          const price = `R$: ${Number(convertedPrice).toFixed(2).replace('.', ',')}`;
+          row.innerHTML = `<td>${id} (${symbol})</td><td>${price}</td>`;
+        })
+        .catch(() => {
+          const price = `$: ${Number(priceUsd).toFixed(2).replace('.', ',')}`;
+          row.innerHTML = `<td>${id} (${symbol})</td><td>${price}</td>`;
+        });
+
     });
 }
 
