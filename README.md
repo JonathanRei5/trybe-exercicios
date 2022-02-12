@@ -6,7 +6,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 
 O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
 
-## [Fundamentos do Desenvolvimento Web :hourglass_flowing_sand:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web)
+## [Fundamentos do Desenvolvimento Web :heavy_check_mark:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web)
 
 ##### [Bloco 01: Unix & Bash](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-01-unix-e-bash)
 
@@ -77,7 +77,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 9.1: _JavaScript Assíncrono e Callbacks_
 - [X] 9.2: _JavaScript Assíncrono - Fetch API e async/await_
 - [X] 9.3: _Jest - Testes Assíncronos_
-- [ ] 9.4: _[Projeto - Carrinho de Compras]()_
+- [X] 9.4: _[Projeto - Carrinho de Compras](https://jonathanrei5.github.io/projetos/shopping-cart/)_
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
