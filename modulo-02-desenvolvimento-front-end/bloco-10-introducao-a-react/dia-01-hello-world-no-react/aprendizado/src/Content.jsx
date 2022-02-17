@@ -8,27 +8,27 @@ const conteudos = [
   },
   {
     conteudo: 'Composicao de Componentes',
-    bloco: 11,
+    bloco: 10,
     status: 'Aprendendo',
   },
   {
     conteudo: 'Composicao de Estados',
-    bloco: 12,
+    bloco: 11,
     status: 'Aprenderei'
   },
   {
     conteudo: 'Redux',
-    bloco: 16,
+    bloco: 15,
     status: 'Aprenderei'
   },
 ];
 
 function ListContent({ value }) {
   return (
-    <li>
-      <div>O conteúdo é: {value.conteudo}</div>
-      <div>Status: {value.status}</div>
-      <div>Bloco: {value.bloco}</div>
+    <li className='content'>
+      <div><span>O conteúdo é:</span> {value.conteudo}</div>
+      <div><span>Status:</span> {value.status}</div>
+      <div><span>Bloco:</span> {value.bloco}</div>
     </li>
   );
 }
@@ -36,7 +36,7 @@ function ListContent({ value }) {
 class Content extends React.Component {
   render() {
     return (
-      <ul>
+      <ul className='contents'>
         {conteudos.map((content, index) => <ListContent value={content} key={index} />)}
       </ul>
     );
