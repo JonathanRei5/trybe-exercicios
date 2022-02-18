@@ -3,10 +3,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: fit-content;
   padding: 10px;
+  margin: 10px;
   background-color: rgb(240, 240, 240);
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 10px;
   box-shadow: 0 1px 10px grey;
 }

@@ -1,13 +1,13 @@
 import './css/App.css';
-import Pokemon from './Pokemon'
+import Pokedex from './components/Pokedex'
 import pokemons from './data'
 
 function App() {
   return (
-    <>
-      <Pokemon pokemon={pokemons[0]}/>
-      <Pokemon pokemon={pokemons[1]}/>
-    </>
+    <div className="pokedex-app">
+      <h1>Pokedex</h1>
+      <Pokedex pokemons={pokemons} />
+    </div>
   );
 }
 

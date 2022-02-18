@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import './css/Pokemon.css'
+import '../css/Pokemon.css'
 
 class Pokemon extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class Pokemon extends React.Component {
           <span>{type}</span>
           <span>Peso médio {weight} {unit}</span>
           <span>
-            <a className="more-info" href={moreInfo} target="_blank" rel="noreferrer">Mais Informação</a>
+            <a className="more-info" href={moreInfo} target="_blank" rel="noreferrer">Mais Informações</a>
           </span>
         </div>
         <div className="image-container">
