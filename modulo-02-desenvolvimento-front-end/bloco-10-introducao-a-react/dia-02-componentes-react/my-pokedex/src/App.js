@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import Pokemon from './Pokemon'
 import pokemons from './data'
 
