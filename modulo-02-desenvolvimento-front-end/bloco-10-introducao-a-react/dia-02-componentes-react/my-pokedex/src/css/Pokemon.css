@@ -1,0 +1,26 @@
+.pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px grey;
+}
+
+.info-container span {
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.info-container span .more-info {
+  padding-right: 20px;
+  background-image: url('../icon/outline_open_in_new_black.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
