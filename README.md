@@ -25,7 +25,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 3.2: _HTML & CSS - Primeiros passos em CSS_
 - [X] 3.3: _HTML & CSS - Seletores e posicionamento_
 - [X] 3.4: _HTML Semântico_
-- [X] 3.5: _[Projeto - Lessons Learned](https://JonathanRei5.github.io/projetos/lessons-learned/)_
+- [X] 3.5: _[Projeto - Lessons Learned](https://JonathanRei5.github.io/trybe-projetos/lessons-learned/)_
 
 ##### [Bloco 04: Introdução à JavaScript e Lógica de Programação](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-04-introducao-a-javascript-e-logica-de-programacao)
 
@@ -33,7 +33,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4.2: _JavaScript - Array e loop For_
 - [X] 4.3: _JavaScript - Lógica de Programação e Algoritmos_
 - [X] 4.4: _JavaScript - Objetos e funções_
-- [X] 4.5: _[Projeto - Playground Functions](https://github.com/JonathanRei5/trybe-projetos/tree/master/playground-functions/)_
+- [X] 4.5: _[Projeto - Playground Functions](https://github.com/JonathanRei5/trybe-projetos/tree/main/playground-functions/)_
 
 ##### [Bloco 05: JavaScript: DOM, Eventos e Web Storage](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-05-javascript-dom-eventos-e-web-storage)
 
@@ -41,11 +41,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5.2: _JavaScript - Trabalhando com elementos_
 - [X] 5.3: _JavaScript - Eventos_
 - [X] 5.4: _JavaScript - Web Storage_
-- [X] 5.5: _[Projeto - Arte com Pixels](https://JonathanRei5.github.io/projetos/pixels-art/)_
-- [X] 5.6: _[Projeto - Lista de tarefas](https://JonathanRei5.github.io/projetos/todo-list/)_
-- [X] 5.7: _[Projeto - Meme Generator (Bônus)](https://JonathanRei5.github.io/projetos/meme-generator/)_
-- [X] 5.7: _[Projeto - Adivinhe a Cor (Bônus)](https://JonathanRei5.github.io/projetos/color-guess/)_
-- [X] 5.7: _[Projeto - Carta Misteriosa (Bônus)](https://JonathanRei5.github.io/projetos/mistery-letter/)_
+- [X] 5.5: _[Projeto - Arte com Pixels](https://JonathanRei5.github.io/trybe-projetos/pixels-art/)_
+- [X] 5.6: _[Projeto - Lista de tarefas](https://JonathanRei5.github.io/trybe-projetos/todo-list/)_
+- [X] 5.7: _[Projeto - Meme Generator (Bônus)](https://JonathanRei5.github.io/trybe-projetos/meme-generator/)_
+- [X] 5.7: _[Projeto - Adivinhe a Cor (Bônus)](https://JonathanRei5.github.io/trybe-projetos/color-guess/)_
+- [X] 5.7: _[Projeto - Carta Misteriosa (Bônus)](https://JonathanRei5.github.io/trybe-projetos/mistery-letter/)_
 
 ##### [Bloco 06: HTML e CSS: Forms, Flexbox e Responsivo](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-06-html-e-css-forms-flexbox-e-responsivo)
 
@@ -54,14 +54,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 6.3: _CSS Flexbox - Parte 1_
 - [X] 6.4: _CSS Flexbox - Parte 2_
 - [X] 6.5: _CSS Responsivo - Mobile First_
-- [X] 6.6: _[Projeto - Trybewarts](https://JonathanRei5.github.io/projetos/trybewarts/)_
+- [X] 6.6: _[Projeto - Trybewarts](https://JonathanRei5.github.io/trybe-projetos/trybewarts/)_
 
 ##### [Bloco 07: Introdução à JavaScript ES6 e Testes Unitários](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-07-introducao-a-javascript-es6-e-testes-unitarios)
 
 - [X] 7.1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [X] 7.2: _JavaScript ES6 - Fluxo de exceção e Objetos_
 - [X] 7.3: _Primeiros passos em Jest_
-- [X] 7.4: _[Projeto - JavaScript Testes Unitários](https://github.com/JonathanRei5/trybe-projetos/tree/master/js-unit-tests/)_
+- [X] 7.4: _[Projeto - JavaScript Testes Unitários](https://github.com/JonathanRei5/trybe-projetos/tree/main/js-unit-tests/)_
 
 ##### [Bloco 08: Higher Order Functions do JavaScript ES6](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-08-higher-order-functions-do-javascript-es6)
 
@@ -70,14 +70,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 8.3: _JavaScript ES6 - Higher Order Functions - map e filter_
 - [X] 8.4: _JavaScript ES6 - Higher Order Functions - reduce_
 - [X] 8.5: _JavaScript ES6 - spread operator, parâmetro rest, destructuring e mais_
-- [X] 8.6: _[Projeto - Zoo functions](https://github.com/JonathanRei5/trybe-projetos/tree/master/zoo-functions/)_
+- [X] 8.6: _[Projeto - Zoo functions](https://github.com/JonathanRei5/trybe-projetos/tree/main/zoo-functions/)_
 
 ##### [Bloco 09: JavaScript e Testes Assíncronos](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-01-fundamentos-do-desenvolvimento-web/bloco-09-javascript-e-testes-assincronos)
 
 - [X] 9.1: _JavaScript Assíncrono e Callbacks_
 - [X] 9.2: _JavaScript Assíncrono - Fetch API e async/await_
 - [X] 9.3: _Jest - Testes Assíncronos_
-- [X] 9.4: _[Projeto - Carrinho de Compras](https://jonathanrei5.github.io/projetos/shopping-cart/)_
+- [X] 9.4: _[Projeto - Carrinho de Compras](https://JonathanRei5.github.io/trybe-projetos/shopping-cart/)_
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
@@ -85,7 +85,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 10.1: _'Hello, world!' no React!_
 - [X] 10.2: _Componentes React_
-- [ ] 10.3: _[Projeto - Movie Cards Library]()_
+- [X] 10.3: _[Projeto - Sistema Solar](https://jonathanrei5.github.io/trybe-projetos/solar-system/)_
 
 ##### Bloco 11: React
 
