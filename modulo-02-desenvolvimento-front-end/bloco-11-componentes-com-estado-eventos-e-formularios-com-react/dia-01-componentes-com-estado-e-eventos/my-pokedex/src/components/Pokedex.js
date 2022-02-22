@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Pokemon from "./Pokemon";
+import Button from "./Button";
 import "../css/Pokedex.css";
 
 class Pokedex extends React.Component {
@@ -10,7 +11,12 @@ class Pokedex extends React.Component {
     this.state = {
       pokemonIndex: 0,
       filteredPokemons: this.props.pokemons,
-      filters: ['All', 'Fire', 'Psychic'],
+      filters: this.props.pokemons.reduce((filter, pokemon) => {
+        if (!filter.includes(pokemon.type)) {
+          filter.push(pokemon.type);
+        }
+        return filter;
+      }, ['All']),
       filterIndex: 0
     };
 
@@ -47,12 +53,11 @@ class Pokedex extends React.Component {
           pokemonIndex: 0
         }
       });
-      console.log(textContent);
     }
   }
 
   render() {
-    const { filteredPokemons, pokemonIndex, filters } = this.state;
+    const { filteredPokemons, pokemonIndex, filters, filterIndex } = this.state;
 
     return (
       <div className="pokedex">
@@ -62,9 +67,20 @@ class Pokedex extends React.Component {
             : <></>
         }
         <div className="filter" onClick={this.handleFilter}>
-          {filters.map((filter) => <button key={filter}>{filter}</button>)}
+          {filters.map((filter) => {
+            const className = (filters[filterIndex] === filter)
+              ? "Button-orange selected"
+              : "Button-orange";
+            return <Button key={filter} value={filter} className={className} />;
+          })}
         </div>
-        <button onClick={this.handleNextPokemon}>Próximo</button>
+        <div onClick={this.handleNextPokemon}>
+          {
+            (filteredPokemons.length === 1)
+              ? <Button value="Próximo" className="Button-green" disabled={true} />
+              : <Button value="Próximo" className="Button-green" />
+          }
+        </div>
       </div>
     );
   }
