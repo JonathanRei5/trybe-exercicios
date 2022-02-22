@@ -1,0 +1,32 @@
+.Button {
+  background-color: gray;
+  opacity: 0.8;
+  border: none;
+  outline: none;
+  min-width: 80px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.Button:hover {
+  opacity: 1;
+}
+
+.Button:active {
+  opacity: 0.7;
+}
+
+.Button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.Button.selected {
+  outline: 2px solid black;
+}
