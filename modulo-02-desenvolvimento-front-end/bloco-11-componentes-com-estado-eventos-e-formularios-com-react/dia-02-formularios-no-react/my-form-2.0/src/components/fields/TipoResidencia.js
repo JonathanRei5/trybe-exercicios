@@ -1,7 +1,9 @@
 import React from 'react';
+import ErrorMessage from '../ErrorMessage';
 
 class TipoResidencia extends React.Component {
   render() {
+    const { error } = this.props;
     return (
       <>
         <label>
@@ -26,6 +28,7 @@ class TipoResidencia extends React.Component {
             required
           />
         </label>
+        {error && <ErrorMessage message={error} />}
       </>
     )
   }
