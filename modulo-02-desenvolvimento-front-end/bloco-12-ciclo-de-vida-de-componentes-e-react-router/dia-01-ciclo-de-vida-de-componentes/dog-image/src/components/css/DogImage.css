@@ -1,0 +1,62 @@
+.DogImage {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameTheDog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dogName-label {
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.dogName-input {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.image {
+  max-width: 90vw;
+  max-height: 70vh;
+  border-radius: 5px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: darkgreen;
+}
+
+.button:active {
+  box-shadow: inset 0 0 0 3px blue;
+}
+
+.btn-NextDog {
+  margin-top: 20px;
+}
