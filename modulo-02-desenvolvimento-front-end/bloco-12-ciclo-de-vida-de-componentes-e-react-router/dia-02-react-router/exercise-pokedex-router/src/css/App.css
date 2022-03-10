@@ -1,0 +1,7 @@
+.pokedex-app {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
