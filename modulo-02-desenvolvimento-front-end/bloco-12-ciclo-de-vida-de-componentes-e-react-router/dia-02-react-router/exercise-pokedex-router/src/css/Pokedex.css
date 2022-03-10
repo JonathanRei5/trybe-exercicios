@@ -1,0 +1,19 @@
+.pokedex {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.pokedex .filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokedex .filter .Button-orange {
+  background-color: orange;
+}
+
+.pokedex .Button-green {
+  background-color: green;
+}

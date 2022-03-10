@@ -1,0 +1,15 @@
+.Favorites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Favorites h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.Favorites p {
+  font-size: 18px;
+  font-weight: 500;
+}

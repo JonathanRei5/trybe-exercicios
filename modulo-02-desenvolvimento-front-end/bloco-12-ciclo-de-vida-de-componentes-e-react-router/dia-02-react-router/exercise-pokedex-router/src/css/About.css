@@ -1,0 +1,14 @@
+.About {
+  width: 70%;
+  margin: auto;
+}
+
+.About h1 {
+  text-align: center;
+}
+
+.About img {
+  max-width: 80%;
+  margin: 10px auto;
+  display: block;
+}
