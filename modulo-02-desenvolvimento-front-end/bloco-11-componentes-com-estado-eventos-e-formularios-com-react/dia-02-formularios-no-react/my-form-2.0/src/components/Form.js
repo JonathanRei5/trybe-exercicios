@@ -2,13 +2,9 @@ import React from 'react';
 import '../css/Form.css';
 import estados from '../data/estados.js';
 import fieldsValidations from '../utils/fieldsValidations';
-import Cidade from './fields/Cidade.js';
-import CPF from './fields/CPF.js';
-import Email from './fields/Email.js';
-import Endereco from './fields/Endereco.js';
-import Estado from './fields/Estado.js';
-import Nome from './fields/Nome.js';
-import TipoResidencia from './fields/TipoResidencia.js';
+import Input from './fields/Input';
+import InputRadio from './fields/InputRadio';
+import Select from './fields/Select';
 
 class Form extends React.Component {
 
@@ -17,6 +13,7 @@ class Form extends React.Component {
     this.state = {
       fields: this.fields(),
       invalidField: undefined,
+      canShowCargoAlert: true,
     };
   }
 
@@ -65,48 +62,87 @@ class Form extends React.Component {
       <form className="Form">
         <fieldset>
           <legend>Dados Pessoais</legend>
-          <Nome
+          <Input
+            label="Nome:"
+            type="text"
             name="nome"
             value={this.state.fields.nome}
-            onChange={this.handleField}
+            maxLength="40"
+            required
+            onChange={(event) => {
+              const { target } = event;
+              target.value = target.value.toUpperCase();
+              this.handleField(event);
+            }}
             error={invalidField && invalidField.nome}
           />
-          <Email
+          <Input
+            label="Email:"
+            type="text"
             name="email"
             value={this.state.fields.email}
+            maxLength="50"
+            required
             onChange={this.handleField}
             error={invalidField && invalidField.email}
           />
-          <CPF
+          <Input
+            label="CPF:"
+            type="text"
             name="cpf"
             value={this.state.fields.cpf}
+            maxLength="11"
+            required
             onChange={this.handleField}
             error={invalidField && invalidField.cpf}
           />
-          <Endereco
+          <Input
+            label="Endereco:"
+            type="text"
             name="endereco"
             value={this.state.fields.endereco}
-            onChange={this.handleField}
+            maxLength="200"
+            required
+            onChange={(event) => {
+              const { target } = event;
+              target.value = target.value.replace(/[^\w|\d|\s]/g, '');
+              this.handleField(event);
+            }}
             error={invalidField && invalidField.endereco}
           />
-          <Cidade
+          <Input
+            label="Cidade:"
+            type="text"
             name="cidade"
             value={this.state.fields.cidade}
+            maxLength="28"
+            required
             onChange={this.handleField}
+            onBlur={function ({ target }) {
+              if (/^\d/g.test(target.value)) {
+                target.value = '';
+              }
+            }}
             error={invalidField && invalidField.cidade}
           />
-          <Estado
+          <Select
+            options={estados}
+            label="Estado:"
             name="estado"
-            value={this.state.fields.estado}
+            select={this.state.fields.estado}
             onChange={this.handleField}
-            estados={estados}
             error={invalidField && invalidField.estado}
           />
-          <TipoResidencia
-            name="tipoResidencia"
-            value={this.state.fields.tipoResidencia}
+          <InputRadio
+            inputs={[
+              { label: "Casa:", name: "tipoResidencia", value: "Casa" },
+              { label: "Apartamento:", name: "tipoResidencia", value: "Apartamento" }
+            ]}
+            label="Tipo de Residência:"
+            select={this.state.fields.tipoResidencia}
             onChange={this.handleField}
             error={invalidField && invalidField.tipoResidencia}
+            required
           />
         </fieldset>
         <button
