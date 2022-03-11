@@ -5,6 +5,7 @@ import fieldsValidations from '../utils/fieldsValidations';
 import Input from './fields/Input';
 import InputRadio from './fields/InputRadio';
 import Select from './fields/Select';
+import TextArea from './fields/TextArea';
 
 class Form extends React.Component {
 
@@ -25,6 +26,9 @@ class Form extends React.Component {
     cidade: '',
     estado: '',
     tipoResidencia: '',
+    resumoCurriculo: '',
+    cargo: '',
+    descricaoCargo: '',
   });
 
   hasInvalidField = () => {
@@ -143,6 +147,42 @@ class Form extends React.Component {
             onChange={this.handleField}
             error={invalidField && invalidField.tipoResidencia}
             required
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Último emprego</legend>
+          <TextArea
+            label="Resumo do currículo:"
+            name="resumoCurriculo"
+            value={this.state.fields.resumoCurriculo}
+            onChange={this.handleField}
+            error={invalidField && invalidField.resumoCurriculo}
+            maxLength="1000"
+            required
+          />
+          <Input
+            label="Cargo:"
+            type="text"
+            name="cargo"
+            value={this.state.fields.cargo}
+            maxLength="40"
+            required
+            onChange={this.handleField}
+            onMouseEnter={() => {
+              const { canShowCargoAlert } = this.state;
+              if (canShowCargoAlert) alert('Preencha com cuidado esta informação.')
+              this.setState({ canShowCargoAlert: false });
+            }}
+            error={invalidField && invalidField.cargo}
+          />
+          <TextArea
+            label="Descrição do cargo:"
+            name="descricaoCargo"
+            value={this.state.fields.descricaoCargo}
+            maxLength="500"
+            required
+            onChange={this.handleField}
+            error={invalidField && invalidField.descricaoCargo}
           />
         </fieldset>
         <button

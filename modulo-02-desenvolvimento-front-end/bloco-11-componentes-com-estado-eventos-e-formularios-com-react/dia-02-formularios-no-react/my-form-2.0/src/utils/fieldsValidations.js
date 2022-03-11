@@ -44,6 +44,24 @@ const fieldsValidations = {
     if (emptyField(value)) return 'Selecione o tipo de residência.'
     return '';
   },
+
+  resumoCurriculo: (value) => {
+    if (emptyField(value)) return 'Preencha este campo.'
+    if (value.length > 1000) return 'Limite máximo de 1000 caracteres.'
+    return '';
+  },
+
+  cargo: (value) => {
+    if (emptyField(value)) return 'Preencha este campo.'
+    if (value.length > 40) return 'Limite máximo de 40 caracteres.'
+    return '';
+  },
+
+  descricaoCargo: (value) => {
+    if (emptyField(value)) return 'Preencha este campo.'
+    if (value.length > 500) return 'Limite máximo de 500 caracteres.'
+    return '';
+  },
 };
 
 export default fieldsValidations;

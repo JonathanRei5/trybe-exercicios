@@ -12,6 +12,7 @@ class Input extends React.Component {
       required,
       onChange,
       onBlur,
+      onMouseEnter,
       error,
     } = this.props;
     return (
@@ -26,6 +27,7 @@ class Input extends React.Component {
             required={required}
             onChange={onChange}
             onBlur={onBlur}
+            onMouseEnter={onMouseEnter}
           />
         </label>
         {error && <ErrorMessage message={error} />}

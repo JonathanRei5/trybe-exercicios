@@ -49,12 +49,12 @@ Vamos criar um formulário de cadastro de currículo com base na especificação
      * Limite de 1000 caracteres
      * Campo obrigatório.
 
-   * Cargo - TextArea
+   * Cargo - Texto
      * Limite de 40 caracteres
      * Quando o mouse passar por cima deste campo (evento onMouseEnter ), exibir um alerta dizendo 'Preencha com cuidado esta informação.'. Exiba essa mensagem apenas uma vez.
      * Campo obrigatório
 
-   * Descrição do cargo - Texto
+   * Descrição do cargo - TextArea
      * Limite de 500 caracteres
      * Campo obrigatório
 
