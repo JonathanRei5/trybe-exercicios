@@ -12,27 +12,13 @@ class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      fields: this.fields(),
       invalidField: undefined,
       canShowCargoAlert: true,
     };
   }
 
-  fields = () => ({
-    nome: '',
-    email: '',
-    cpf: '',
-    endereco: '',
-    cidade: '',
-    estado: '',
-    tipoResidencia: '',
-    resumoCurriculo: '',
-    cargo: '',
-    descricaoCargo: '',
-  });
-
   hasInvalidField = () => {
-    const { fields } = this.state;
+    const { fields } = this.props;
     const fieldsName = Object.keys(fields);
     for (let i = 0; i < fieldsName.length; i += 1) {
       const fieldName = fieldsName[i];
@@ -43,25 +29,20 @@ class Form extends React.Component {
     return undefined;
   }
 
-  handleField = ({ target }) => {
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const { fields } = this.state;
-    fields[target.name] = value;
-    this.setState({ fields });
-  }
-
   onSubmitButtonClick = (event) => {
     event.preventDefault();
+    const { shouldShowData } = this.props;
     const invalidField = this.hasInvalidField();
     if (invalidField) {
       this.setState({ invalidField });
     } else {
-      this.setState({ fields: this.fields(), invalidField });
+      shouldShowData(true);
     }
   }
 
   render() {
     let { invalidField } = this.state;
+    const { fields, handleField } = this.props;
     return (
       <form className="Form">
         <fieldset>
@@ -70,13 +51,13 @@ class Form extends React.Component {
             label="Nome:"
             type="text"
             name="nome"
-            value={this.state.fields.nome}
+            value={fields.nome}
             maxLength="40"
             required
             onChange={(event) => {
               const { target } = event;
               target.value = target.value.toUpperCase();
-              this.handleField(event);
+              handleField(event);
             }}
             error={invalidField && invalidField.nome}
           />
@@ -84,33 +65,33 @@ class Form extends React.Component {
             label="Email:"
             type="text"
             name="email"
-            value={this.state.fields.email}
+            value={fields.email}
             maxLength="50"
             required
-            onChange={this.handleField}
+            onChange={handleField}
             error={invalidField && invalidField.email}
           />
           <Input
             label="CPF:"
             type="text"
             name="cpf"
-            value={this.state.fields.cpf}
+            value={fields.cpf}
             maxLength="11"
             required
-            onChange={this.handleField}
+            onChange={handleField}
             error={invalidField && invalidField.cpf}
           />
           <Input
             label="Endereco:"
             type="text"
             name="endereco"
-            value={this.state.fields.endereco}
+            value={fields.endereco}
             maxLength="200"
             required
             onChange={(event) => {
               const { target } = event;
               target.value = target.value.replace(/[^\w|\d|\s]/g, '');
-              this.handleField(event);
+              handleField(event);
             }}
             error={invalidField && invalidField.endereco}
           />
@@ -118,10 +99,10 @@ class Form extends React.Component {
             label="Cidade:"
             type="text"
             name="cidade"
-            value={this.state.fields.cidade}
+            value={fields.cidade}
             maxLength="28"
             required
-            onChange={this.handleField}
+            onChange={handleField}
             onBlur={function ({ target }) {
               if (/^\d/g.test(target.value)) {
                 target.value = '';
@@ -133,8 +114,8 @@ class Form extends React.Component {
             options={estados}
             label="Estado:"
             name="estado"
-            select={this.state.fields.estado}
-            onChange={this.handleField}
+            select={fields.estado}
+            onChange={handleField}
             error={invalidField && invalidField.estado}
           />
           <InputRadio
@@ -143,8 +124,8 @@ class Form extends React.Component {
               { label: "Apartamento:", name: "tipoResidencia", value: "Apartamento" }
             ]}
             label="Tipo de Residência:"
-            select={this.state.fields.tipoResidencia}
-            onChange={this.handleField}
+            select={fields.tipoResidencia}
+            onChange={handleField}
             error={invalidField && invalidField.tipoResidencia}
             required
           />
@@ -154,8 +135,8 @@ class Form extends React.Component {
           <TextArea
             label="Resumo do currículo:"
             name="resumoCurriculo"
-            value={this.state.fields.resumoCurriculo}
-            onChange={this.handleField}
+            value={fields.resumoCurriculo}
+            onChange={handleField}
             error={invalidField && invalidField.resumoCurriculo}
             maxLength="1000"
             required
@@ -164,24 +145,26 @@ class Form extends React.Component {
             label="Cargo:"
             type="text"
             name="cargo"
-            value={this.state.fields.cargo}
+            value={fields.cargo}
             maxLength="40"
             required
-            onChange={this.handleField}
+            onChange={handleField}
             onMouseEnter={() => {
               const { canShowCargoAlert } = this.state;
-              if (canShowCargoAlert) alert('Preencha com cuidado esta informação.')
-              this.setState({ canShowCargoAlert: false });
+              if (canShowCargoAlert) {
+                alert('Preencha com cuidado esta informação.')
+                this.setState({ canShowCargoAlert: false });
+              }
             }}
             error={invalidField && invalidField.cargo}
           />
           <TextArea
             label="Descrição do cargo:"
             name="descricaoCargo"
-            value={this.state.fields.descricaoCargo}
+            value={fields.descricaoCargo}
             maxLength="500"
             required
-            onChange={this.handleField}
+            onChange={handleField}
             error={invalidField && invalidField.descricaoCargo}
           />
         </fieldset>
