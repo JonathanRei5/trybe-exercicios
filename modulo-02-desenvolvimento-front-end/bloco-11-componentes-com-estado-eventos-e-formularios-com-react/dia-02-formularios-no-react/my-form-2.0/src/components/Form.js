@@ -40,6 +40,12 @@ class Form extends React.Component {
     }
   }
 
+  onClearButtonClick = () => {
+    const { clearFields, shouldShowData } = this.props;
+    clearFields();
+    shouldShowData(false);
+  }
+
   render() {
     let { invalidField } = this.state;
     const { fields, handleField } = this.props;
@@ -172,6 +178,11 @@ class Form extends React.Component {
           type="submit"
           onClick={this.onSubmitButtonClick}>
           Enviar
+        </button>
+        <button
+          type="button"
+          onClick={this.onClearButtonClick}>
+          Limpar
         </button>
       </form>
     );
