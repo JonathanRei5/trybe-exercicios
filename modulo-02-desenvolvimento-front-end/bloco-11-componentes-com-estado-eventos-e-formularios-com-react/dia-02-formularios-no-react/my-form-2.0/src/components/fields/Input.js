@@ -4,6 +4,7 @@ import ErrorMessage from '../ErrorMessage';
 class Input extends React.Component {
   render() {
     const {
+      labelClass,
       label,
       type,
       name,
@@ -17,8 +18,8 @@ class Input extends React.Component {
     } = this.props;
     return (
       <>
-        <label>
-          {label}
+        <label className={labelClass}>
+          <span>{label}</span>
           <input
             type={type}
             name={name}

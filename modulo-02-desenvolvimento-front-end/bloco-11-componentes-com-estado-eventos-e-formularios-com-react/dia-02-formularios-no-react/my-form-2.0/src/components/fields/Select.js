@@ -4,6 +4,7 @@ import ErrorMessage from '../ErrorMessage';
 class Select extends React.Component {
   render() {
     const {
+      labelClass,
       options,
       label,
       name,
@@ -14,8 +15,8 @@ class Select extends React.Component {
     } = this.props;
     return (
       <>
-        <label>
-          {label}
+        <label className={labelClass}>
+          <span>{label}</span>
           <select
             name={name}
             value={select}

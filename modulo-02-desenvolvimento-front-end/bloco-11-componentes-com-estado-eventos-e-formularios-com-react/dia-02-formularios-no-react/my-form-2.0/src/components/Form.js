@@ -12,7 +12,7 @@ class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      invalidField: undefined,
+      invalidField: {},
       canShowCargoAlert: true,
     };
   }
@@ -36,6 +36,7 @@ class Form extends React.Component {
     if (invalidField) {
       this.setState({ invalidField });
     } else {
+      this.setState({ invalidField: {} });
       shouldShowData(true);
     }
   }
@@ -46,14 +47,24 @@ class Form extends React.Component {
     shouldShowData(false);
   }
 
+  highlightField = (field) => {
+    let { invalidField } = this.state;
+    if (invalidField[field]) return ' highlightField'
+    return '';
+  }
+
   render() {
     let { invalidField } = this.state;
     const { fields, handleField } = this.props;
     return (
-      <form className="Form">
-        <fieldset>
+      <form
+        className="Form"
+        onFocus={() => { this.setState({ invalidField: {} }) }}
+      >
+        <fieldset className="fieldsetUserData">
           <legend>Dados Pessoais</legend>
           <Input
+            labelClass={'fieldContainer' + this.highlightField('nome')}
             label="Nome:"
             type="text"
             name="nome"
@@ -65,9 +76,10 @@ class Form extends React.Component {
               target.value = target.value.toUpperCase();
               handleField(event);
             }}
-            error={invalidField && invalidField.nome}
+            error={invalidField.nome}
           />
           <Input
+            labelClass={'fieldContainer' + this.highlightField('email')}
             label="Email:"
             type="text"
             name="email"
@@ -75,9 +87,10 @@ class Form extends React.Component {
             maxLength="50"
             required
             onChange={handleField}
-            error={invalidField && invalidField.email}
+            error={invalidField.email}
           />
           <Input
+            labelClass={'fieldContainer' + this.highlightField('cpf')}
             label="CPF:"
             type="text"
             name="cpf"
@@ -85,9 +98,10 @@ class Form extends React.Component {
             maxLength="11"
             required
             onChange={handleField}
-            error={invalidField && invalidField.cpf}
+            error={invalidField.cpf}
           />
           <Input
+            labelClass={'fieldContainer' + this.highlightField('endereco')}
             label="Endereco:"
             type="text"
             name="endereco"
@@ -99,9 +113,10 @@ class Form extends React.Component {
               target.value = target.value.replace(/[^\w|\d|\s]/g, '');
               handleField(event);
             }}
-            error={invalidField && invalidField.endereco}
+            error={invalidField.endereco}
           />
           <Input
+            labelClass={'fieldContainer' + this.highlightField('cidade')}
             label="Cidade:"
             type="text"
             name="cidade"
@@ -114,40 +129,44 @@ class Form extends React.Component {
                 target.value = '';
               }
             }}
-            error={invalidField && invalidField.cidade}
+            error={invalidField.cidade}
           />
           <Select
+            labelClass={'fieldContainer fieldEstado' + this.highlightField('estado')}
             options={estados}
             label="Estado:"
             name="estado"
             select={fields.estado}
             onChange={handleField}
-            error={invalidField && invalidField.estado}
+            error={invalidField.estado}
           />
           <InputRadio
+            labelClass={'fieldContainer fieldTipoResidencia' + this.highlightField('tipoResidencia')}
             inputs={[
-              { label: "Casa:", name: "tipoResidencia", value: "Casa" },
-              { label: "Apartamento:", name: "tipoResidencia", value: "Apartamento" }
+              { label: "Casa", name: "tipoResidencia", value: "Casa" },
+              { label: "Apartamento", name: "tipoResidencia", value: "Apartamento" }
             ]}
             label="Tipo de Residência:"
             select={fields.tipoResidencia}
             onChange={handleField}
-            error={invalidField && invalidField.tipoResidencia}
+            error={invalidField.tipoResidencia}
             required
           />
         </fieldset>
         <fieldset>
           <legend>Último emprego</legend>
           <TextArea
+            labelClass={'fieldContainer fieldResumoCurriculo' + this.highlightField('resumoCurriculo')}
             label="Resumo do currículo:"
             name="resumoCurriculo"
             value={fields.resumoCurriculo}
             onChange={handleField}
-            error={invalidField && invalidField.resumoCurriculo}
+            error={invalidField.resumoCurriculo}
             maxLength="1000"
             required
           />
           <Input
+            labelClass={'fieldContainer' + this.highlightField('cargo')}
             label="Cargo:"
             type="text"
             name="cargo"
@@ -162,28 +181,33 @@ class Form extends React.Component {
                 this.setState({ canShowCargoAlert: false });
               }
             }}
-            error={invalidField && invalidField.cargo}
+            error={invalidField.cargo}
           />
           <TextArea
+            labelClass={'fieldContainer fieldDescricaoCargo' + this.highlightField('descricaoCargo')}
             label="Descrição do cargo:"
             name="descricaoCargo"
             value={fields.descricaoCargo}
             maxLength="500"
             required
             onChange={handleField}
-            error={invalidField && invalidField.descricaoCargo}
+            error={invalidField.descricaoCargo}
           />
         </fieldset>
-        <button
-          type="submit"
-          onClick={this.onSubmitButtonClick}>
-          Enviar
-        </button>
-        <button
-          type="button"
-          onClick={this.onClearButtonClick}>
-          Limpar
-        </button>
+        <div className="buttons-container">
+          <button
+            className="button btnSubmit"
+            type="submit"
+            onClick={this.onSubmitButtonClick}>
+            Enviar
+          </button>
+          <button
+            className="button btnReset"
+            type="reset"
+            onClick={this.onClearButtonClick}>
+            Limpar
+          </button>
+        </div>
       </form>
     );
   }

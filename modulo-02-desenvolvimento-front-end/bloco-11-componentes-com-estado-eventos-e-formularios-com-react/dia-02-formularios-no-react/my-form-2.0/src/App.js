@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form.js';
 import UserData from './components/UserData.js';
+import './css/App.css'
 
 class App extends React.Component {
   constructor() {
@@ -42,7 +43,7 @@ class App extends React.Component {
   render() {
     const { fields, showData } = this.state;
     return (
-      <>
+      <main className='App'>
         < Form
           fields={fields}
           handleField={this.handleField}
@@ -50,7 +51,7 @@ class App extends React.Component {
           shouldShowData={this.shouldShowData}
         />
         {showData && <UserData fields={fields} />}
-      </>
+      </main>
     );
   }
 }

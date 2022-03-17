@@ -1,12 +1,13 @@
 import React from "react";
+import '../css/UserData.css'
 
 class UserData extends React.Component {
   render() {
     const { fields } = this.props;
     return (
-      <div>
+      <div className="UserData">
         <h2>Seus Dados</h2>
-        <div id="dados">
+        <div className="data">
           <div>
             <span>Nome:</span>{fields.nome}
           </div>

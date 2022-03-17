@@ -10,7 +10,6 @@ class InputRadio extends React.Component {
     } = this.props;
     return (
       <label key={value}>
-        {label}
         <input
           type="radio"
           name={name}
@@ -19,23 +18,25 @@ class InputRadio extends React.Component {
           required={required}
           checked={select === value}
         />
+        {label}
       </label>
     )
   }
 
   render() {
     const {
+      labelClass,
       label,
       inputs,
       error,
     } = this.props;
     return (
       <>
-        <div>
-          {label}
+        <div className={labelClass}>
+          <span>{label}</span>
           {inputs.map(this.renderInputRadio)}
-          {error && <ErrorMessage message={error} />}
         </div>
+        {error && <ErrorMessage message={error} />}
       </>
     )
   }

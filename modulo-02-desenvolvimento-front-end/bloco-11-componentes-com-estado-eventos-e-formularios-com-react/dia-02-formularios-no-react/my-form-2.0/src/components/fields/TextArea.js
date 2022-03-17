@@ -4,6 +4,7 @@ import ErrorMessage from '../ErrorMessage';
 class TextArea extends React.Component {
   render() {
     const {
+      labelClass,
       label,
       name,
       value,
@@ -14,8 +15,8 @@ class TextArea extends React.Component {
     } = this.props;
     return (
       <>
-        <label>
-          {label}
+        <label className={labelClass}>
+          <span>{label}</span>
           <textarea
             name={name}
             value={value}
