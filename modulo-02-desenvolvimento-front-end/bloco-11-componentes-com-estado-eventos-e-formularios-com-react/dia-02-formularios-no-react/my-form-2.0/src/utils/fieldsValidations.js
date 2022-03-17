@@ -13,25 +13,25 @@ const fieldsValidations = {
 
   email: (value) => {
     if (emptyField(value)) return 'Preencha este campo.'
-    if (value.length > 40) return 'Limite máximo de 50 caracteres.'
+    if (value.length > 50) return 'Limite máximo de 50 caracteres.'
     return '';
   },
 
   cpf: (value) => {
     if (emptyField(value)) return 'Preencha este campo.'
-    if (value.length > 40) return 'Limite máximo de 11 caracteres.'
+    if (value.length > 11) return 'Limite máximo de 11 caracteres.'
     return '';
   },
 
   endereco: (value) => {
     if (emptyField(value)) return 'Preencha este campo.'
-    if (value.length > 40) return 'Limite máximo de 200 caracteres.'
+    if (value.length > 200) return 'Limite máximo de 200 caracteres.'
     return '';
   },
 
   cidade: (value) => {
     if (emptyField(value)) return 'Preencha este campo.'
-    if (value.length > 40) return 'Limite máximo de 28 caracteres.'
+    if (value.length > 28) return 'Limite máximo de 28 caracteres.'
     return '';
   },
 
