@@ -1,5 +1,15 @@
 const func = require('./service.js');
 
+jest.spyOn(func, 'toUpperCase');
+func.toUpperCase.mockImplementation((text) => text.toLowerCase());
+
+func.firstLetter = jest.fn().mockImplementation(
+  (text) => text.length > 0 ? text[text.length - 1] : ''
+);
+func.concat = jest.fn().mockImplementation(
+  (textA, textB, textC) => textA.concat(textB).concat(textC)
+);
+
 describe('Exercícios bloco 14 dia 2:', () => {
   test('Verifica se a função randomNumber está definida.',
     () => {
@@ -37,4 +47,16 @@ describe('Exercícios bloco 14 dia 2:', () => {
       expect(func.randomNumber).toHaveBeenCalledTimes(1);
     })
 
+  test('Verifica se os mocks das funções toUpperCase, firstLetter e concat estão funcionando.',
+    () => {
+      expect(func.toUpperCase('XABLAU')).toBe('xablau');
+      expect(func.firstLetter('XABLAU')).toBe('U');
+      expect(func.concat('XA', 'BL', 'AU')).toBe('XABLAU');
+    })
+
+  test('Verifica se a implementação da função toUpperCase foi restaurada.',
+    () => {
+      func.toUpperCase.mockRestore();
+      expect(func.toUpperCase('xablau')).toBe('XABLAU');
+    })
 })
