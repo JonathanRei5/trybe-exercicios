@@ -1,3 +1,5 @@
+global.fetch = require('node-fetch');
+
 function randomNumber() {
   return Math.round(Math.random() * 100);
 }
@@ -14,4 +16,21 @@ function concat(textA, textB) {
   return textA.concat(textB);
 }
 
-module.exports = { randomNumber, toUpperCase, firstLetter, concat };
+async function getDogPicture() {
+  try {
+    const URL = 'https://dog.ceo/api/breeds/image/random';
+    const response = await fetch(URL);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+module.exports = {
+  randomNumber,
+  toUpperCase,
+  firstLetter,
+  concat,
+  getDogPicture
+};

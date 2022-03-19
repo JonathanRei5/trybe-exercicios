@@ -1,15 +1,5 @@
 const func = require('./service.js');
 
-jest.spyOn(func, 'toUpperCase');
-func.toUpperCase.mockImplementation((text) => text.toLowerCase());
-
-func.firstLetter = jest.fn().mockImplementation(
-  (text) => text.length > 0 ? text[text.length - 1] : ''
-);
-func.concat = jest.fn().mockImplementation(
-  (textA, textB, textC) => textA.concat(textB).concat(textC)
-);
-
 describe('Exercícios bloco 14 dia 2:', () => {
   test('Verifica se a função randomNumber está definida.',
     () => {
@@ -49,6 +39,21 @@ describe('Exercícios bloco 14 dia 2:', () => {
 
   test('Verifica se os mocks das funções toUpperCase, firstLetter e concat estão funcionando.',
     () => {
+      expect(func.toUpperCase).toBeDefined();
+      expect(func.firstLetter).toBeDefined();
+      expect(func.concat).toBeDefined();
+
+      jest.spyOn(func, 'toUpperCase');
+      func.toUpperCase.mockImplementation((text) => text.toLowerCase());
+
+      func.firstLetter = jest.fn().mockImplementation(
+        (text) => text.length > 0 ? text[text.length - 1] : ''
+      );
+
+      func.concat = jest.fn().mockImplementation(
+        (textA, textB, textC) => textA.concat(textB).concat(textC)
+      );
+
       expect(func.toUpperCase('XABLAU')).toBe('xablau');
       expect(func.firstLetter('XABLAU')).toBe('U');
       expect(func.concat('XA', 'BL', 'AU')).toBe('XABLAU');
@@ -58,5 +63,22 @@ describe('Exercícios bloco 14 dia 2:', () => {
     () => {
       func.toUpperCase.mockRestore();
       expect(func.toUpperCase('xablau')).toBe('XABLAU');
+    })
+
+  test('Verifica se a função getDogPicture faz a requisição corretamente e retonar os valores esperados.',
+    async () => {
+      expect(func.getDogPicture).toBeDefined();
+      expect(global.fetch).toBeDefined();
+      jest.spyOn(global, 'fetch');
+      const URL = 'https://dog.ceo/api/breeds/image/random';
+
+      fetch.mockResolvedValueOnce({ json: async () => 'request sucess' });
+      expect(await func.getDogPicture()).toBe('request sucess');
+      expect(fetch).toHaveBeenCalledTimes(1);
+      expect(fetch).toHaveBeenCalledWith(URL);
+
+      fetch.mockRejectedValueOnce(Error('request failed'));
+      expect(await func.getDogPicture()).toBe('request failed');
+      expect(fetch).toHaveBeenCalledTimes(2);
     })
 })
