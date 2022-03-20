@@ -10,7 +10,7 @@ describe('Teste do campo de input', () => {
     render(<App />)
     listTodo.forEach((todo) => {
       const taskInput = screen.getByLabelText(/Tarefa/);
-      const button = screen.getByRole('button');
+      const button = screen.getByRole('button', { name: 'Adicionar' });
       userEvent.type(taskInput, todo);
       userEvent.click(button);
       expect(screen.getByText(todo)).toBeInTheDocument();
