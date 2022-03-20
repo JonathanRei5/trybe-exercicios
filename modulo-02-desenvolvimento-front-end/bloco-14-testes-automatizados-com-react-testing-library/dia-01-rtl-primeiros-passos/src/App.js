@@ -4,7 +4,7 @@ import Item from './Item';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       listTodo: [],
       selectedTodo: '',
@@ -21,14 +21,14 @@ class App extends Component {
 
   selectTodo(todo) {
     this.setState((state) => {
-      const {selectedTodo} = state;
-      return todo===selectedTodo ? { selectedTodo: '' } : { selectedTodo: todo };
+      const { selectedTodo } = state;
+      return todo === selectedTodo ? { selectedTodo: '' } : { selectedTodo: todo };
     });
   }
 
   removeTodo(todo) {
-    this.setState((state) => ({ 
-      listTodo: [...state.listTodo.filter((todoInList) => todo !== todoInList)] 
+    this.setState((state) => ({
+      listTodo: [...state.listTodo.filter((todoInList) => todo !== todoInList)],
     }));
   }
 
@@ -37,17 +37,18 @@ class App extends Component {
     return (
       <div className="App">
         <InputTodo addTodo={ (todo) => this.addTodo(todo) } />
-        {listTodo &&
+        {listTodo
+        && (
           <ul>
             {
               listTodo.map((todo, index) => (
                 <li key={ index + 1 }>
                   <Item content={ todo } selectCallBack={ this.selectTodo } />
-                  <button 
+                  <button
                     type="button"
                     data-testid="id-remove"
-                    onClick={() => {this.removeTodo(todo)}}
-                    disabled={selectedTodo === todo ? false : true}
+                    onClick={ () => { this.removeTodo(todo); } }
+                    disabled={ selectedTodo !== todo }
                   >
                     Remover
                   </button>
@@ -55,7 +56,7 @@ class App extends Component {
               ))
             }
           </ul>
-        }
+        )}
       </div>
     );
   }
