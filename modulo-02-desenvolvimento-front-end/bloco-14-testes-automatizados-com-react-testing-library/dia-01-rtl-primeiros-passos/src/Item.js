@@ -8,14 +8,23 @@ function Item(props) {
     <div
       className="Item"
       onClick={ () => selectCallBack(content) }
+      onKeyDown={ (event) => {
+        if (event.code === 'Enter' || event.code === 'NumpadEnter'
+        || event.code === 'Space') {
+          selectCallBack(content);
+        }
+      } }
+      role="button"
+      tabIndex={ 0 }
     >
       { content }
     </div>
   );
 }
 
-export default Item;
-
 Item.propTypes = {
   content: PropTypes.string.isRequired,
+  selectCallBack: PropTypes.func.isRequired,
 };
+
+export default Item;
