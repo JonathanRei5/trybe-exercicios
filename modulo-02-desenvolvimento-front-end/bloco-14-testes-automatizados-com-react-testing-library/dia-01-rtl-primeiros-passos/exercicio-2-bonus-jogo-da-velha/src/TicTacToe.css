@@ -1,0 +1,13 @@
+.TicTacToe {
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.TicTacToe .btnRestartGame {
+  display: block;
+  margin: 20px auto;
+}
+
+.TicTacToe .endGameMessage {
+  text-align: center;
+}
