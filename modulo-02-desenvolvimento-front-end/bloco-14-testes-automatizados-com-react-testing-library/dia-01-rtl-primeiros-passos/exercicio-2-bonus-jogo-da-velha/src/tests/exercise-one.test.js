@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 
 describe('Configuração inicial do jogo', () => {
   test('Verificar se foi renderizada nove casas', async () => {
