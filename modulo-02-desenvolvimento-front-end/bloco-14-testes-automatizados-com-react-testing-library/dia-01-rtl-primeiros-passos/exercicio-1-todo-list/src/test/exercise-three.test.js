@@ -5,13 +5,10 @@ import App from '../App';
 
 describe('Testando funcionalidade de apagar item selecionado', () => {
   test(`Não deve haver botões de remover
-        após a primeira renderização da página`, async () => {
+        após a primeira renderização da página`, () => {
     render(<App />);
-    let btnRemove;
-    try {
-      btnRemove = await screen.findAllByTestId('id-remove');
-      expect(btnRemove).toBe(undefined);
-    } catch (e) { expect(btnRemove).toBe(undefined); }
+    const btnRemove = screen.queryByTestId('id-remove');
+    expect(btnRemove).not.toBeInTheDocument();
   });
 
   test('Testando a seleção de elemento', async () => {
