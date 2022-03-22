@@ -34,7 +34,7 @@
 
   * Teste cada um separadamente, não se esqueça de usar o `history` para reiniciar o estado de cada teste.
 
-* Um formulário com campo de e-mail e mensagem para que as pessoas possam entrar em contato com você [EmailJS](href="https://www.emailjs.com/docs/introduction/how-does-emailjs-work/).
+* Um formulário com campo de e-mail e mensagem para que as pessoas possam entrar em contato com você [EmailJS](https://www.emailjs.com/docs/introduction/how-does-emailjs-work/).
 
   * Utilize _mocks_ para garantir o funcionamento desse teste, uma vez que essa aplicação comporta-se como uma API e é um link externo. 
 
