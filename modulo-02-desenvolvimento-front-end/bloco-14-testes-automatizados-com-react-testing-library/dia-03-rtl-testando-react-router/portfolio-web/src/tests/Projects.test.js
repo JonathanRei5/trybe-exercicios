@@ -7,6 +7,7 @@ describe('Verifica a página Projetos', () => {
     render(<Projects />);
     const gitHubLink = screen.getByRole('link', { name: /GitHub/i });
     expect(gitHubLink).toHaveAttribute('href', 'https://github.com/JonathanRei5');
+    expect(gitHubLink).toHaveAttribute('target', '_blanck');
     userEvent.click(gitHubLink);
   });
 });
