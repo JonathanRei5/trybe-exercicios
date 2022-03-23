@@ -37,31 +37,26 @@ class Contact extends React.Component {
     const { sending } = this.state;
     return (
       <form ref={(element) => { this.refForm = element }} onSubmit={this.sendMessage}>
-        <label htmlFor="name">
-          Nome
-          <input type="text" name="name" placeholder="Seu nome" id="name" required />
-        </label>
-        <label htmlFor="message">
-          Mensagem
-          <textarea name="message" placeholder="Sua mensagem" id="message" required />
-        </label>
-        {sending ? <p>Enviando...</p> : <input type="submit" value="Enviar" />}
+        <fieldset>
+          <legend>Me envie uma mensagem</legend>
+          <label htmlFor="name">
+            Nome
+            <input type="text" name="name" placeholder="Seu nome" id="name" required />
+          </label>
+          <label htmlFor="message">
+            Mensagem
+            <textarea name="message" placeholder="Sua mensagem" id="message" required />
+          </label>
+          {sending ? <p>Enviando...</p> : <input type="submit" value="Enviar" />}
+        </fieldset>
       </form>
     );
   }
 
-  render() {
+  renderResponseMessage = () => {
     const { error } = this.state;
     return (
-      <main className="Contact">
-        <h1>Contato</h1>
-        <a
-          href="https://www.linkedin.com/in/jonathanrei5/"
-          rel="noopener noreferrer"
-          target="_blanck"
-        >Meu LinkedIn</a>
-        <p>Me envie uma mensagem:</p>
-        {this.renderForm()}
+      <>
         {error !== undefined && !error && <p>Mensagem enviada com sucesso.</p>}
         {
           error !== undefined
@@ -73,6 +68,22 @@ class Contact extends React.Component {
             </>
           )
         }
+      </>
+    )
+  }
+
+  render() {
+    console.log(global.emailjs);
+    return (
+      <main className="Contact">
+        <h1>Contato</h1>
+        <a
+          href="https://www.linkedin.com/in/jonathanrei5/"
+          rel="noopener noreferrer"
+          target="_blanck"
+        >Meu LinkedIn</a>
+        {this.renderForm()}
+        {this.renderResponseMessage()}
       </main>
     );
   };

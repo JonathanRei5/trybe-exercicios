@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
+}
+
+.Contact fieldset {
+  padding: 10px;
 }
 
 .Contact form label {
