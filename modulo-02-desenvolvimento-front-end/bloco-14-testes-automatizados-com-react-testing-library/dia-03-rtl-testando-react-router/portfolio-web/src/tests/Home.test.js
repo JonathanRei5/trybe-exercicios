@@ -2,7 +2,7 @@ import renderWithRouter from '../helper/renderWithRouter';
 import { screen } from '@testing-library/react';
 import App from '../App';
 
-describe('Verifica se na página inicial contem as infomações corretas', () => {
+describe('Verifica se a página "Home" contém as infomações corretas.', () => {
   test('Verifica se existe uma foto de perfil.', () => {
     renderWithRouter(<App />);
     const profilePicture = screen.getByRole('img', { name: /Foto de perfil/i });

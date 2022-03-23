@@ -26,7 +26,7 @@ describe('Verifica se as rotas estão funcionado', () => {
     expect(screen.getByRole('heading', { name: /Início/i, level: 1 })).toBeInTheDocument();
   });
 
-  test('Verifica no histórico se as urls corretas são acessadas após cada clique no link.', () => {
+  test('Verifica no histórico se as URLs corretas são acessadas após cada clique no link.', () => {
     const { history } = renderWithRouter(<App />);
 
     userEvent.click(screen.getByRole('link', { name: /Sobre/i }));
