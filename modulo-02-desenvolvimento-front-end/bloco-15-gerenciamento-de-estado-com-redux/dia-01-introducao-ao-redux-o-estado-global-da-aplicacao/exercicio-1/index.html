@@ -42,13 +42,29 @@
     };
 
     const reducer = (state = ESTADO_INICIAL, action) => {
+      const { colors, index } = state;
+      const lastIndex = colors.length - 1;
       switch (action.type) {
+        case 'NEXT_COLOR':
+          return { ...state, index: (index === lastIndex) ? index : index + 1 };
+        case 'PREVIOUS_COLOR':
+          return { ...state, index: (index === 0) ? index : index - 1 };
         default:
           return state;
       }
     }
 
     const store = Redux.createStore(reducer);
+
+    document.getElementById('previous').addEventListener('click', () => {
+      store.dispatch({ type: 'PREVIOUS_COLOR' });
+      console.log(store.getState());
+    })
+    document.getElementById('next').addEventListener('click', () => {
+      store.dispatch({ type: 'NEXT_COLOR' });
+      console.log(store.getState());
+    })
+
   </script>
 </body>
 
