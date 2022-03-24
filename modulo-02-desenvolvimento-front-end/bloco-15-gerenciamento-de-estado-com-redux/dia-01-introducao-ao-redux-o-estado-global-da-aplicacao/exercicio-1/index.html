@@ -56,13 +56,22 @@
 
     const store = Redux.createStore(reducer);
 
+    store.subscribe(() => {
+      const state = store.getState();
+
+      const value = document.getElementById('value');
+      const container = document.getElementById('container');
+
+      const color = state.colors[state.index];
+      value.innerHTML = color;
+      container.style.backgroundColor = color;
+    });
+
     document.getElementById('previous').addEventListener('click', () => {
       store.dispatch({ type: 'PREVIOUS_COLOR' });
-      console.log(store.getState());
     })
     document.getElementById('next').addEventListener('click', () => {
       store.dispatch({ type: 'NEXT_COLOR' });
-      console.log(store.getState());
     })
 
   </script>
