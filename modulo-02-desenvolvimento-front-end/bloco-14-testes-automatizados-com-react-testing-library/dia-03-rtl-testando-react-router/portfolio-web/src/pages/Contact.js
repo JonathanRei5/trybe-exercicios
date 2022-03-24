@@ -8,7 +8,7 @@ class Contact extends React.Component {
 
     this.state = {
       sending: false,
-      error: undefined,
+      responseMessage: '',
     }
 
     this.refForm = React.createRef()
@@ -21,14 +21,14 @@ class Contact extends React.Component {
   sendMessage = (e) => {
     e.preventDefault();
 
-    this.setState({ sending: true, error: undefined });
+    this.setState({ sending: true, responseMessage: '' });
 
     emailjs.sendForm('service_teuc6sr', 'template_9bnbkep', this.refForm, 'hk905J2u45Ktw7__N')
       .then(() => {
-        this.setState({ sending: false, error: '' });
+        this.setState({ sending: false, responseMessage: 'Mensagem enviada com sucesso.' });
         this.clearForm();
-      }, (error) => {
-        this.setState({ sending: false, error: error.text });
+      }, () => {
+        this.setState({ sending: false, responseMessage: 'Erro ao enviar a mensagem.' });
         this.clearForm();
       });
   };
@@ -53,26 +53,8 @@ class Contact extends React.Component {
     );
   }
 
-  renderResponseMessage = () => {
-    const { error } = this.state;
-    return (
-      <>
-        {error !== undefined && !error && <p>Mensagem enviada com sucesso.</p>}
-        {
-          error !== undefined
-          && error
-          && (
-            <>
-              <p>Erro ao enviar a mensagem.</p>
-              <p>{error}</p>
-            </>
-          )
-        }
-      </>
-    )
-  }
-
   render() {
+    const { responseMessage } = this.state;
     return (
       <main className="Contact">
         <h1>Contato</h1>
@@ -82,7 +64,7 @@ class Contact extends React.Component {
           target="_blanck"
         >Meu LinkedIn</a>
         {this.renderForm()}
-        {this.renderResponseMessage()}
+        {responseMessage && <p>{responseMessage}</p>}
       </main>
     );
   };
