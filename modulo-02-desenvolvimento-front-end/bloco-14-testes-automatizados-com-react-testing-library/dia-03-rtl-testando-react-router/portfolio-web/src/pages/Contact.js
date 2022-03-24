@@ -73,7 +73,6 @@ class Contact extends React.Component {
   }
 
   render() {
-    console.log(global.emailjs);
     return (
       <main className="Contact">
         <h1>Contato</h1>
