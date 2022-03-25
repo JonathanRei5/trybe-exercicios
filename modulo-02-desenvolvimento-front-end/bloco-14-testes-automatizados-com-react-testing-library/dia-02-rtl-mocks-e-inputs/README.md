@@ -70,4 +70,10 @@ Para os exercícios a seguir:
      * O segundo deve interpretar que a requisição falhou e ter como valor "request failed".
    * Crie todos os testes que achar necessário.
 
+__Parte 2__
+
+É uma aplicação simples que pesquisa digimons pelo nome, seu objetivo nesse exercício é utilizar todos os aprendizados sobre testes até o momento para alcançar 100% de cobertura de testes.
+
+_O código para esse exercício parte 2 foi fornecido pela Trybe eu desenvolvi os testes._
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
