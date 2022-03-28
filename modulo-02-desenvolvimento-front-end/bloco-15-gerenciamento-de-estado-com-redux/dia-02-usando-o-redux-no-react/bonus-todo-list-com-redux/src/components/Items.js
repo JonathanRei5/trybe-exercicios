@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { actionRemoveTask } from '../redux/actions';
 import Item from './Item';
+import ItemOptions from './ItemOptions';
 
 class Items extends Component {
   render() {
-    const {
-      todoList,
-      selectedTask,
-      removeTask,
-    } = this.props;
+    const { todoList } = this.props;
 
     return (
       <ul>
@@ -17,14 +13,7 @@ class Items extends Component {
           todoList.map((todo, index) => (
             <li key={index + 1}>
               <Item content={todo} />
-              <button
-                type="button"
-                data-testid="id-remove"
-                onClick={() => { removeTask(todo); }}
-                disabled={selectedTask !== todo}
-              >
-                Remover
-              </button>
+              <ItemOptions todo={todo} />
             </li>
           ))
         }
@@ -35,11 +24,6 @@ class Items extends Component {
 
 const mapStateToProps = (state) => ({
   todoList: state.reducerTodoList.todoList,
-  selectedTask: state.reducerTodoList.selectedTask,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  removeTask: (task) => dispatch(actionRemoveTask(task)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Items);
+export default connect(mapStateToProps, null)(Items);

@@ -1,31 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { actionToggleSelectedTask } from '../redux/actions'
+import { actionToggleSelectedTask } from '../redux/actions';
+import './css/Item.css';
 
 function Item(props) {
   const { content, toggleSelectedTask } = props;
-
+  const classDone = content.done ? ' done_task' : '';
   return (
     <div
-      className="Item"
-      onClick={() => toggleSelectedTask(content)}
+      className={`Item${classDone}`}
+      onClick={() => toggleSelectedTask(content.task)}
       onKeyDown={(event) => {
         if (event.code === 'Enter' || event.code === 'NumpadEnter'
           || event.code === 'Space') {
-          toggleSelectedTask(content);
+          toggleSelectedTask(content.task);
         }
       }}
       role="button"
       tabIndex={0}
     >
-      {content}
+      {content.task}
     </div>
   );
 }
 
 Item.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.shape({}).isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
