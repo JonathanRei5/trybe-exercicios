@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { actionAddTask } from './redux/actions';
 
 class InputTodo extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class InputTodo extends Component {
   }
 
   render() {
-    const { addTodo } = this.props;
+    const { addTask } = this.props;
     const { textTodo } = this.state;
     return (
       <div className="InputTodo">
@@ -30,22 +31,23 @@ class InputTodo extends Component {
           <input
             id="inputTodo"
             type="text"
-            value={ textTodo }
-            onChange={ (e) => this.changeTextTodo(e.target.value) }
+            value={textTodo}
+            onChange={(e) => this.changeTextTodo(e.target.value)}
           />
         </label>
         <input
           id="btnAdd"
           type="button"
           value="Adicionar"
-          onClick={ () => this.addItem(textTodo, addTodo) }
+          onClick={() => this.addItem(textTodo, addTask)}
         />
       </div>
     );
   }
 }
-export default InputTodo;
 
-InputTodo.propTypes = {
-  addTodo: PropTypes.func.isRequired,
-};
+const mapDispatchToProps = (dispatch) => ({
+  addTask: (task) => dispatch(actionAddTask(task)),
+});
+
+export default connect(null, mapDispatchToProps)(InputTodo);

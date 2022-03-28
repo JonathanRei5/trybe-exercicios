@@ -13,6 +13,6 @@ export const actionRemoveTask = (task) => ({
 });
 
 export const actionToggleSelectedTask = (task) => ({
-  type: REMOVE_TASK,
+  type: TOGGLE_SELECTED_TASK,
   task,
 });
