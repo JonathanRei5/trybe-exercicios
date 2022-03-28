@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { actionToggleSelectedTask } from './redux/actions'
+import { actionToggleSelectedTask } from '../redux/actions'
 
 function Item(props) {
   const { content, toggleSelectedTask } = props;
