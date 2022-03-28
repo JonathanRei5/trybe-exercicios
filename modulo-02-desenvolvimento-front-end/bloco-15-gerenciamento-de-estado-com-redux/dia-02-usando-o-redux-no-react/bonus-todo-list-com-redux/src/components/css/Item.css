@@ -1,3 +1,14 @@
+.Item {
+  padding: 5px;
+  border: 1px black solid;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
 .Item.done_task {
   text-decoration: line-through;
+}
+
+.Item.inProgress_task {
+  background-color: rgb(230, 230, 230);
 }

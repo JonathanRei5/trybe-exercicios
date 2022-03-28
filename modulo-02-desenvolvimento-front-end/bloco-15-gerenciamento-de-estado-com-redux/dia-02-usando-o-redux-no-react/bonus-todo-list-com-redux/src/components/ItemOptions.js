@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
   actionRemoveTask,
-  actionToggleDoneTask
+  actionToggleDoneTask,
+  actionToggleInProgressTask,
 } from '../redux/actions';
 
 class ItemOptions extends Component {
@@ -19,17 +20,33 @@ class ItemOptions extends Component {
     )
   }
 
-  renderDoneButton = () => {
+  renderDoneInput = () => {
     const { todo, selectedTask, toggleDoneTask } = this.props;
     return (
-      <label hidden={selectedTask !== todo.task}>
+      <label htmlFor={`input_doneTask_id_${todo.id}`} hidden={selectedTask !== todo.task}>
         Completa
         <input
           type="checkbox"
-          name="complete"
-          id="input_complete"
+          name="doneTask"
+          id={`input_doneTask_id_${todo.id}`}
           checked={todo.done}
           onChange={() => { toggleDoneTask(todo.task); }}
+        />
+      </label>
+    )
+  }
+
+  renderInProgressInput = () => {
+    const { todo, selectedTask, toggleInProgressTask } = this.props;
+    return (
+      <label htmlFor={`input_inProgress_id_${todo.id}`} hidden={selectedTask !== todo.task}>
+        Em Andamento
+        <input
+          type="checkbox"
+          name="inProgress"
+          id={`input_inProgress_id_${todo.id}`}
+          checked={todo.inProgress}
+          onChange={() => { toggleInProgressTask(todo.task); }}
         />
       </label>
     )
@@ -39,7 +56,8 @@ class ItemOptions extends Component {
     return (
       <>
         {this.renderRemoveButton()}
-        {this.renderDoneButton()}
+        {this.renderDoneInput()}
+        {this.renderInProgressInput()}
       </>
     );
   }
@@ -52,6 +70,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   removeTask: (task) => dispatch(actionRemoveTask(task)),
   toggleDoneTask: (task) => dispatch(actionToggleDoneTask(task)),
+  toggleInProgressTask: (task) => dispatch(actionToggleInProgressTask(task)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemOptions);

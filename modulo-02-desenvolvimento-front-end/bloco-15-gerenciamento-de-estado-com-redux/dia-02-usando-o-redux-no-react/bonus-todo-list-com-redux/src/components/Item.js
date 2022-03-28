@@ -7,9 +7,10 @@ import './css/Item.css';
 function Item(props) {
   const { content, toggleSelectedTask } = props;
   const classDone = content.done ? ' done_task' : '';
+  const classInProgress = content.inProgress ? ' inProgress_task' : '';
   return (
     <div
-      className={`Item${classDone}`}
+      className={`Item${classDone}${classInProgress}`}
       onClick={() => toggleSelectedTask(content.task)}
       onKeyDown={(event) => {
         if (event.code === 'Enter' || event.code === 'NumpadEnter'

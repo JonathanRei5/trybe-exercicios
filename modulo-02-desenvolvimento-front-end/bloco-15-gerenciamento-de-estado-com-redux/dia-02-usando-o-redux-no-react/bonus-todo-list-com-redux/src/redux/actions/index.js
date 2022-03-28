@@ -2,6 +2,7 @@ export const ADD_TASK = 'ADD_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const TOGGLE_SELECTED_TASK = 'TOGGLE_SELECTED_TASK';
 export const TOGGLE_DONE_TASK = 'TOGGLE_DONE_TASK';
+export const TOGGLE_INPROGRESS_TASK = 'TOGGLE_INPROGRESS_TASK';
 
 export const actionAddTask = (task) => ({
   type: ADD_TASK,
@@ -20,5 +21,10 @@ export const actionToggleSelectedTask = (task) => ({
 
 export const actionToggleDoneTask = (task) => ({
   type: TOGGLE_DONE_TASK,
+  task,
+});
+
+export const actionToggleInProgressTask = (task) => ({
+  type: TOGGLE_INPROGRESS_TASK,
   task,
 });

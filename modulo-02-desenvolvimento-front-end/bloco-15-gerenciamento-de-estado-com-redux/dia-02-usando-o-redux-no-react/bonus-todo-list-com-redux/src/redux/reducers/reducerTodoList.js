@@ -3,11 +3,13 @@ import {
   REMOVE_TASK,
   TOGGLE_SELECTED_TASK,
   TOGGLE_DONE_TASK,
+  TOGGLE_INPROGRESS_TASK,
 } from '../actions';
 
 const INICIAL_STATE = {
   todoList: [],
   selectedTask: '',
+  lastID: 0,
 }
 
 const reducerTodoList = (state = INICIAL_STATE, action) => {
@@ -19,11 +21,13 @@ const reducerTodoList = (state = INICIAL_STATE, action) => {
         todoList: [
           ...state.todoList,
           {
+            id: state.lastID,
             task: action.task,
             inProgress: false,
             done: false,
           }
-        ]
+        ],
+        lastID: state.lastID + 1,
       };
     }
 
@@ -54,6 +58,23 @@ const reducerTodoList = (state = INICIAL_STATE, action) => {
               return {
                 ...todo,
                 done: !todo.done,
+              }
+            }
+            return todo;
+          })
+        ]
+      };
+    }
+
+    case TOGGLE_INPROGRESS_TASK: {
+      return {
+        ...state,
+        todoList: [
+          ...state.todoList.map((todo) => {
+            if (todo.task === action.task) {
+              return {
+                ...todo,
+                inProgress: !todo.inProgress,
               }
             }
             return todo;
