@@ -1,0 +1,120 @@
+.Form {
+  position: relative;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.Form fieldset {
+  padding: 10px;
+}
+
+.Form .fieldsetUserData {
+  margin-bottom: 20px;
+}
+
+.Form .fieldContainer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2px 5px 2px 10px;
+  margin: 0 0 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: text;
+  font-weight: 600;
+}
+
+.Form .fieldContainer span {
+  min-width: max-content;
+  margin-right: 5px;
+}
+
+.Form .fieldEstado, .Form .fieldTipoResidencia {
+  cursor: default;
+}
+
+.Form input[type="text"], .Form select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+.Form .fieldTipoResidencia,
+.Form .fieldResumoCurriculo,
+.Form .fieldDescricaoCargo {
+  padding: 5px 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Form .fieldTipoResidencia span {
+  margin-bottom: 10px;
+}
+
+.Form .fieldTipoResidencia input {
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+}
+
+.Form .fieldTipoResidencia label {
+  cursor: pointer;
+}
+
+.Form .fieldResumoCurriculo textarea,
+.Form .fieldDescricaoCargo textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  outline: none;
+  border: none;
+  margin-top: 5px;
+}
+
+.Form .buttons-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Form .button {
+  display: inline-block;
+  background-color: rgb(225, 225, 225);
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.Form .button:hover {
+  opacity: 1;
+}
+
+.Form .btnSubmit {
+  background-color: rgb(170, 255, 70);
+}
+
+.Form .btnReset {
+  background-color: rgb(255, 80, 80);
+}
+
+.Form .highlightField {
+  border-color: transparent !important;
+  outline: 3px solid red;
+  animation: vibrate alternate 150ms linear infinite;
+}
+
+@keyframes vibrate {
+  from {
+    transform: translateX(-3px);
+  }
+  to {
+    transform: translateX(3px);
+  }
+}
