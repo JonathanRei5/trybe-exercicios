@@ -4,12 +4,14 @@ import {
   TOGGLE_SELECTED_TASK,
   TOGGLE_DONE_TASK,
   TOGGLE_INPROGRESS_TASK,
+  CHANGE_FILTER,
 } from '../actions';
 
 const INICIAL_STATE = {
   todoList: [],
   selectedTask: '',
   lastID: 0,
+  filter: 'all',
 }
 
 const reducerTodoList = (state = INICIAL_STATE, action) => {
@@ -58,6 +60,7 @@ const reducerTodoList = (state = INICIAL_STATE, action) => {
               return {
                 ...todo,
                 done: !todo.done,
+                inProgress: todo.done ? todo.inProgress : false,
               }
             }
             return todo;
@@ -75,12 +78,20 @@ const reducerTodoList = (state = INICIAL_STATE, action) => {
               return {
                 ...todo,
                 inProgress: !todo.inProgress,
+                done: todo.inProgress ? todo.done : false,
               }
             }
             return todo;
           })
         ]
       };
+    }
+
+    case CHANGE_FILTER: {
+      return {
+        ...state,
+        filter: action.filter,
+      }
     }
 
     default:
