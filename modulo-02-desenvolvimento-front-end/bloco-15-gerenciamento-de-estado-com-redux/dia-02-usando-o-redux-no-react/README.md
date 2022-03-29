@@ -1,4 +1,5 @@
 # Exercícios
+**React com Redux introdução**
 
 Você irá desenvolver 3 exercícios para solidificar seus conhecimentos de Redux com React.
    * No primeiro exercício, desenvolveremos um semáforo simples.
@@ -33,5 +34,29 @@ no estado de seu reduce, então certifique-se que ambos os componentes continuem
 ---
 
 _O código para esses exercícios foi fornecido pela Trybe eu desenvolvi a parte do Redux conforme solicitado nos exercícios._
+
+<br/>
+
+# BÔNUS
+**Todo List com Redux**
+
+Refatore a aplicação do Todo List.
+
+   * Os testes em redux não serão necessários nesse momento. Você aprenderá sobre eles ao longo do bloco.
+   * Adicione filtros para apresentar apenas as tarefas concluídas e outro para exibir as tarefas em progresso.
+   * Utilize Redux para armazenar todo o estado da aplicação.
+   * BÔNUS Implemente a função de desfazer ações. Ações são "adicionar item", "marcar como completo" e "marcar como em andamento".
+
+**Observação:** busque utilizar todos os conceitos, métodos e funcionalidades que você aprendeu.
+
+   * `Store`
+   * `connect`
+   * `mapStateToProps`
+   * `mapDispatchToProps`
+   * `reducers`
+   * `combineReducers`
+   * `actions`
+
+Existem várias boas práticas que podem ser adotadas durante os exercícios. Busque implementá-las.
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
