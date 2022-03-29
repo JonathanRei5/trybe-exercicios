@@ -79,43 +79,43 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 9.3: _Jest - Testes Assíncronos_
 - [X] 9.4: _[Projeto - Carrinho de Compras](https://JonathanRei5.github.io/trybe-projetos/shopping-cart/)_
 
-## Desenvolvimento Front-end :hourglass_flowing_sand:
+## [Desenvolvimento Front-end :hourglass_flowing_sand:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end)
 
-##### Bloco 10: Introdução à React
+##### [Bloco 10: Introdução à React](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-10-introducao-a-react)
 
 - [X] 10.1: _'Hello, world!' no React!_
 - [X] 10.2: _Componentes React_
 - [X] 10.3: _[Projeto - Sistema Solar](https://jonathanrei5.github.io/trybe-projetos/solar-system/)_
 
-##### Bloco 11: React
+##### [Bloco 11: Componentes com Estado, Eventos e Formulários com React](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-11-componentes-com-estado-eventos-e-formularios-com-react)
 
-- [ ] 11.1: _Components com estado_
-- [ ] 11.2: _Eventos e formulários no React_
-- [ ] 11.3: _[Projeto - Movie Cards Library Stateful]()_
+- [X] 11.1: _Componentes com estado e eventos_
+- [X] 11.2: _Formulários no React_
+- [X] 11.3: _[Projeto - Tryunfo](https://jonathanrei5.github.io/trybe-projetos/tryunfo/)_
 
-##### Bloco 12: React
+##### [Bloco 12: Ciclo de Vida de Componentes e React Router](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-12-ciclo-de-vida-de-componentes-e-react-router)
 
-- [ ] 12.1: _Melhorando o reuso de componentes: props.children e PropTypes_
-- [ ] 12.2: _Ciclo de vida de componentes em React_
-- [ ] 12.3: _React Router_
-- [ ] 12.4: _[Projeto - Movie Cards Library CRUD]()_
+- [X] 12.1: _Ciclo de vida de componentes_
+- [X] 12.2: _React Router_
+- [X] 12.3: _[Projeto - TrybeTunes]()_
 
-##### Bloco 13: Metodologias Ágeis
+##### [Bloco 13: Metodologias Ágeis](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-13-metodologias-ageis/dia-01-metodologias-ageis)
 
-- [ ] 13.1: _Metodologias Ágeis_
-- [ ] 13.2: _[Projeto - Frontend Online Store]()_
+- [X] 13.1: _Metodologias Ágeis_
+- [X] 13.2: _[Projeto - Frontend Online Store]()_
 
-##### Bloco 14: Testes em React
+##### [Bloco 14: Testes automatizados com React Testing Library](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-14-testes-automatizados-com-react-testing-library)
 
-- [ ] 14.1: _Testando React com a React Testing Library_
-- [ ] 14.2: _Testando React com a React Testing Library - Parte 2_
-- [ ] 14.3: _[Projeto - Testes em React]()_
+- [X] 14.1: _RTL - Primeiros passos_
+- [X] 14.2: _RTL - Mocks e Inputs_
+- [X] 14.3: _RTL - Testando React Router_
+- [X] 14.4: _[Projeto - Testes em React]()_
 
-##### Bloco 15: Introdução ao Redux
+##### [Bloco 15: Gerenciamento de estado com Redux](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-15-gerenciamento-de-estado-com-redux)
 
-- [ ] 15.1: _Introdução ao Redux_
-- [ ] 15.2: _React com Redux - Parte 1_
-- [ ] 15.3: _React com Redux - Prática_
+- [X] 15.1: _Introdução ao Redux - O estado global da aplicação_
+- [X] 15.2: _Usando o Redux no React_
+- [X] 15.3: _Usando o Redux no React - Prática_
 - [ ] 15.4: _React com Redux - Parte 2_
 - [ ] 15.5: _Testes síncronos com React-Redux_
 - [ ] 15.6: _[Projeto - Tabela com filtros de dados]()_
