@@ -1,0 +1,19 @@
+{
+  "name": "parte-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "@types/jest": "^27.4.1",
+    "node-fetch": "^2.6.7"
+  }
+}
