@@ -1,0 +1,10 @@
+.Header .pagesLinks {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.Header .pagesLinks li{
+  margin: 5px;
+}
