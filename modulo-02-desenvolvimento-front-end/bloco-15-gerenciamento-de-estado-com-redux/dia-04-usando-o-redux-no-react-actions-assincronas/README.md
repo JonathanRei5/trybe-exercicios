@@ -43,9 +43,9 @@ Então, a API está pronta, os componentes estão prontos, mas precisamos obter 
 
 2- Crie o `Reducer` que tratará as `actions` criadas no passo 1 e insira-o no `combineReducers`. ***Importante:*** a API retorna uma array com um único objeto, logo você precisa acessar a posição correta do array para, em seguida, se utilizar do objeto.
 
-3- Conecte a `action` a ser despachada no seu componente `SearchForm` e os `states` oriundos do reducer no componente characterInfo, bem como prepare o componente para exibir uma mensagem em caso de erro da API.
+3- Conecte a `action` a ser despachada no seu componente `SearchForm` e os `states` oriundos do reducer no componente `CharacterInfo`, bem como prepare o componente para exibir uma mensagem em caso de erro da API.
 
-4- Utilize a `Prop` importadas do seu `reducer` para renderizar o as informações na tela. Ao final, sua aplicação ficará mais ou menos assim:
+4- Utilize a `Prop` importada do seu `reducer` para renderizar as informações na tela.
 
 ---
 

@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
-import REQUEST_CHARACTER from '../actions';
-import GET_CHARACTER from '../actions';
-import FAILED_REQUEST from '../actions';
+import {
+  REQUEST_CHARACTER,
+  GET_CHARACTER,
+  FAILED_REQUEST
+} from '../actions';
 
 const INITIAL_STATE = {
   loading: false,
-  character: undefined,
-  error: undefined,
+  character: null,
+  error: null,
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -14,9 +16,9 @@ const reducer = (state = INITIAL_STATE, action) => {
     case REQUEST_CHARACTER:
       return { ...state, loading: true };
     case GET_CHARACTER:
-      return { ...state, loading: false, character: action.character };
+      return { ...state, loading: false, character: action.character[0] };
     case FAILED_REQUEST:
-      return { ...state, loading: false, error: action.error, character: undefined };
+      return { ...state, loading: false, error: action.error };
     default:
       return state;
   }

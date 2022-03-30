@@ -16,10 +16,10 @@ function failedRequest(error) {
   return { type: FAILED_REQUEST, error };
 }
 
-export function fetchCharacter() {
+export function fetchCharacter(char) {
   return (dispatch) => {
     dispatch(requestCharacter());
-    charAPI()
+    charAPI(char)
       .then((data) => dispatch(getCharacter(data)))
       .catch((error) => dispatch(failedRequest(error)));
   };
