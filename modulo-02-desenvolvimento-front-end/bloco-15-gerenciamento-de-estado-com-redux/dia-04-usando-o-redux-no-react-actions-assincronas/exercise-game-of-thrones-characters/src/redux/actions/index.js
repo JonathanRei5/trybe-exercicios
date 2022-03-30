@@ -1,8 +1,8 @@
 import charAPI from "../../services/charAPI";
 
-const REQUEST_CHARACTER = 'REQUEST_CHARACTER';
-const GET_CHARACTER = 'GET_CHARACTER';
-const FAILED_REQUEST = 'FAILED_REQUEST';
+export const REQUEST_CHARACTER = 'REQUEST_CHARACTER';
+export const GET_CHARACTER = 'GET_CHARACTER';
+export const FAILED_REQUEST = 'FAILED_REQUEST';
 
 function requestCharacter() {
   return { type: REQUEST_CHARACTER };
