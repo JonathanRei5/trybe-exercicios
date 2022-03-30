@@ -9,4 +9,10 @@ describe('Testando o App', () => {
     expect(screen.getAllByRole('button', { name: /Move/i }))
       .toHaveLength(3);
   });
+
+  test('Verifica se existe três carros na tela', () => {
+    renderWithRedux(<App />);
+    expect(screen.getAllByRole('img', { name: /car/i }))
+      .toHaveLength(3);
+  });
 });
