@@ -12,15 +12,15 @@ class Cars extends React.Component {
       <div>
         <div>
           <img className={redCar ? 'car-right' : 'car-left'} src={carRed} alt="red car" />
-          <button onClick={() => moveCar('red', !redCar)} type="button">move</button>
+          <button data-testid="carRed" onClick={() => moveCar('red', !redCar)} type="button">move</button>
         </div>
         <div>
           <img className={blueCar ? 'car-right' : 'car-left'} src={carBlue} alt="blue car" />
-          <button onClick={() => moveCar('blue', !blueCar)} type="button">move</button>
+          <button data-testid="carBlue" onClick={() => moveCar('blue', !blueCar)} type="button">move</button>
         </div>
         <div>
           <img className={yellowCar ? 'car-right' : 'car-left'} src={carYellow} alt="yellow car" />
-          <button onClick={() => moveCar('yellow', !yellowCar)} type="button">move</button>
+          <button data-testid="carYellow" onClick={() => moveCar('yellow', !yellowCar)} type="button">move</button>
         </div>
       </div>
     );
