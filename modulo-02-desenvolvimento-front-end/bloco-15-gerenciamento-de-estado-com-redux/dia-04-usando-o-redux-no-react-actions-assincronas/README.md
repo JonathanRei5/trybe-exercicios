@@ -2,8 +2,6 @@
 
 ## Exercícios Redux Thunk
 
-### Exercício 1
-
 Nesse exercício, utilizaremos [essa API](https://aws.random.cat/meow) para realizarmos nossas requisições. Vamos focar apenas no desenvolvimento de uma **action assíncrona** e na implementação do `thunk` na `store`. O `reducer`, 
 assim como os componentes da aplicação, já estão prontos. Desse modo, realizaremos modificações apenas nos arquivos `actions/index.js` e 
 `store/index.js`.
@@ -28,8 +26,6 @@ _Observação: Para essa aplicação, é necessário que o nome da action assín
 ---
 
 ## Exercício Game of Thrones Characters
-
-### Exercício 1
 
 Vamos fazer uma pequena aplicação que nos permitirá buscar informações sobre os personagens da famosa série de livros "As Crônicas de Gelo e Fogo", que gerou a famosa série _Game of Thrones_.
 
