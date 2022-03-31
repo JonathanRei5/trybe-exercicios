@@ -18,6 +18,7 @@ const reducerTodoList = (state = INICIAL_STATE, action) => {
   switch (action.type) {
     case ADD_TASK: {
       if (!action.task) return state;
+      if (state.todoList.some(({ task }) => task === action.task)) return state;
       return {
         ...state,
         todoList: [
