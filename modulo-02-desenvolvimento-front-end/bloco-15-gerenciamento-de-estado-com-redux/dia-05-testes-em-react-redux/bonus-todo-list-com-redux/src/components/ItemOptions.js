@@ -8,22 +8,18 @@ import {
 
 class ItemOptions extends Component {
   renderRemoveButton = () => {
-    const { todo, selectedTask, removeTask } = this.props;
+    const { todo, removeTask } = this.props;
     return (
-      <button
-        type="button"
-        onClick={() => { removeTask(todo.task); }}
-        hidden={selectedTask !== todo.task}
-      >
+      <button type="button" onClick={() => { removeTask(todo.task); }} >
         Remover
       </button>
     )
   }
 
   renderDoneInput = () => {
-    const { todo, selectedTask, toggleDoneTask } = this.props;
+    const { todo, toggleDoneTask } = this.props;
     return (
-      <label htmlFor={`input_doneTask_id_${todo.id}`} hidden={selectedTask !== todo.task}>
+      <label htmlFor={`input_doneTask_id_${todo.id}`}>
         Completa
         <input
           type="checkbox"
@@ -37,9 +33,9 @@ class ItemOptions extends Component {
   }
 
   renderInProgressInput = () => {
-    const { todo, selectedTask, toggleInProgressTask } = this.props;
+    const { todo, toggleInProgressTask } = this.props;
     return (
-      <label htmlFor={`input_inProgress_id_${todo.id}`} hidden={selectedTask !== todo.task}>
+      <label htmlFor={`input_inProgress_id_${todo.id}`}>
         Em Andamento
         <input
           type="checkbox"
@@ -52,14 +48,17 @@ class ItemOptions extends Component {
     )
   }
 
+  renderOptions = () => (
+    <div className="ItemOptions">
+      {this.renderRemoveButton()}
+      {this.renderDoneInput()}
+      {this.renderInProgressInput()}
+    </div>
+  )
+
   render() {
-    return (
-      <>
-        {this.renderRemoveButton()}
-        {this.renderDoneInput()}
-        {this.renderInProgressInput()}
-      </>
-    );
+    const { todo, selectedTask } = this.props;
+    return (todo.task === selectedTask) && this.renderOptions();
   }
 }
 
