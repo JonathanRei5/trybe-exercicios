@@ -1,13 +1,14 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderWithRedux from './helpers/renderWithRedux'
 import App from '../App';
-import Item from '../Item';
+import Item from '../components/Item';
 
 describe('Teste do campo de input', () => {
   test('Testando a adição de vários itens a aplicação', () => {
     const listTodo = ['Realizar CR', 'Ler Post no Medium', 'Beber água'];
-    render(<App />);
+    renderWithRedux(<App />);
     listTodo.forEach((todo) => {
       const taskInput = screen.getByLabelText(/Tarefa/);
       const button = screen.getByRole('button', { name: 'Adicionar' });
@@ -21,7 +22,7 @@ describe('Teste do campo de input', () => {
 describe('Teste do componente Item', () => {
   test('Ao receber uma string como prop ela precisa aparecer na tela', () => {
     const TASK = 'Uma tarefa qualquer.';
-    render(<Item content={ TASK } selectCallBack={ () => {} } />);
+    renderWithRedux(<Item content={TASK} selectCallBack={() => { }} />);
     expect(screen.getByText(TASK)).toBeInTheDocument();
   });
 });

@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import renderWithRedux from './helpers/renderWithRedux'
 import App from '../App';
 
 describe('Testando a aplicação, testando input', () => {
-  render(<App />);
+  renderWithRedux(<App />);
   const inputTask = screen.getByLabelText('Tarefa:');
   const labelTask = screen.getByText('Tarefa:');
 

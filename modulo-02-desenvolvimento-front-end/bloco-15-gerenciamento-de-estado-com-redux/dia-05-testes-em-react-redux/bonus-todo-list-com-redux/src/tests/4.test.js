@@ -1,18 +1,19 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderWithRedux from './helpers/renderWithRedux'
 import App from '../App';
 
 describe('Testando funcionalidade de apagar item selecionado', () => {
   test(`Não deve haver botões de remover
         após a primeira renderização da página`, () => {
-    render(<App />);
+    renderWithRedux(<App />);
     const btnRemove = screen.queryByTestId('id-remove');
     expect(btnRemove).not.toBeInTheDocument();
   });
 
   test('Testando a seleção de elemento', async () => {
-    render(<App />);
+    renderWithRedux(<App />);
     const inputTask = screen.getByLabelText('Tarefa:');
     const btnAdd = screen.getByText('Adicionar');
 

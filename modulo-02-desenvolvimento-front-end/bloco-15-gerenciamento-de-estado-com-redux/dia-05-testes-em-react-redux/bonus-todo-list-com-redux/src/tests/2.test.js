@@ -1,12 +1,13 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import renderWithRedux from './helpers/renderWithRedux'
 import App from '../App';
 
 describe('Teste da aplicação, testando o botão e sua funcionalidade', () => {
   test(`Verificando se o botão está na tela
         e se o ele contém o texto "Adicionar"`, () => {
-    render(<App />);
+    renderWithRedux(<App />);
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
     expect(button).toHaveValue('Adicionar');
@@ -14,7 +15,7 @@ describe('Teste da aplicação, testando o botão e sua funcionalidade', () => {
 
   test(`Ao clicar no botão, é necessário adicionar
         o que o usuário digitou à lista`, () => {
-    render(<App />);
+    renderWithRedux(<App />);
     const button = screen.getByRole('button');
     const taskInput = screen.getByLabelText(/Tarefa/);
 
