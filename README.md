@@ -97,19 +97,19 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 12.1: _Ciclo de vida de componentes_
 - [X] 12.2: _React Router_
-- [X] 12.3: _[Projeto - TrybeTunes]()_
+- [X] 12.3: _Projeto - TrybeTunes_
 
 ##### [Bloco 13: Metodologias Ágeis](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-13-metodologias-ageis/dia-01-metodologias-ageis)
 
 - [X] 13.1: _Metodologias Ágeis_
-- [X] 13.2: _[Projeto - Frontend Online Store]()_
+- [X] 13.2: _Projeto - Frontend Online Store_
 
 ##### [Bloco 14: Testes automatizados com React Testing Library](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-14-testes-automatizados-com-react-testing-library)
 
 - [X] 14.1: _RTL - Primeiros passos_
 - [X] 14.2: _RTL - Mocks e Inputs_
 - [X] 14.3: _RTL - Testando React Router_
-- [X] 14.4: _[Projeto - Testes em React]()_
+- [X] 14.4: _Projeto - Testes em React_
 
 ##### [Bloco 15: Gerenciamento de estado com Redux](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-15-gerenciamento-de-estado-com-redux)
 
@@ -117,7 +117,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 15.2: _Usando o Redux no React_
 - [X] 15.3: _Usando o Redux no React - Prática_
 - [X] 15.4: _Usando o Redux no React - Actions Assíncronas_
-- [ ] 15.5: _Testes síncronos com React-Redux_
+- [X] 15.5: _Testes em React-Redux_
 - [ ] 15.6: _[Projeto - Tabela com filtros de dados]()_
 
 ##### Bloco 16: Projeto React
