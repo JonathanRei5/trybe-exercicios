@@ -22,7 +22,7 @@ describe('Teste do campo de input', () => {
 describe('Teste do componente Item', () => {
   test('Ao receber uma string como prop ela precisa aparecer na tela', () => {
     const TASK = 'Uma tarefa qualquer.';
-    renderWithRedux(<Item content={TASK} selectCallBack={() => { }} />);
+    renderWithRedux(<Item content={{ task: TASK }} selectCallBack={() => { }} />);
     expect(screen.getByText(TASK)).toBeInTheDocument();
   });
 });

@@ -12,7 +12,7 @@ describe('Testando funcionalidade de apagar item selecionado', () => {
     expect(btnRemove).not.toBeInTheDocument();
   });
 
-  test('Testando a seleção de elemento', async () => {
+  test('Testando a seleção de elemento', () => {
     renderWithRedux(<App />);
     const inputTask = screen.getByLabelText('Tarefa:');
     const btnAdd = screen.getByText('Adicionar');
@@ -22,14 +22,17 @@ describe('Testando funcionalidade de apagar item selecionado', () => {
     userEvent.type(inputTask, 'Estudar');
     userEvent.click(btnAdd);
 
-    const [btnRemove] = await screen.findAllByText('Remover');
     const selectTask = screen.getByText('Exercitar');
+    const removeButtons = screen.queryAllByText('Remover');
 
     expect(selectTask).toBeInTheDocument();
-    expect(btnRemove.disabled).toBe(true);
+    expect(removeButtons).toHaveLength(0);
+
     userEvent.click(selectTask);
-    expect(btnRemove.disabled).toBe(false);
-    userEvent.click(btnRemove);
+    const [removeButton] = screen.queryAllByText('Remover');
+    expect(removeButton).toBeInTheDocument();
+
+    userEvent.click(removeButton);
     expect(screen.queryByText('Exercitar')).not.toBeInTheDocument();
   });
 });
