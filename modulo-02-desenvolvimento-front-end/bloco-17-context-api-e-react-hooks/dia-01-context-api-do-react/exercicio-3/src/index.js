@@ -1,17 +1,16 @@
+// import { Provider } from 'react-redux';
+// import store from './store';
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-
-import App from './App';
-import store from './store';
-
 import RedditProvider from './context/redditProvider';
+import {renderWithConsumer} from './context/redditContext';
+import App from './App';
 
 render(
-  <Provider store={store}>
+  // <Provider store={store}>
     <RedditProvider>
-      <App />
-    </RedditProvider>
-  </Provider>,
+      {renderWithConsumer(App)}
+    </RedditProvider>,
+  // </Provider>
   document.getElementById('root'),
 );

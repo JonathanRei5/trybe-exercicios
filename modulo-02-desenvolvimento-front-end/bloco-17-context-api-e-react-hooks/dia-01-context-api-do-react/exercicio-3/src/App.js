@@ -1,49 +1,45 @@
+// import { connect } from 'react-redux';
+// import { selectSubreddit, fetchPostsIfNeeded, refreshSubreddit } from './actions';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import { selectSubreddit, fetchPostsIfNeeded, refreshSubreddit } from './actions';
 import Posts from './components/Posts';
 import Selector from './components/Selector';
-import redditContext from './context/redditContext';
 
 class App extends Component {
   componentDidMount() {
-    const { dispatch, selectedSubreddit } = this.props;
-    dispatch(fetchPostsIfNeeded(selectedSubreddit));
-    console.log('*** CONTEXT *** | ', this.context);
-    this.context.fetchPostsIfNeeded();
+    const {  selectedSubreddit, fetchPostsIfNeeded } = this.props;
+    fetchPostsIfNeeded(selectedSubreddit);
   }
 
   componentDidUpdate(prevProps) {
     const { props } = this;
     if (prevProps.selectedSubreddit !== props.selectedSubreddit) {
-      const { dispatch, selectedSubreddit } = props;
-      dispatch(fetchPostsIfNeeded(selectedSubreddit));
+      const { selectedSubreddit } = props;
+      props.fetchPostsIfNeeded(selectedSubreddit);
     }
   }
 
   selectSubreddit(nextSubreddit) {
-    const { dispatch } = this.props;
-    dispatch(selectSubreddit(nextSubreddit));
+    const { selectSubreddit } = this.props;
+    selectSubreddit(nextSubreddit);
   }
 
   handleRefreshClick(event) {
     event.preventDefault();
-
-    const { dispatch, selectedSubreddit } = this.props;
-    dispatch(refreshSubreddit(selectedSubreddit));
-    dispatch(fetchPostsIfNeeded(selectedSubreddit));
+    const { selectedSubreddit, fetchPostsIfNeeded } = this.props;
+    fetchPostsIfNeeded(selectedSubreddit, true);
   }
 
   renderLastUpdatedAt() {
-    const { lastUpdated } = this.props;
+    const { selectedSubreddit, postsBySubreddit } = this.props;
+    const { lastUpdated } = postsBySubreddit[selectedSubreddit];
 
     return <span>{`Last updated at ${new Date(lastUpdated).toLocaleTimeString()}.`}</span>;
   }
 
   renderRefreshButton() {
-    const { isFetching } = this.props;
+    const { selectedSubreddit, postsBySubreddit } = this.props;
+    const { isFetching } = postsBySubreddit[selectedSubreddit];
 
     return (
       <button
@@ -57,13 +53,9 @@ class App extends Component {
   }
 
   render() {
-    const {
-      availableSubreddits,
-      selectedSubreddit,
-      posts = [],
-      isFetching,
-      lastUpdated,
-    } = this.props;
+    const { selectedSubreddit, postsBySubreddit } = this.props;
+    const { isFetching, lastUpdated, items: posts } = postsBySubreddit[selectedSubreddit];
+    const availableSubreddits = Object.keys(postsBySubreddit);
 
     const isEmpty = posts.length === 0;
 
@@ -86,38 +78,29 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  const { selectedSubreddit, postsBySubreddit } = state;
-  const { isFetching, lastUpdated, items: posts } = postsBySubreddit[selectedSubreddit];
-
-  return {
-    selectedSubreddit,
-    posts,
-    isFetching,
-    lastUpdated,
-    availableSubreddits: Object.keys(postsBySubreddit),
-  };
-};
-
-App.contextType = redditContext;
-
 App.propTypes = {
-  availableSubreddits: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  dispatch: PropTypes.func.isRequired,
-  isFetching: PropTypes.bool.isRequired,
-  lastUpdated: PropTypes.number,
-  posts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    }),
-  ),
+  postsBySubreddit: PropTypes.shape({
+   frontend: PropTypes.shape({}).isRequired,
+   reactjs: PropTypes.shape({}).isRequired,
+  }).isRequired,
   selectedSubreddit: PropTypes.string.isRequired,
+  fetchPostsIfNeeded: PropTypes.func.isRequired,
+  selectSubreddit: PropTypes.func.isRequired,
 };
 
-App.defaultProps = {
-  lastUpdated: null,
-  posts: [],
-};
+export default App;
 
-export default connect(mapStateToProps)(App);
+// const mapStateToProps = (state) => {
+//   const { selectedSubreddit, postsBySubreddit } = state;
+//   const { isFetching, lastUpdated, items: posts } = postsBySubreddit[selectedSubreddit];
+
+//   return {
+//     selectedSubreddit,
+//     posts,
+//     isFetching,
+//     lastUpdated,
+//     availableSubreddits: Object.keys(postsBySubreddit),
+//   };
+// };
+
+// export default connect(mapStateToProps)(App);
