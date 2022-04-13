@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,6 +5,7 @@ import { connect } from 'react-redux';
 import { selectSubreddit, fetchPostsIfNeeded, refreshSubreddit } from './actions';
 import Posts from './components/Posts';
 import Selector from './components/Selector';
+import redditContext from './context/redditContext';
 
 class App extends Component {
   componentDidMount() {
@@ -16,6 +15,7 @@ class App extends Component {
 
   componentDidUpdate(prevProps) {
     const { props } = this;
+    console.log('*** CONTEXT *** | ', this.context);
 
     if (prevProps.selectedSubreddit !== props.selectedSubreddit) {
       const { dispatch, selectedSubreddit } = props;
@@ -98,6 +98,8 @@ const mapStateToProps = (state) => {
     availableSubreddits: Object.keys(postsBySubreddit),
   };
 };
+
+App.contextType = redditContext;
 
 App.propTypes = {
   availableSubreddits: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,

@@ -4,6 +4,7 @@ import selectedSubreddit from './selectedSubreddit';
 
 const rootReducer = combineReducers({
   postsBySubreddit,
-  selectedSubreddit});
+  selectedSubreddit
+});
 
 export default rootReducer;
