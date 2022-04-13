@@ -11,12 +11,12 @@ class App extends Component {
   componentDidMount() {
     const { dispatch, selectedSubreddit } = this.props;
     dispatch(fetchPostsIfNeeded(selectedSubreddit));
+    console.log('*** CONTEXT *** | ', this.context);
+    this.context.fetchPostsIfNeeded();
   }
 
   componentDidUpdate(prevProps) {
     const { props } = this;
-    console.log('*** CONTEXT *** | ', this.context);
-
     if (prevProps.selectedSubreddit !== props.selectedSubreddit) {
       const { dispatch, selectedSubreddit } = props;
       dispatch(fetchPostsIfNeeded(selectedSubreddit));

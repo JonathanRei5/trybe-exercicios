@@ -58,36 +58,33 @@ class RedditProvider extends React.Component {
     }
   }));
 
-  fetchPosts(subreddit) {
+  fetchPosts = () => {
     const {selectedSubreddit} = this.state;
     this.requestPosts(selectedSubreddit);
     getPostsBySubreddit(selectedSubreddit)
     .then(
-      (posts) => this.receivePostsSuccess(subreddit, posts),
-      (error) => this.receivePostsFailure(subreddit, error.message),
+      (posts) => this.receivePostsSuccess(selectedSubreddit, posts),
+      (error) => this.receivePostsFailure(selectedSubreddit, error.message),
     );
   }
   
   shouldFetchPosts = () => {
-    const {selectedSubreddit} = this.state;
-    const {[selectedSubreddit]: posts} = this.state;
-  
+    const {selectedSubreddit, [selectedSubreddit]: posts} = this.state;
     if (!posts.items) return true;
     if (posts.isFetching) return false;
     return posts.shouldRefreshSubreddit;
   };
   
-  fetchPostsIfNeeded() {
-    if(this.shouldFetchPosts()) this.fetchPosts();
-  }
+  fetchPostsIfNeeded = () => { if(this.shouldFetchPosts()) this.fetchPosts(); }
 
   render(){
     const {Provider} = redditContext;
     const {children} = this.props;
+    const contextValue = { ...this.state, fetchPostsIfNeeded: this.fetchPostsIfNeeded };
     return (
-        <Provider value={{...this.state}}>
-          {children}
-        </Provider>
+      <Provider value={contextValue}>
+        {children}
+      </Provider>
     )
   }
 }
