@@ -22,4 +22,12 @@ O funcionamento dos dois componentes DEVE se manter o mesmo.
 
 Nesse exercício toda a estrutura de Redux já está pronta, você precisará refatorar a estrutura dele para Context API.
 
+---
+
+## Exercício 3 
+
+Refatore o exercício sobre o Reddit, modifique a aplicação para utilizar Context API para gerenciar o estado no lugar de Redux.
+
+---
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
