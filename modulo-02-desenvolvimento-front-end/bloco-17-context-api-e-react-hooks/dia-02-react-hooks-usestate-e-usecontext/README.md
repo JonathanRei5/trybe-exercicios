@@ -16,4 +16,10 @@ Nesse exercício toda a estrutura de Context API já está pronta, você precisa
 
 ---
 
+## Exercício 3
+
+Refatore a aplicação Tic Tac Toe do dia 14.1, também substituindo toda a lógica de classes para a lógica de _React Hooks_, deixando todos os componentes funcionais. Aproveite que ela possui testes e veja como é prático refatorar uma aplicação que já foi testada!
+
+---
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
