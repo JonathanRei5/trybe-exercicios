@@ -1,6 +1,6 @@
 import React from 'react';
 import GameBoard from './GameBoard';
-import './TicTacToe.css';
+import '../styles/TicTacToe.css';
 
 class TicTacToe extends React.Component {
   constructor(props) {

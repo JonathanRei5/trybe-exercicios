@@ -1,6 +1,6 @@
 import React from 'react';
-import TicTacToe from './TicTacToe';
-import './App.css';
+import TicTacToe from './components/TicTacToe';
+import './styles/App.css';
 
 function App() {
   return <TicTacToe />;

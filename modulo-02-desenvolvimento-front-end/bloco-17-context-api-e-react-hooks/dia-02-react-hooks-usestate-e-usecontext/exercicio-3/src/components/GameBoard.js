@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GameCell from './GameCell';
-import './GameBoard.css';
+import '../styles/GameBoard.css';
 
 class GameBoard extends React.Component {
   render() {

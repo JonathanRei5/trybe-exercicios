@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import xImage from './x.png';
-import oImage from './o.svg';
-import './GameCell.css';
+import xImage from '../images/x.png';
+import oImage from '../images/o.svg';
+import '../styles/GameCell.css';
 
 class GameCell extends React.Component {
     handleOnKeyDown = ({ code }) => {
