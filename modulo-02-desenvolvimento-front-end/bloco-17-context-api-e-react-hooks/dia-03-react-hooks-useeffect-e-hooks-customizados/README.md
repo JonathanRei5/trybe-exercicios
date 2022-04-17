@@ -8,6 +8,8 @@ _O código para esse exercício foi fornecido pela Trybe eu refatorei conforme p
 
 ## Exercício 2
 
-* 2.1: Utilize o hook useState para conectar um campo de formulário com o componente React. Siga as instruções que estão no código do arquivo App.js
+* 2.1: utilize o hook useState para conectar um campo de formulário com o componente React. Siga as instruções que estão no código do arquivo App.js
+
+* 2.2: utilize o hook useEffect para atualizar o localStorage com base nas alterações do estado do componente. Siga as instruções que estão no código do arquivo App.js
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
