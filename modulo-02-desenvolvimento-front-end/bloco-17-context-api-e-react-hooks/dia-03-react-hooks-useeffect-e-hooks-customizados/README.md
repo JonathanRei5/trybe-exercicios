@@ -14,4 +14,6 @@ _O código para esse exercício foi fornecido pela Trybe eu refatorei conforme p
 
 * 2.3: siga as instruções que estão no código do arquivo App.js para criar uma pequena aplicação que exibe o nome e o animal favorito de uma pessoa
 
+_O código para esse exercício foi fornecido pela Trybe eu refatorei conforme pede o exercício_
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
