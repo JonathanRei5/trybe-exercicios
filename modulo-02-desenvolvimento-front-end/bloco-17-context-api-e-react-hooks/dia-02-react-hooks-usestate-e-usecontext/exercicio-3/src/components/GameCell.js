@@ -4,34 +4,29 @@ import xImage from '../images/x.png';
 import oImage from '../images/o.svg';
 import '../styles/GameCell.css';
 
-class GameCell extends React.Component {
-    handleOnKeyDown = ({ code }) => {
-      const { onClick } = this.props;
-      if (code === 'Enter'
+function GameCell({ id, onClick, content }) {
+  const handleOnKeyDown = ({ code }) => {
+    if (code === 'Enter'
           || code === 'NumpadEnter'
           || code === 'Space') {
-        onClick();
-      }
-    };
-
-    render() {
-      const { id, onClick, content } = this.props;
-
-      return (
-        <div
-          key={ id }
-          data-testid={ `cell_${id}` }
-          className="game-cell"
-          onClick={ onClick }
-          onKeyDown={ this.handleOnKeyDown }
-          role="button"
-          tabIndex={ 0 }
-        >
-          {content === 1 && <img src={ xImage } alt="Símbolo X" />}
-          {content === 2 && <img src={ oImage } alt="Símbolo O" />}
-        </div>
-      );
+      onClick();
     }
+  };
+
+  return (
+    <div
+      key={ id }
+      data-testid={ `cell_${id}` }
+      className="game-cell"
+      onClick={ onClick }
+      onKeyDown={ handleOnKeyDown }
+      role="button"
+      tabIndex={ 0 }
+    >
+      {content === 1 && <img src={ xImage } alt="Símbolo X" />}
+      {content === 2 && <img src={ oImage } alt="Símbolo O" />}
+    </div>
+  );
 }
 
 GameCell.propTypes = {

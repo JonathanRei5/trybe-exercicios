@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import GameBoard from './GameBoard';
 import '../styles/TicTacToe.css';
 
-class TicTacToe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activePlayer: 1,
-      gameBoard: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      filledCells: 0,
-      winner: '',
-    };
-  }
+function TicTacToe() {
+  const [state, setState] = useState({
+    activePlayer: 1,
+    gameBoard: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    filledCells: 0,
+    winner: '',
+  });
 
-  checkLineWinner = (gameBoard) => {
+  const checkLineWinner = (gameBoard) => {
     const lastLine = 6;
     const totalColumns = 3;
     for (let line = 0; line <= lastLine; line += totalColumns) {
@@ -25,9 +22,9 @@ class TicTacToe extends React.Component {
       if (lineCells === '222') return 'O';
     }
     return '';
-  }
+  };
 
-  checkColumnWinner = (gameBoard) => {
+  const checkColumnWinner = (gameBoard) => {
     const lastLine = 6;
     const totalColumns = 3;
     for (let column = 0; column < totalColumns; column += 1) {
@@ -39,9 +36,9 @@ class TicTacToe extends React.Component {
       if (columnCells === '222') return 'O';
     }
     return '';
-  }
+  };
 
-  checkDiagonalWinner = (gameBoard) => {
+  const checkDiagonalWinner = (gameBoard) => {
     const totalCells = gameBoard.length;
     const totalColumns = 3;
     let diagonalCells = '';
@@ -60,71 +57,74 @@ class TicTacToe extends React.Component {
     if (diagonalCells === '222') return 'O';
 
     return '';
-  }
+  };
 
-  checkWinner = () => {
-    const { gameBoard } = this.state;
-    let winner = this.checkLineWinner(gameBoard);
+  const checkWinner = () => {
+    const { gameBoard } = state;
+    let winner = checkLineWinner(gameBoard);
     if (winner) return winner;
-    winner = this.checkColumnWinner(gameBoard);
+    winner = checkColumnWinner(gameBoard);
     if (winner) return winner;
-    return this.checkDiagonalWinner(gameBoard);
-  }
+    return checkDiagonalWinner(gameBoard);
+  };
 
-  updateGame = (index) => {
-    const { activePlayer, gameBoard, filledCells } = this.state;
-    let { winner } = this.state;
+  const updateGame = (index) => {
+    const {
+      activePlayer, gameBoard, filledCells, winner,
+    } = state;
     if (gameBoard[index] !== 0) return;
     if (winner) return;
     const newGameBoard = [...gameBoard];
     newGameBoard[index] = activePlayer;
 
-    this.setState({
+    setState({
+      ...state,
       activePlayer: activePlayer === 1 ? 2 : 1,
       gameBoard: newGameBoard,
       filledCells: filledCells + 1,
-    }, () => {
-      winner = this.checkWinner();
-      if (winner) this.setState({ winner });
     });
-  }
+  };
 
-  restartGame = () => {
-    this.setState({
+  const restartGame = () => {
+    setState({
       activePlayer: 1,
       gameBoard: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       filledCells: 0,
       winner: '',
     });
-  }
+  };
 
-  redenderRestartButton = () => (
+  const redenderRestartButton = () => (
     <button
       type="button"
       className="btnRestartGame"
-      onClick={ this.restartGame }
+      onClick={ restartGame }
     >
       Reiniciar
     </button>
-  )
+  );
 
-  render() {
-    const { gameBoard, winner, filledCells } = this.state;
-    let messageElement = null;
-    if (winner) {
-      messageElement = <p className="endGameMessage">{`Player ${winner} Ganhou`}</p>;
-    } else if (gameBoard.length === filledCells) {
-      messageElement = <p className="endGameMessage">Empate</p>;
-    }
-    return (
-      <div className="TicTacToe">
-        <GameBoard gameState={ gameBoard } updateGame={ this.updateGame } />
-        {messageElement && <p className="endGameMessage">Fim de jogo</p>}
-        {messageElement}
-        {this.redenderRestartButton()}
-      </div>
-    );
+  useEffect(() => {
+    const winner = checkWinner();
+    if (winner) setState({ ...state, winner });
+  }, [state.filledCells]);
+
+  const { gameBoard, winner, filledCells } = state;
+  let messageElement = null;
+  if (winner) {
+    messageElement = <p className="endGameMessage">{`Player ${winner} Ganhou`}</p>;
+  } else if (gameBoard.length === filledCells) {
+    messageElement = <p className="endGameMessage">Empate</p>;
   }
+
+  return (
+    <div className="TicTacToe">
+      <GameBoard gameState={ gameBoard } updateGame={ updateGame } />
+      {messageElement && <p className="endGameMessage">Fim de jogo</p>}
+      {messageElement}
+      {redenderRestartButton()}
+    </div>
+  );
 }
 
 export default TicTacToe;
