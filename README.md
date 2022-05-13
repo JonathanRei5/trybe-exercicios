@@ -79,7 +79,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 9.3: _Jest - Testes Assíncronos_
 - [X] 9.4: _[Projeto - Carrinho de Compras](https://JonathanRei5.github.io/trybe-projetos/shopping-cart/)_
 
-## [Desenvolvimento Front-end :hourglass_flowing_sand:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end)
+## [Desenvolvimento Front-end :heavy_check_mark:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end)
 
 ##### [Bloco 10: Introdução à React](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-02-desenvolvimento-front-end/bloco-10-introducao-a-react)
 
@@ -129,17 +129,17 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 17.1: _Context API do React_
 - [X] 17.2: _React Hooks - useState e useContext_
 - [X] 17.3: _React Hooks - useEffect e Hooks customizados_
-- [ ] 17.4: _Projeto - StarWars Datatable com Context API e Hooks_
+- [X] 17.4: _Projeto - StarWars Datatable com Context API e Hooks_
 
 ##### Bloco 18: Projeto Final de Front-end
 
-- [ ] 18.1: _[Projeto - App de Receitas]()_
+- [X] 18.1: _Projeto - App de Receitas_
 
-## Desenvolvimento Back-end :hourglass_flowing_sand:
+## [Desenvolvimento Back-end :hourglass_flowing_sand:](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end)
 
-##### Bloco 19: Introdução - Bancos de dados relacionais
+##### [Bloco 19: Docker: Utilizando Containers](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-19-docker-utilizando-containers)
 
-- [ ] 19.1: _Banco de dados SQL_
+- [X] 19.1: _Introdução - Back-end_
 - [ ] 19.2: _Encontrando dados em um banco de dados_
 - [ ] 19.3: _Filtrando dados de forma específica_
 - [ ] 19.4: _Manipulando tabelas_
