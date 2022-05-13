@@ -28,6 +28,6 @@ Vamos juntar tudo o que aprendemos até aqui e exercitar mais ainda nosso aprend
 
 13. [BÔNUS] Crie e rode de modo interativo em modo 'Cleanup', a imagem andrius/ascii-patrol.
 
-14. [BÔNUS] **Encerre o contêiner utilizando os botões [ctrl] + [c].
+14. [BÔNUS] Encerre o contêiner utilizando os botões [ctrl] + [c].
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
