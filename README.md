@@ -139,7 +139,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### [Bloco 19: Docker: Utilizando Containers](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-19-docker-utilizando-containers)
 
-- [X] 19.1: _Introdução - Back-end_
+- [X] 19.1: _Utilizando Containers - Docker_
 - [ ] 19.2: _Encontrando dados em um banco de dados_
 - [ ] 19.3: _Filtrando dados de forma específica_
 - [ ] 19.4: _Manipulando tabelas_
