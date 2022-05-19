@@ -12,6 +12,8 @@ services:
       - "3306:3306"
     volumes:
       - ./mysql:/var/lib/mysql:rw
+    networks:
+      - "my-network"
   ghost:
     image: ghost:1-alpine
     ports:
@@ -24,3 +26,9 @@ services:
       database__connection__password: Senha_Segura_:)
     depends_on:
       - mysql
+    networks:
+      - "my-network"
+
+networks:
+  my-network:
+    driver: bridge
