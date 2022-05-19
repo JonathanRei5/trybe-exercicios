@@ -10,6 +10,8 @@ services:
       MYSQL_DATABASE: ghostDB
     ports:
       - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql:rw
   ghost:
     image: ghost:1-alpine
     ports:
