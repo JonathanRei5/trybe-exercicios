@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: Senha_Segura_:)
+      MYSQL_USER: Jonathan
+      MYSQL_PASSWORD: Senha_Segura_:)
+      MYSQL_DATABASE: ghostDB
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql:rw
+    networks:
+      - "my-network"
+  ghost:
+    image: ghost:1-alpine
+    ports:
+      - "2368:2368"
+    environment:
+      database__client: mysql
+      database__connection__database: ghostDB
+      database__connection__host: mysql
+      database__connection__user: Jonathan
+      database__connection__password: Senha_Segura_:)
+    depends_on:
+      - mysql
+    networks:
+      - "my-network"
+
+networks:
+  my-network:
+    driver: bridge

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  react-in-docker:
+    build: .
+    container_name: react-in-docker
+    ports:
+      - 8080:3000
