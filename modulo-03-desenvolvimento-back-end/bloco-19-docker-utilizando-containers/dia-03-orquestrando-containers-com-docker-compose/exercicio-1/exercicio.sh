@@ -27,15 +27,19 @@ sleep $WAIT
 
 echo -e "\nListando os containers para obtendo o id do container httpd:2.4"
 docker container ls
+sleep $WAIT
 
 echo -e "\nVerificando o volume do container no Docker Host"
 docker container inspect server_missao_trybe | egrep Source
+sleep $WAIT
 
 echo -e "\nParando o container"
 docker container stop server_missao_trybe
+sleep $WAIT
 
 echo -e "\nExcluindo o container"
 docker container rm server_missao_trybe
+sleep $WAIT
 
 echo -e "\nVerificando se a pasta permanece no mesmo lugar"
 if [ -d htdocs ]; then
@@ -44,9 +48,12 @@ if [ -d htdocs ]; then
 else 
   echo "A pasta não permanece no mesmo lugar"
 fi
+sleep $WAIT
 
 echo -e "\nObtendo o IMAGE ID do servidor"
 docker images -q httpd:2.4
+sleep $WAIT
 
 echo -e "\nExcluindo a imagem"
 docker image rm -f $(docker images -q httpd:2.4)
+sleep $WAIT
