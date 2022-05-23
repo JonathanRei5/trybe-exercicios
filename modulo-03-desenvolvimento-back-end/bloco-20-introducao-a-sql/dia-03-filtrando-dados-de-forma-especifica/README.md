@@ -70,16 +70,61 @@ INSERT INTO Vendas(fornecimento, quantity, order_date)
 
 1. Vamos lá! Faça uma consulta que retorne todas as peças que começam com as letras GR.
 
+   __*Resposta:*__
+   ```SQL
+   SELECT * FROM PecasFornecedores.Pecas
+   WHERE name LIKE 'Gr%';
+   ```
+
 2. Agora, escreva uma query para mostrar todos os fornecimentos que contenham a peça com code 2. Organize o resultado por ordem alfabética de fornecedor.
+
+   __*Resposta:*__
+   ```SQL
+   SELECT * FROM PecasFornecedores.Fornecimentos
+   WHERE peca=2
+   ORDER BY Fornecedor;
+   ```
 
 3. Em seguida, faça uma consulta para exibir as peças, preço e fornecedor de todos os fornecimentos em que o código do fornecedor tenha a letra N.
 
+   __*Resposta:*__
+   ```SQL
+   SELECT peca, preco, fornecedor FROM PecasFornecedores.Fornecimentos
+   WHERE fornecedor LIKE '%N%';
+   ```
+
 4. Avante, falta pouco! Escreva uma query para exibir todas as informações dos fornecedores que são empresas limitadas (LTDA). Ordene esses resultados em ordem alfabética decrescente.
+
+   __*Resposta:*__
+   ```SQL
+   SELECT * FROM PecasFornecedores.Fornecedores
+   WHERE name LIKE '%LTDA'
+   ORDER BY name DESC;
+   ```
 
 5. Agora, faça uma consulta para exibir o número de empresas (fornecedores) que contém a letra F no código.
 
+   __*Resposta:*__
+   ```SQL
+   SELECT COUNT(*) FROM PecasFornecedores.Fornecedores
+   WHERE code LIKE '%F%';
+   ```
+
 6. Quase lá! Agora escreva uma query para exibir os fornecimentos onde as peças custam mais de R$15,00 e menos de $40,00. Ordene os resultados por ordem crescente.
 
+   __*Resposta:*__
+   ```SQL
+   SELECT * FROM PecasFornecedores.Fornecimentos
+   WHERE Preco>15 AND Preco<40
+   ORDER BY Preco;
+   ```
+
 7. Ufa! Por fim, faça uma query para exibir o número de vendas feitas entre o dia 15/04/2018 e o dia 30/07/2019.
+
+   __*Resposta:*__
+   ```SQL
+   SELECT COUNT(*) FROM PecasFornecedores.Vendas
+   WHERE order_date BETWEEN '2018/04/15' AND '2019/07/30';
+   ```
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
