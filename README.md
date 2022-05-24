@@ -144,11 +144,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 19.3: _Orquestrando Containers com Docker Compose_
 - [X] 19.4: _Projeto - Docker Todo-List_
 
-##### Bloco 20: Bancos de dados relacionais
+##### [Bloco 20: Introdução à SQL](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-20-introducao-a-sql)
 
-- [ ] 20.1: _Funções mais usadas no SQL_
-- [ ] 20.2: _Descomplicando JOINs e UNIONs_
-- [ ] 20.3: _Stored Routines & Subqueries_
+- [X] 20.1: _Banco de dados SQL_
+- [X] 20.2: _Encontrando dados em um banco de dados_
+- [X] 20.3: _Filtrando dados de forma específica_
 - [ ] 20.4: _[Projeto - Vocabulary Booster]()_
 
 ##### Bloco 21: Bancos de dados relacionais
