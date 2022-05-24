@@ -73,7 +73,7 @@ INSERT INTO Vendas(fornecimento, quantity, order_date)
    __*Resposta:*__
    ```SQL
    SELECT * FROM PecasFornecedores.Pecas
-   WHERE name LIKE 'Gr%';
+   WHERE name LIKE 'GR%';
    ```
 
 2. Agora, escreva uma query para mostrar todos os fornecimentos que contenham a peça com code `2`. Organize o resultado por ordem alfabética de fornecedor.
