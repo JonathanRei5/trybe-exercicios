@@ -125,8 +125,32 @@ __Exercício 7:__ Exclua da tabela `Movies` todos os filmes dirigidos por "Andre
 
 __Exercício 8:__ Altere a classificação da tabela BoxOffice para 9.0 de todos os filmes que lucraram mais de 400 milhões no mercado interno.
 
+   __*Resposta:*__
+   ```SQL
+   UPDATE Pixar.BoxOffice
+   SET rating = 9.0
+   WHERE movie_id IN (6,10) AND domestic_sales > 400000000;
+   ```
+
 __Exercício 9:__ Altere a classificação da tabela BoxOffice para 6.0 de todos os filmes que lucraram menos de 300 milhões no mercado internacional e mais de 200 milhões no mercado interno.
 
+   __*Resposta:*__
+   ```SQL
+   UPDATE Pixar.BoxOffice
+   SET rating = 6.0
+   WHERE movie_id IN (3,7,8)
+   AND international_sales < 300000000
+   AND domestic_sales > 200000000;
+   ```
+
 __Exercício 10:__ Exclua da tabela Movies todos os filmes com menos de 100 minutos de duração.
+
+   __*Resposta:*__
+   ```SQL
+   DELETE FROM Pixar.BoxOffice
+   WHERE movie_id IN (1,6,7,8);
+   DELETE FROM Pixar.Movies
+   WHERE id IN (1,6,7,8) AND length_minutes < 100;
+   ```
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
