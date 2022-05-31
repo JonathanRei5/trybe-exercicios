@@ -89,28 +89,78 @@ __Instruções de como restaurar o banco de dados__
 
 10. Escreva um query que exiba média salarial e o número de funcionários de todos os departamentos com mais de dez funcionários. Dica: agrupe pelo `DEPARTMENT_ID`.
 
-   __*Resposta:*__
-   ```SQL
-   SELECT AVG(`SALARY`) AS `AVG SALARY`, COUNT(`EMPLOYEE_ID`) AS `TOTAL EMPLOYEES`
-   FROM `hr`.`employees`
-   GROUP BY `DEPARTMENT_ID`
-   HAVING `TOTAL EMPLOYEES` > 10;
-   ```
+    __*Resposta:*__
+    ```SQL
+    SELECT AVG(`SALARY`) AS `AVG SALARY`, COUNT(`EMPLOYEE_ID`) AS `TOTAL EMPLOYEES`
+    FROM `hr`.`employees`
+    GROUP BY `DEPARTMENT_ID`
+    HAVING `TOTAL EMPLOYEES` > 10;
+    ```
 
 11. Escreva uma query que atualize a coluna `PHONE_NUMBER`, de modo que todos os telefones iniciados por `515` agora devem iniciar com `777`.
 
+    __*Resposta:*__
+    ```SQL
+    UPDATE `hr`.`employees`
+    SET `PHONE_NUMBER` = CONCAT('777', SUBSTRING(`PHONE_NUMBER`, 4))
+    WHERE LEFT(`PHONE_NUMBER`, 3) = '515';
+    ```
+
 12. Escreva uma query que só exiba as informações dos funcionários cujo o primeiro nome tenha oito ou mais caracteres.
+
+    __*Resposta:*__
+    ```SQL
+    SELECT * FROM `hr`.`employees`
+    WHERE CHAR_LENGTH(`FIRST_NAME`) >= 8;
+    ```
 
 13. Escreva uma query que exiba as seguintes informações de cada funcionário: `id`, `primeiro nome` e `ano no qual foi contratado` (exiba somente o ano).
 
+    __*Resposta:*__
+    ```SQL
+    SELECT `EMPLOYEE_ID`, `FIRST_NAME`, YEAR(`HIRE_DATE`)
+    FROM `hr`.`employees`;
+    ```
+
 14. Escreva uma query que exiba as seguintes informações de cada funcionário: `id`, `primeiro nome` e `dia do mês no qual foi contratado` (exiba somente o dia).
+
+    __*Resposta:*__
+    ```SQL
+    SELECT `EMPLOYEE_ID`, `FIRST_NAME`, DAYOFMONTH(`HIRE_DATE`)
+    FROM `hr`.`employees`;
+    ```
 
 15. Escreva uma query que exiba as seguintes informações de cada funcionário: `id`, `primeiro nome` e `mês no qual foi contratado` (exiba somente o mês).
 
+    __*Resposta:*__
+    ```SQL
+    SELECT `EMPLOYEE_ID`, `FIRST_NAME`, MONTH(`HIRE_DATE`)
+    FROM `hr`.`employees`;
+    ```
+
 16. Escreva uma query que exiba os nomes dos funcionários em letra maiúscula.
+
+    __*Resposta:*__
+    ```SQL
+    SELECT UPPER(CONCAT(`FIRST_NAME`,' ',`LAST_NAME`)) AS `NAME`
+    FROM `hr`.`employees`;
+    ```
 
 17. Escreva uma query que exiba o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987.
 
+    __*Resposta:*__
+    ```SQL
+    SELECT `LAST_NAME`, `HIRE_DATE` FROM `hr`.`employees`
+    WHERE YEAR(`HIRE_DATE`) = 1987
+    AND MONTH(`HIRE_DATE`) = 7;
+    ```
+
 18. Escreva uma query que exiba as seguintes informações de cada funcionário: `nome`, `sobrenome`, `tempo que trabalha na empresa (em dias)`.
+
+    __*Resposta:*__
+    ```SQL
+    SELECT `FIRST_NAME`, `LAST_NAME`, DATEDIFF(CURRENT_DATE(), `HIRE_DATE`)
+    FROM `hr`.`employees`;
+    ```
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
