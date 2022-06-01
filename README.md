@@ -155,9 +155,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### [Bloco 21: Funções SQL, JOINs e Normalização](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-21-funcoes-sql-joins-e-normalizacao)
 
 - [X] 21.1: _Funções mais usadas no SQL_
-- [ ] 21.2: _Normalização, Formas Normais e Dumps_
-- [ ] 21.2: _Transformando ideias em um modelo de banco de dados - Parte 2_
-- [ ] 21.3: _[Projeto - One For All]()_
+- [X] 21.2: _Descomplicando JOINs_
+- [ ] 21.3: _Transformando ideias em um modelo de banco de dados_
+- [ ] 21.4: _[Projeto - One For All]()_
 
 ##### Bloco 22: Introdução - NoSQL
 
