@@ -1,6 +1,6 @@
 # Exercícios
 
-Faça os exercícios 1 a 5 utilizando banco de dados Pixar abaixo:
+Faça os exercícios 1 a 6 utilizando banco de dados Pixar abaixo:
 
 ```SQL
 DROP SCHEMA IF EXISTS Pixar;
@@ -120,6 +120,21 @@ INSERT INTO BoxOffice(movie_id, rating, domestic_sales, international_sales)
    RIGHT JOIN `Pixar`.`Movies` AS `m`
    ON `t`.`id` = `m`.`theater_id`
    ORDER BY `t`.`name`;
+   ```
+
+6. Utilizando o `INNER JOIN`, selecione todas as informações dos filmes que estão em cartaz (possuem `theater_id` diferente de `NULL`) com avaliação maior que 8.
+
+   __*Resposta:*__
+   ```SQL
+   SELECT `m`.`id`, `m`.`title`, `m`.`director`, `m`.`year`, `m`.`length_minutes`,
+   `t`.`name`, `t`.`location`,
+   `bo`.`rating`, `bo`.`domestic_sales`, `bo`.`international_sales`
+   FROM `Pixar`.`Movies` AS `m`
+   INNER JOIN `Pixar`.`Theater` AS `t`
+   INNER JOIN `Pixar`.`BoxOffice` AS `bo`
+   ON `m`.`theater_id` = `t`.`id`
+   AND `m`.`id` = `bo`.`movie_id`
+   AND `bo`.`rating` > 8;
    ```
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
