@@ -11,6 +11,10 @@
    Cada animal também possui vários cuidadores, e cada cuidador pode ser responsável por mais de um animal. Além disso, cada cuidador possui um gerente, sendo que cada gerente pode ser responsável por mais de um cuidador.
 Siga os passos aprendidos no dia de hoje para modelar essa base de dados.
 
+   __*Resposta:*__
+   
+   ![Tabela normalizada](/exercicio-1/diagrama-zoo-db.png)
+
 __Normalização__
 
 Consulte as imagens associadas aos exercícios como referência para resolução.
