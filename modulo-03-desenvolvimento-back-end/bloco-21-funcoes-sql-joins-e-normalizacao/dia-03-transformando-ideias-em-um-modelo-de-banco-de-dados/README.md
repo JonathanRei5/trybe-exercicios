@@ -29,6 +29,8 @@ Não é necessário montar queries para resolver os exercícios. Crie novas plan
 3. Converta a tabela desnormalizada abaixo (que já está nos padrões da 1ª Forma Normal) para a 2ª Forma Normal. [Planilha aqui](https://assets.app.betrybe.com/back-end/sql/database-modeling/segunda-forma-normal-bfe03f94d64fbf2e114c56819d56ddae.xlsx)
 
    ![Tabela desnormalizada](/imagens/tabela_2.webp)
+   __*Resposta:*__
+   ![Tabela normalizada](/exercicio-3/segunda-forma-normal.png)
 
 4. Agora, converta essa outra tabela (que já está nos moldes das duas primeiras formas) para a 3ª Forma Normal. [Planilha aqui](https://assets.app.betrybe.com/back-end/sql/database-modeling/terceira-forma-normal-b364e3a456f2fc3da2113863ee9455f6.xlsx)
 
