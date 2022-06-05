@@ -13,7 +13,7 @@ Siga os passos aprendidos no dia de hoje para modelar essa base de dados.
 
    __*Resposta:*__
    
-   ![Tabela normalizada](/exercicio-1/diagrama-zoo-db.png)
+   ![Tabela normalizada](./exercicio-1/diagrama-zoo-db.png)
 
 __Normalização__
 
@@ -22,26 +22,26 @@ Não é necessário montar queries para resolver os exercícios. Crie novas plan
 
 2. Converta a tabela desnormalizada abaixo para a 1ª Forma Normal. [Planilha aqui](https://assets.app.betrybe.com/back-end/sql/database-modeling/primeira-forma-normal-d014c67b9acc6d0f9e3c884a411ad8d3.xlsx)
 
-   ![Tabela desnormalizada](/imagens/tabela_1.webp)
+   ![Tabela desnormalizada](./imagens/tabela_1.webp)
 
    __*Resposta:*__
 
-   ![Tabela normalizada](/exercicio-2/primeira-forma-normal.png)
+   ![Tabela normalizada](./exercicio-2/primeira-forma-normal.png)
 
 3. Converta a tabela desnormalizada abaixo (que já está nos padrões da 1ª Forma Normal) para a 2ª Forma Normal. [Planilha aqui](https://assets.app.betrybe.com/back-end/sql/database-modeling/segunda-forma-normal-bfe03f94d64fbf2e114c56819d56ddae.xlsx)
 
-   ![Tabela desnormalizada](/imagens/tabela_2.webp)
+   ![Tabela desnormalizada](./imagens/tabela_2.webp)
 
    __*Resposta:*__
 
-   ![Tabela normalizada](/exercicio-3/segunda-forma-normal.png)
+   ![Tabela normalizada](./exercicio-3/segunda-forma-normal.png)
 
 4. Agora, converta essa outra tabela (que já está nos moldes das duas primeiras formas) para a 3ª Forma Normal. [Planilha aqui](https://assets.app.betrybe.com/back-end/sql/database-modeling/terceira-forma-normal-b364e3a456f2fc3da2113863ee9455f6.xlsx)
 
-   ![Tabela desnormalizada](/imagens/tabela_3.webp)
+   ![Tabela desnormalizada](./imagens/tabela_3.webp)
 
    __*Resposta:*__
    
-   ![Tabela normalizada](/exercicio-4/terceira-forma-normal.png)
+   ![Tabela normalizada](./exercicio-4/terceira-forma-normal.png)
 
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
