@@ -17,6 +17,17 @@ const calc = (numA, numB, numC) => {
   });
 }
 
-calc(randomNumber(),randomNumber(),randomNumber())
-  .then((result) => console.log(`Resultado: ${result}`))
-  .catch((err) => console.log(`Erro: ${err}`));
+// calc(randomNumber(),randomNumber(),randomNumber())
+//   .then((result) => console.log(`Resultado: ${result}`))
+//   .catch((err) => console.log(`Erro: ${err}`));
+
+const main = async () => {
+  try {
+    const result = await calc(randomNumber(),randomNumber(),randomNumber());
+    console.log(`Resultado: ${result}`);
+  } catch(err) {
+    console.log(`Erro: ${err}`);
+  }
+}
+
+main();
