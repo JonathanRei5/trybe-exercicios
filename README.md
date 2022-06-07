@@ -159,9 +159,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 21.3: _Transformando ideias em um modelo de banco de dados_
 - [X] 21.4: _Projeto - One For All_
 
-##### Bloco 22: Introdução - NoSQL
+##### [Bloco 22: Introdução ao desenvolvimento Web com Node.js](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-22-introducao-ao-desenvolvimento-web-com-nodejs)
 
-- [ ] 22.1: _MongoDB - Introdução_
+- [X] 22.1: _Node.js - Um motor JavaScript_
 - [ ] 22.2: _Filter Operators_
 - [ ] 22.3: _[Projeto - Data Flights]()_
 
