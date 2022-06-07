@@ -2,7 +2,7 @@ const { keyInSelect } = require('readline-sync');
 
 console.log('Lista dos scripts disponíveis para executar:');
 
-const scripts = ['IMC', 'Velocidade', 'Sorteio', 'Fatorial'];
+const scripts = ['IMC', 'Velocidade', 'Sorteio', 'Fatorial', 'Fibonacci'];
 
 const scriptIndex = keyInSelect(scripts, 'Qual script executar?', {cancel: 'Cancelar'});
 console.log('');
@@ -19,5 +19,8 @@ switch(scriptIndex){
     break;
   case 3:
     require('./fatorial');
+    break;
+  case 4:
+    require('./fibonacci');
     break;
 }
