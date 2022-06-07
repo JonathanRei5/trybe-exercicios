@@ -2,6 +2,8 @@ const areAllNumbers = (numbers) => {
   return !numbers.some((number) => typeof number !== 'number');
 }
 
+const randomNumber = () => Math.floor(Math.random() * 100 + 1);
+
 const calc = (numA, numB, numC) => {
   return new Promise((resolve, reject) => {
 
@@ -15,12 +17,6 @@ const calc = (numA, numB, numC) => {
   });
 }
 
-calc(5,5,'5')
-  .then((result) => console.log(`1 - calc(5,5,'5') Resultado: ${result}`))
-  .catch((err) => console.log(`1 - calc(5,5,'5') Erro: ${err}`));
-calc(5,5,4)
-  .then((result) => console.log(`2 - calc(5,5,4) Resultado: ${result}`))
-  .catch((err) => console.log(`2 - calc(5,5,4) Erro: ${err}`));
-calc(5,5,5)
-  .then((result) => console.log(`3 - calc(5,5,5) Resultado: ${result}`))
-  .catch((err) => console.log(`3 - calc(5,5,5) Erro: ${err}`));
+calc(randomNumber(),randomNumber(),randomNumber())
+  .then((result) => console.log(`Resultado: ${result}`))
+  .catch((err) => console.log(`Erro: ${err}`));
