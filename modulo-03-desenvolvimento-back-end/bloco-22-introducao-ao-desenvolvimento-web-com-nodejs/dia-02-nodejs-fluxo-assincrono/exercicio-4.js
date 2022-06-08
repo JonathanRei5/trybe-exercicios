@@ -25,14 +25,10 @@ const showOneSimpson = async (id) => {
   return simpson;
 }
 
-const removeSimpson = async (id) => {
-  const simpsonsArray = await getAllCharacters('./simpsons.json');
-
-  const simpsons = simpsonsArray.filter(({ id: simpsonID }) => id !== Number(simpsonID));
-
-  await writeFile('./simpsons.json', JSON.stringify(simpsons));
-
-  return 'Arquivo alterado'
+const removeCharacters = async (origin, ...ids) => {
+  const characters = await getAllCharacters(origin);
+  const newCharacters = characters.filter(({ id }) => !ids.includes(Number(id)));
+  await writeFile(origin, JSON.stringify(newCharacters));
 }
 
 const createSimpsonFamily = async (...ids) => {
@@ -74,15 +70,7 @@ showOneSimpson(3)
   .then((simpson) => console.log(simpson))
   .catch((error) => console.log(error.message));
 
-removeSimpson(10)
-  .then((result) => {
-    console.log(result);
-    return removeSimpson(6);
-  })
-  .then((result) => {
-    console.log(result);
-    showAllSimpsons();
-  })
+removeCharacters('./simpsons.json', 10, 6)
   .catch((error) => console.log(error.message));
 
 createSimpsonFamily(1, 2, 3, 4);
