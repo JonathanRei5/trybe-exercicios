@@ -5,9 +5,9 @@ const getAllCharacters = async (origin) => {
   return JSON.parse(simpsonsString);
 }
 
-const charactersInfo = async () => {
+const charactersInfo = async (origin) => {
   try {
-    const simpsonsArray = await getAllCharacters('./simpsons.json');
+    const simpsonsArray = await getAllCharacters(origin);
     simpsonsArray.forEach(({ id, name }) => {
       console.log(`${id} - ${name}`);
     });
@@ -16,8 +16,8 @@ const charactersInfo = async () => {
   }
 }
 
-const characterInfo = async (id) => {
-  const simpsonsArray = await getAllCharacters('./simpsons.json');
+const characterInfo = async (origin, id) => {
+  const simpsonsArray = await getAllCharacters(origin);
 
   const simpson = simpsonsArray.find(({ id: simpsonID }) => id === Number(simpsonID));
 
@@ -31,11 +31,11 @@ const removeCharacters = async (origin, ...ids) => {
   await writeFile(origin, JSON.stringify(newCharacters));
 }
 
-const createSimpsonFamily = async (...ids) => {
-  const simpsonsArray = await getAllCharacters('./simpsons.json');
+const createSimpsonFamily = async (origin, destination, ...ids) => {
+  const simpsonsArray = await getAllCharacters(origin);
 
   const simpsonFamily = simpsonsArray.filter(({ id }) => ids.includes(Number(id)));
-  await writeFile('./simpsonFamily.json', JSON.stringify(simpsonFamily));
+  await writeFile(destination, JSON.stringify(simpsonFamily));
   return 'Família Simpson criada';
 }
 
@@ -64,16 +64,16 @@ const updateCharacter = async (oldCharacterId, newCharacterId, origin, destinati
   return 'Personagem atualizado';
 }
 
-charactersInfo();
+charactersInfo('./simpsons.json');
 
-characterInfo(3)
+characterInfo('./simpsons.json', 3)
   .then((simpson) => console.log(simpson))
   .catch((error) => console.log(error.message));
 
 removeCharacters('./simpsons.json', 10, 6)
   .catch((error) => console.log(error.message));
 
-createSimpsonFamily(1, 2, 3, 4);
+createSimpsonFamily('./simpsons.json', './simpsonFamily.json', 1, 2, 3, 4);
 
 addCharacter('Nelson Muntz', './simpsons.json', './simpsonFamily.json');
 
