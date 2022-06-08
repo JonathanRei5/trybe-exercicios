@@ -5,7 +5,7 @@ const getAllCharacters = async (origin) => {
   return JSON.parse(simpsonsString);
 }
 
-const showAllSimpsons = async () => {
+const charactersInfo = async () => {
   try {
     const simpsonsArray = await getAllCharacters('./simpsons.json');
     simpsonsArray.forEach(({ id, name }) => {
@@ -16,7 +16,7 @@ const showAllSimpsons = async () => {
   }
 }
 
-const showOneSimpson = async (id) => {
+const characterInfo = async (id) => {
   const simpsonsArray = await getAllCharacters('./simpsons.json');
 
   const simpson = simpsonsArray.find(({ id: simpsonID }) => id === Number(simpsonID));
@@ -64,9 +64,9 @@ const updateCharacter = async (oldCharacterId, newCharacterId, origin, destinati
   return 'Personagem atualizado';
 }
 
-showAllSimpsons();
+charactersInfo();
 
-showOneSimpson(3)
+characterInfo(3)
   .then((simpson) => console.log(simpson))
   .catch((error) => console.log(error.message));
 
