@@ -64,17 +64,18 @@ const updateCharacter = async (oldCharacterId, newCharacterId, origin, destinati
   return 'Personagem atualizado';
 }
 
-charactersInfo('./simpsons.json');
+charactersInfo('exercicio-4/simpsons.json');
 
-characterInfo('./simpsons.json', 3)
+characterInfo('exercicio-4/simpsons.json', 3)
   .then((simpson) => console.log(simpson))
   .catch((error) => console.log(error.message));
 
-removeCharacters('./simpsons.json', 10, 6)
+removeCharacters('exercicio-4/simpsons.json', 10, 6)
   .catch((error) => console.log(error.message));
 
-createSimpsonFamily('./simpsons.json', './simpsonFamily.json', 1, 2, 3, 4);
+createSimpsonFamily('exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json',
+  1, 2, 3, 4);
 
-addCharacter('Nelson Muntz', './simpsons.json', './simpsonFamily.json');
+addCharacter('Nelson Muntz', 'exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json');
 
-updateCharacter(8, 5, './simpsons.json', './simpsonFamily.json');
+updateCharacter(8, 5, 'exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json');
