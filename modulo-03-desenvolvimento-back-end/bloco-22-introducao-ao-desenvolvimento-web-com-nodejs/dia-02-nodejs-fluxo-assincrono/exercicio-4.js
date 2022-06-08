@@ -1,13 +1,13 @@
 const { readFile, writeFile } = require('fs').promises;
 
-const getAllSimpsons = async () => {
-  const simpsonsString = await readFile('./simpsons.json', { encoding: 'utf8' });
+const getAllCharacters = async (origin) => {
+  const simpsonsString = await readFile(origin, { encoding: 'utf8' });
   return JSON.parse(simpsonsString);
 }
 
 const showAllSimpsons = async () => {
   try {
-    const simpsonsArray = await getAllSimpsons();
+    const simpsonsArray = await getAllCharacters('./simpsons.json');
     simpsonsArray.forEach(({ id, name }) => {
       console.log(`${id} - ${name}`);
     });
@@ -17,7 +17,7 @@ const showAllSimpsons = async () => {
 }
 
 const showOneSimpson = async (id) => {
-  const simpsonsArray = await getAllSimpsons();
+  const simpsonsArray = await getAllCharacters('./simpsons.json');
 
   const simpson = simpsonsArray.find(({ id: simpsonID }) => id === Number(simpsonID));
 
@@ -26,7 +26,7 @@ const showOneSimpson = async (id) => {
 }
 
 const removeSimpson = async (id) => {
-  const simpsonsArray = await getAllSimpsons();
+  const simpsonsArray = await getAllCharacters('./simpsons.json');
 
   const simpsons = simpsonsArray.filter(({ id: simpsonID }) => id !== Number(simpsonID));
 
@@ -36,9 +36,9 @@ const removeSimpson = async (id) => {
 }
 
 const createSimpsonFamily = async (...ids) => {
-  const simpsonsArray = await getAllSimpsons();
-  
-  const simpsonFamily = simpsonsArray.filter(({id}) => ids.includes(Number(id)));
+  const simpsonsArray = await getAllCharacters('./simpsons.json');
+
+  const simpsonFamily = simpsonsArray.filter(({ id }) => ids.includes(Number(id)));
   await writeFile('./simpsonFamily.json', JSON.stringify(simpsonFamily));
   return 'Família Simpson criada';
 }
@@ -60,4 +60,4 @@ removeSimpson(10)
   })
   .catch((error) => console.log(error.message));
 
-createSimpsonFamily(1,2,3,4);
+createSimpsonFamily(1, 2, 3, 4);
