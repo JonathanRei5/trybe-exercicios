@@ -55,6 +55,19 @@ const addCharacter = async (characterName, origin, destination) => {
   return 'Personagem adicionado';
 }
 
+const updateCharacter = async (oldCharacterId, newCharacterId, origin, destination) => {
+  const simpsons = await getAllCharacters(origin);
+  const simpsonsFamily = (await getAllCharacters(destination))
+    .filter(({ id }) => oldCharacterId !== Number(id));
+
+  const simpson = simpsons.find(({ id }) => newCharacterId === Number(id));
+  if (simpson === undefined) throw new Error('Personagem não encontrado');
+
+  simpsonsFamily.push(simpson);
+  await writeFile(destination, JSON.stringify(simpsonsFamily));
+  return 'Personagem atualizado';
+}
+
 showAllSimpsons();
 
 showOneSimpson(3)
@@ -75,3 +88,5 @@ removeSimpson(10)
 createSimpsonFamily(1, 2, 3, 4);
 
 addCharacter('Nelson Muntz', './simpsons.json', './simpsonFamily.json');
+
+updateCharacter(8, 5, './simpsons.json', './simpsonFamily.json');
