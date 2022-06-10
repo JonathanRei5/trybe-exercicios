@@ -162,7 +162,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### [Bloco 22: Introdução ao desenvolvimento Web com Node.js](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-22-introducao-ao-desenvolvimento-web-com-nodejs)
 
 - [X] 22.1: _Node.js - Um motor JavaScript_
-- [ ] 22.2: _Filter Operators_
+- [X] 22.2: _Node.js - Fluxo Assíncrono_
 - [ ] 22.3: _[Projeto - Data Flights]()_
 
 ##### Bloco 23: Updates
