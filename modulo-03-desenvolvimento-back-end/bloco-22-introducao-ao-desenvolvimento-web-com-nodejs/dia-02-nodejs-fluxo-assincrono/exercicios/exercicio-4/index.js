@@ -26,9 +26,9 @@ const characterInfo = async (origin, id) => {
 }
 
 const removeCharacters = async (origin, ...ids) => {
-  const characters = await getAllCharacters(origin);
-  const newCharacters = characters.filter(({ id }) => !ids.includes(Number(id)));
-  await writeFile(origin, JSON.stringify(newCharacters));
+  const characters = (await getAllCharacters(origin))
+    .filter(({ id }) => !ids.includes(Number(id)));
+  await writeFile(origin, JSON.stringify(characters));
 }
 
 const createSimpsonFamily = async (origin, destination, ...ids) => {
