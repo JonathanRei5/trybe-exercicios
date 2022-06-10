@@ -1,14 +1,14 @@
 const { readFile, writeFile } = require('fs').promises;
 
 const getAllCharacters = async (origin) => {
-  const simpsonsString = await readFile(origin, { encoding: 'utf8' });
-  return JSON.parse(simpsonsString);
+  const characters = await readFile(origin, { encoding: 'utf8' });
+  return JSON.parse(characters);
 }
 
 const charactersInfo = async (origin) => {
   try {
-    const simpsonsArray = await getAllCharacters(origin);
-    simpsonsArray.forEach(({ id, name }) => {
+    const characters = await getAllCharacters(origin);
+    characters.forEach(({ id, name }) => {
       console.log(`${id} - ${name}`);
     });
   } catch (error) {
@@ -17,12 +17,12 @@ const charactersInfo = async (origin) => {
 }
 
 const characterInfo = async (origin, id) => {
-  const simpsonsArray = await getAllCharacters(origin);
+  const characters = await getAllCharacters(origin);
 
-  const simpson = simpsonsArray.find(({ id: simpsonID }) => id === Number(simpsonID));
+  const character = characters.find(({ id: characterID }) => id === Number(characterID));
 
-  if (simpson === undefined) throw new Error('id não encontrado');
-  return simpson;
+  if (character === undefined) throw new Error('id não encontrado');
+  return character;
 }
 
 const removeCharacters = async (origin, ...ids) => {
@@ -32,34 +32,34 @@ const removeCharacters = async (origin, ...ids) => {
 }
 
 const createSimpsonFamily = async (origin, destination, ...ids) => {
-  const simpsonsArray = await getAllCharacters(origin);
+  const characters = await getAllCharacters(origin);
 
-  const simpsonFamily = simpsonsArray.filter(({ id }) => ids.includes(Number(id)));
+  const simpsonFamily = characters.filter(({ id }) => ids.includes(Number(id)));
   await writeFile(destination, JSON.stringify(simpsonFamily));
   return 'Família Simpson criada';
 }
 
 const addCharacter = async (characterName, origin, destination) => {
-  const simpsons = await getAllCharacters(origin);
+  const characters = await getAllCharacters(origin);
   const simpsonsFamily = await getAllCharacters(destination);
 
-  const simpson = simpsons.find(({ name }) => characterName === name);
-  if (simpson === undefined) throw new Error('Personagem não encontrado');
+  const character = characters.find(({ name }) => characterName === name);
+  if (character === undefined) throw new Error('Personagem não encontrado');
 
-  simpsonsFamily.push(simpson);
+  simpsonsFamily.push(character);
   await writeFile(destination, JSON.stringify(simpsonsFamily));
   return 'Personagem adicionado';
 }
 
 const updateCharacter = async (oldCharacterId, newCharacterId, origin, destination) => {
-  const simpsons = await getAllCharacters(origin);
+  const characters = await getAllCharacters(origin);
   const simpsonsFamily = (await getAllCharacters(destination))
     .filter(({ id }) => oldCharacterId !== Number(id));
 
-  const simpson = simpsons.find(({ id }) => newCharacterId === Number(id));
-  if (simpson === undefined) throw new Error('Personagem não encontrado');
+  const character = characters.find(({ id }) => newCharacterId === Number(id));
+  if (character === undefined) throw new Error('Personagem não encontrado');
 
-  simpsonsFamily.push(simpson);
+  simpsonsFamily.push(character);
   await writeFile(destination, JSON.stringify(simpsonsFamily));
   return 'Personagem atualizado';
 }
