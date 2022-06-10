@@ -18,11 +18,9 @@ const charactersInfo = async (origin) => {
 
 const characterInfo = async (origin, id) => {
   const characters = await getAllCharacters(origin);
-
   const character = characters.find(({ id: characterID }) => id === Number(characterID));
-
   if (character === undefined) throw new Error('id não encontrado');
-  return character;
+  return `${character.id} - ${character.name}`;
 }
 
 const removeCharacters = async (origin, ...ids) => {
