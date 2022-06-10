@@ -14,3 +14,5 @@ const calc = (numA, numB, numC) => {
     reject('Informe apenas números');
   });
 }
+
+module.exports = calc;
