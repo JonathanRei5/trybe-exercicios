@@ -62,18 +62,44 @@ const updateCharacter = async (oldCharacterId, newCharacterId, origin, destinati
   return 'Personagem atualizado';
 }
 
-charactersInfo('exercicio-4/simpsons.json');
+const main = async () => {
+  try {
+    // 1
+    console.log('Todos os personagens');
+    await charactersInfo('exercicio-4/allSimpsons.json');
+    console.log('');
 
-characterInfo('exercicio-4/simpsons.json', 3)
-  .then((simpson) => console.log(simpson))
-  .catch((error) => console.log(error.message));
+    // 2
+    console.log('Informações de um personagem');
+    const chacter = await characterInfo('exercicio-4/simpsons.json', 3);
+    console.log(chacter, '\n');
 
-removeCharacters('exercicio-4/simpsons.json', 10, 6)
-  .catch((error) => console.log(error.message));
+    // 3
+    console.log('Removendo personagens');
+    await removeCharacters('exercicio-4/simpsons.json', 10, 6);
+    await charactersInfo('exercicio-4/simpsons.json');
+    console.log('');
 
-createSimpsonFamily('exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json',
-  1, 2, 3, 4);
+    // 4
+    console.log('Criando família Simpson');
+    await createSimpsonFamily('exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json',
+      1, 2, 3, 4);
+    await charactersInfo('exercicio-4/simpsonFamily.json');
+    console.log('');
 
-addCharacter('Nelson Muntz', 'exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json');
+    // 5
+    console.log('Adicionando personagem na família Simpson');
+    await addCharacter('Nelson Muntz', 'exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json');
+    await charactersInfo('exercicio-4/simpsonFamily.json');
+    console.log('');
 
-updateCharacter(8, 5, 'exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json');
+    // 6
+    console.log('Atualizando personagem na família Simpson');
+    await updateCharacter(8, 5, 'exercicio-4/simpsons.json', 'exercicio-4/simpsonFamily.json');
+    await charactersInfo('exercicio-4/simpsonFamily.json');
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+main();
