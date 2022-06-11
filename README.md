@@ -163,7 +163,8 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 22.1: _Node.js - Um motor JavaScript_
 - [X] 22.2: _Node.js - Fluxo Assíncrono_
-- [ ] 22.3: _[Projeto - Data Flights]()_
+- [X] 22.3: _Mocha, Chai e Sinon - Testes de Back-end com Node.js_
+- [ ] 22.4: _[Projeto - Data Flights]()_
 
 ##### Bloco 23: Updates
 
