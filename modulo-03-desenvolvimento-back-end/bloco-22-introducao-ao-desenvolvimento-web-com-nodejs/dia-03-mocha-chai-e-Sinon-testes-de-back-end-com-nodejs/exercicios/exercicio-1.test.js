@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const checkNumber = require('./exercicio-1');
+const checkNumber = require('./exercicio-2');
 
 describe('Ao executar a função checkNumber', () => {
   describe('passando um número maior que 0 como parâmetro', () => {
