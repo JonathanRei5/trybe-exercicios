@@ -31,6 +31,24 @@ app.get('/simpsons/:id', async (req, res) => {
   }
 });
 
+app.post('/simpsons', async (req, res) => {
+  try {
+    const { id, name } = req.body;
+    const simpsons = JSON
+      .parse(await fs.readFile('data/simpsons.json', { encoding: 'utf-8' }));
+
+    const idAlreadyExists = simpsons.some((simpsons) => Number(simpsons.id) === id);
+    if (idAlreadyExists) return res.status(409).json({ message: 'id already exists' });
+
+    simpsons.push({ id: String(id), name });
+    fs.writeFile('data/simpsons.json', JSON.stringify(simpsons));
+
+    res.status(204).end();
+  } catch (erro) {
+    res.status(500).end();
+  }
+});
+
 app.post('/hello', (req, res) => {
   const { name } = req.body;
   res.json({ message: `Hello, ${name}!` });
