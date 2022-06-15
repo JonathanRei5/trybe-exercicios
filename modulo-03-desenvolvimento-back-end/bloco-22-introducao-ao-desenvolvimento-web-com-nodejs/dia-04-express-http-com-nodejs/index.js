@@ -1,3 +1,4 @@
+const fs = require('fs/promises');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -6,6 +7,15 @@ app.use(bodyParser.json());
 
 app.get('/ping', (_req, res) => {
   res.json({ message: 'pong' });
+});
+
+app.get('/simpsons', async (_req, res) => {
+  try {
+    const simpsons = await fs.readFile('data/simpsons.json', { encoding: 'utf-8' });
+    res.json({ simpsons: JSON.parse(simpsons) });
+  } catch (erro) {
+    res.status(500).end();
+  }
 });
 
 app.post('/hello', (req, res) => {
