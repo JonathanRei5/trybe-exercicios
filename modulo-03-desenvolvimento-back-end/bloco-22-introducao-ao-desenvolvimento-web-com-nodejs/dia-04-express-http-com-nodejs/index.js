@@ -18,6 +18,19 @@ app.get('/simpsons', async (_req, res) => {
   }
 });
 
+app.get('/simpsons/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const simpsons = JSON
+      .parse(await fs.readFile('data/simpsons.json', { encoding: 'utf-8' }));
+    const foundSimpson = simpsons.find((simpsons) => simpsons.id === id);
+    if (foundSimpson) res.json(foundSimpson);
+    res.status(404).send({ message: 'simpson not found' });
+  } catch (erro) {
+    res.status(500).end();
+  }
+});
+
 app.post('/hello', (req, res) => {
   const { name } = req.body;
   res.json({ message: `Hello, ${name}!` });
