@@ -2,9 +2,19 @@ const fs = require('fs/promises');
 const express = require('express');
 const bodyParser = require('body-parser');
 const authorization = require('./authorization.js');
+const generateToken = require('./generateToken');
 
 const app = express();
 app.use(bodyParser.json());
+
+app.post('/signup', async (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+  if (!email || !password || !firstName || !phone) {
+    return res.status(401).json({ message: 'missing fields' });
+  }
+  res.json({ token: generateToken() });
+});
+
 app.use(authorization);
 
 app.get('/ping', (_req, res) => {
