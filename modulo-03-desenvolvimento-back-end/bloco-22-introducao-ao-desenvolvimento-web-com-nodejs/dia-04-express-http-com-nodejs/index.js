@@ -1,9 +1,11 @@
 const fs = require('fs/promises');
 const express = require('express');
 const bodyParser = require('body-parser');
+const authorization = require('./authorization.js');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(authorization);
 
 app.get('/ping', (_req, res) => {
   res.json({ message: 'pong' });
