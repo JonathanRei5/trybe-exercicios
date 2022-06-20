@@ -4,9 +4,8 @@ const validateSalesRegister = require('./validations/validateSalesRegister');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(validateSalesRegister);
 
-app.post('/sales', (req, res) => {
+app.post('/sales', validateSalesRegister, (req, res) => {
   res.status(201).json({ "message": "Venda cadastrada com sucesso" })
 });
 
