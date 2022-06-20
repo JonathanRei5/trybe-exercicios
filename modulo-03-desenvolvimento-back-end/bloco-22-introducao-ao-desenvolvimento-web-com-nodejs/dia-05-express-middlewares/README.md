@@ -1,6 +1,7 @@
 # Exercícios
 
 ## Exercício 1
+
 Crie uma rota POST /sales que receba uma requisição que envie productName e infos no body da requisição, como na imagem abaixo.
 
 ```json
