@@ -1,23 +1,14 @@
 const moment = require('moment');
-
-const checkEmptyField = (object) => {
-  const { productName, infos } = object;
-  if (productName === undefined) return 'productName';
-  if (infos === undefined) return 'infos';
-  const { saleDate, warrantyPeriod } = infos;
-  if (saleDate === undefined) return 'saleDate';
-  if (warrantyPeriod === undefined) return 'warrantyPeriod';
-  return null;
-}
+const findEmptyKey = require('../utils/findEmptyKey');
 
 const validateSalesRegister = (req, res, next) => {
-  const emptyField = checkEmptyField(req.body);
+  const emptyField = findEmptyKey(req.body, 'productName', 'infos')
+    || findEmptyKey(req.body.infos, 'saleDate', 'warrantyPeriod');
   if (emptyField) {
     return res.status(400).json({ "message": `O campo ${emptyField} é obrigatório` });
   }
 
-  const { productName, infos } = req.body;
-  const { saleDate, warrantyPeriod } = infos;
+  const { productName, infos: { saleDate, warrantyPeriod } } = req.body;
 
   if (productName.length < 4) {
     return res.status(400).json({ "message": "O campo productName deve ter pelo menos 4 caracteres" });
