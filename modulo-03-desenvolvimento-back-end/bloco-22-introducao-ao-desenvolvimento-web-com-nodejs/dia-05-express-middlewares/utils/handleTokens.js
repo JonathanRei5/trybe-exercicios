@@ -7,10 +7,15 @@ const getTokens = async () => {
   return JSON.parse(tokens);
 };
 
+const includesToken = async (token) => {
+  const tokens = await getTokens();
+  return tokens.includes(token);
+};
+
 const saveToken = async (token) => {
   const tokens = await getTokens();
   tokens.push(token);
   await fs.writeFile(TOKENS_FILE_PATH, JSON.stringify(tokens));
 };
 
-module.exports = { getTokens, saveToken };
+module.exports = { getTokens, includesToken, saveToken };
