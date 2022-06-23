@@ -1,0 +1,12 @@
+{
+  "name": "dia-01-arquitetura-de-software-camada-de-model",
+  "version": "1.0.0",
+  "description": "Aplicação que faz CRUD (Create, Read, Update e Delete) de usuários.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jonathan Reis",
+  "license": "ISC"
+}
