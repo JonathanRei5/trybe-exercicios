@@ -28,4 +28,17 @@ app.post('/user', async (req, res) => {
   res.status(201).json(userCreated);
 });
 
+app.put('/user/:id', async (req, res) => {
+  const user = req.body;
+  const { id } = req.params;
+
+  const { error, message } = userAPI.isValid(user);
+  if (error) return res.status(400).json({ error, message });
+
+  const updatedUser = await userAPI.update(id, user);
+  if (updatedUser.error) return res.status(404).json(updatedUser);
+
+  res.status(200).json(updatedUser);
+});
+
 app.listen(PORT, () => console.log(`Aplicação ouvindo na porta ${PORT}`));

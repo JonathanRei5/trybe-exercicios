@@ -61,8 +61,13 @@ const findById = async (id) => {
   return user || error(true, 'Usuário não encontrado');
 };
 
+const update = async (id, user) => {
+  const foundUser = await findById(id);
+  return foundUser.error ? foundUser : await userModel.update(id, user);
+};
+
 const create = (user) => userModel.create(user);
 
 const getAll = () => userModel.getAll();
 
-module.exports = { isValid, create, getAll, findById };
+module.exports = { isValid, create, getAll, findById, update };

@@ -21,4 +21,15 @@ const findById = async (id) => {
   return user[0];
 };
 
-module.exports = { create, getAll, findById };
+const update = async (id, user) => {
+  const query = `
+    UPDATE user
+    SET first_name=?, last_name=?, email=?
+    WHERE id=?;
+  `;
+  const { firstName, lastName, email } = user;
+  await connection.execute(query, [firstName, lastName, email, id]);
+  return { id, firstName, lastName, email };
+};
+
+module.exports = { create, getAll, findById, update };
