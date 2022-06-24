@@ -4,7 +4,8 @@
   "description": "Aplicação que faz CRUD (Create, Read, Update e Delete) de usuários.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Jonathan Reis",
