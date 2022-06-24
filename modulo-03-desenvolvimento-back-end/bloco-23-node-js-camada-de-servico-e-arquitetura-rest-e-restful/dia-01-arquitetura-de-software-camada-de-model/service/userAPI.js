@@ -56,8 +56,13 @@ const isValid = (user) => {
   return foundError ? foundError : error(false);
 }
 
+const findById = async (id) => {
+  const user = await userModel.findById(Number(id));
+  return user || error(true, 'Usuário não encontrado');
+};
+
 const create = (user) => userModel.create(user);
 
-const getAll = (user) => userModel.getAll();
+const getAll = () => userModel.getAll();
 
-module.exports = { isValid, create, getAll };
+module.exports = { isValid, create, getAll, findById };

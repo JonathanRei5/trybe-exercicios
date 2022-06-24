@@ -13,6 +13,13 @@ app.get('/user', async (_req, res) => {
   res.status(200).json(users);
 });
 
+app.get('/user/:id', async (req, res) => {
+  const { id } = req.params;
+  const user = await userAPI.findById(id);
+  if (user.error) return res.status(404).json(user);
+  res.status(200).json(user)
+});
+
 app.post('/user', async (req, res) => {
   const user = req.body;
   const { error, message } = userAPI.isValid(user);
