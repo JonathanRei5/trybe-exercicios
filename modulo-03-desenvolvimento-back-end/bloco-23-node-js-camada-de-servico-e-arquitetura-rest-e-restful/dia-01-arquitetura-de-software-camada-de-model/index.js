@@ -8,6 +8,11 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get('/user', async (_req, res) => {
+  const users = await userAPI.getAll();
+  res.status(200).json(users);
+});
+
 app.post('/user', async (req, res) => {
   const user = req.body;
   const { error, message } = userAPI.isValid(user);

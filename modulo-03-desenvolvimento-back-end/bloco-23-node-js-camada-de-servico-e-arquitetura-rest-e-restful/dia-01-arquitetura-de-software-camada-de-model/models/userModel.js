@@ -8,4 +8,10 @@ const create = async (user) => {
   return { id: metadata.insertId, ...user };
 };
 
-module.exports = { create };
+const getAll = async () => {
+  const sql = 'SELECT * FROM user';
+  const [users] = await connection.execute(sql);
+  return users;
+};
+
+module.exports = { create, getAll };

@@ -58,4 +58,6 @@ const isValid = (user) => {
 
 const create = (user) => userModel.create(user);
 
-module.exports = { isValid, create };
+const getAll = (user) => userModel.getAll();
+
+module.exports = { isValid, create, getAll };
