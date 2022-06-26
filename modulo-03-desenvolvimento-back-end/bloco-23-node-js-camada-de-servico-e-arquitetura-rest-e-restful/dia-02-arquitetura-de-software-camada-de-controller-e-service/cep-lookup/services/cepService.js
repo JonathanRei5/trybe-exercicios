@@ -19,10 +19,18 @@ const validateCep = (cep) => {
 
 const validateCepData = (cepData) => validateSchema(cepDataSchema, cepData);
 
+const adjustCepData = (cepData) => ({ ...cepData, cep: cepData.cep.replace('-', '') });
+
 const getByCep = async (cep) => {
   const result = await cepModel.getByCep(cep.replace('-', ''));
   if (!result) throw new customError(404, 'notFound', 'CEP não encontrado');
   return result;
 };
 
-module.exports = { validateCep, validateCepData, getByCep };
+const add = async (cepData) => {
+  const result = await cepModel.getByCep(cepData.cep.replace('-', ''));
+  if (result) throw new customError(409, 'alreadyExists', 'CEP já existente');
+  await cepModel.add(adjustCepData(cepData));
+}
+
+module.exports = { validateCep, validateCepData, getByCep, add };

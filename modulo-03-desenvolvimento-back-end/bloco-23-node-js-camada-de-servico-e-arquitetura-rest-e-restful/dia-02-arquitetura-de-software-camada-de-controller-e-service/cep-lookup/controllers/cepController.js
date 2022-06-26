@@ -7,4 +7,11 @@ const getByCep = async (req, res) => {
   res.status(200).json(result);
 };
 
-module.exports = { getByCep };
+const add = async (req, res) => {
+  cepService.validateCepData(req.body);
+  await cepService.add(req.body);
+  const result = await cepService.getByCep(req.body.cep);
+  res.status(201).json(result);
+};
+
+module.exports = { getByCep, add };
