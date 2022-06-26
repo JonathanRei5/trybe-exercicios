@@ -6,4 +6,14 @@ const getByCep = async (cep) => {
   return result;
 };
 
-module.exports = { getByCep };
+const add = async (cepData) => {
+  const query = `
+    INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) values (?,?,?,?,?)
+  `;
+  const { cep, logradouro, bairro, localidade, uf } = cepData;
+  const [{ inserId }] = await connection
+    .execute(query, Object.values([cep, logradouro, bairro, localidade, uf]));
+  return inserId;
+};
+
+module.exports = { getByCep, add };
