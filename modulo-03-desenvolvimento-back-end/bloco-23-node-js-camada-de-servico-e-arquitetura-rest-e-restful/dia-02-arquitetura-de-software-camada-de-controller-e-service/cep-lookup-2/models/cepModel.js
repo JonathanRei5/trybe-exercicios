@@ -6,11 +6,11 @@ const getByCep = async (cep) => {
   return result;
 };
 
-const add = async (cepData) => {
-  const query = 'INSERT INTO ceps (cep, logradouro) values (?,?)';
+const add = async (cepData, bairroId) => {
+  const query = 'INSERT INTO ceps (cep, logradouro, bairro_id) values (?,?,?)';
   const { cep, logradouro } = cepData;
   const [{ inserId }] = await connection
-    .execute(query, [cep, logradouro]);
+    .execute(query, [cep, logradouro, bairroId]);
   return inserId;
 };
 
