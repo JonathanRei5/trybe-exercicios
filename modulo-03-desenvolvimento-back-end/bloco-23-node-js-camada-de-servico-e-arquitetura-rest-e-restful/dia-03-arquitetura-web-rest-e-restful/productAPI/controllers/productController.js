@@ -4,13 +4,13 @@ module.exports = {
   async listProducts(_req, res) {
     const products = await ProductModel.getAll();
 
-    res.send(products);
+    res.json(products);
   },
 
   async getProduct(req, res) {
     const product = await ProductModel.getById(req.params.id);
 
-    res.send(product);
+    res.json(product);
   },
 
   async addProduct(req, res) {
@@ -18,13 +18,13 @@ module.exports = {
 
     const newProduct = await ProductModel.add(name, brand);
 
-    res.send(newProduct);
+    res.json(newProduct);
   },
 
   async deleteProduct(req, res) {
     const products = await ProductModel.exclude(req.params.id);
 
-    res.send(products);
+    res.json(products);
   },
 
   async updateProduct(req, res) {
@@ -32,6 +32,6 @@ module.exports = {
 
     const products = await ProductModel.update(req.params.id, name, brand);
 
-    res.send(products);
+    res.json(products);
   },
 };
