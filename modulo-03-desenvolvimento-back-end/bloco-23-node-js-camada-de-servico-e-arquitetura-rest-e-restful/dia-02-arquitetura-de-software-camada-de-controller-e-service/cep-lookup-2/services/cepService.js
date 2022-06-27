@@ -1,6 +1,7 @@
 const joi = require('joi');
 const bairroModel = require('../models/bairroModel');
 const cepModel = require('../models/cepModel');
+const bairroCepModel = require('../models/bairroCepModel');
 const getCepInfo = require('../models/cepAPI');
 const customError = require('../errors/customError');
 const validateSchema = require('./validateSchema');
@@ -36,7 +37,8 @@ const add = async (data) => {
   const newData = removeHyphenFromCep(data);
   const result = await cepModel.getByCep(newData.cep);
   if (result) throw new customError(409, 'alreadyExists', 'CEP já existente');
-  const id = await bairroModel.add(newData);
+  const [bairro] = await bairroModel.search(newData);
+  const id = bairro ? bairro.id : await bairroModel.add(newData);
   await cepModel.add(newData, id);
 }
 
@@ -51,7 +53,7 @@ const getAndAddCep = async (cep) => {
 }
 
 const getByCep = async (cep) => {
-  const result = await cepModel.getByCep(cep.replace('-', ''))
+  const result = await bairroCepModel.getBairroAndCepByCep(cep.replace('-', ''))
     || await getAndAddCep(cep.replace('-', ''));
   if (!result) throw new customError(404, 'notFound', 'CEP não encontrado');
   return addHyphenToCep(result);
