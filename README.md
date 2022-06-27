@@ -171,7 +171,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### [Bloco 23: Node.js: Camada de Serviço e Arquitetura Rest e Restful](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-23-node-js-camada-de-servico-e-arquitetura-rest-e-restful)
 
 - [X] 23.1: _Arquitetura de Software - Camada de Model_
-- [ ] 23.2: _Updates Complexos - Arrays - Parte 1_
+- [X] 23.2: _Arquitetura de Software - Camada de Controller e Service_
 - [ ] 23.3: _Updates Complexos - Arrays - Parte 2_
 - [ ] 23.4: _[Projeto - Commerce]()_
 
