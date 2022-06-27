@@ -12,7 +12,7 @@ const add = async (cepData) => {
   `;
   const { cep, logradouro, bairro, localidade, uf } = cepData;
   const [{ inserId }] = await connection
-    .execute(query, Object.values([cep, logradouro, bairro, localidade, uf]));
+    .execute(query, [cep, logradouro, bairro, localidade, uf]);
   return inserId;
 };
 
