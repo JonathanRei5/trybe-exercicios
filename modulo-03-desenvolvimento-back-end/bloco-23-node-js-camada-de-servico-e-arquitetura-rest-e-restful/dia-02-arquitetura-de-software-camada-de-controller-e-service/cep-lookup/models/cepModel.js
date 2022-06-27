@@ -11,9 +11,7 @@ const add = async (cepData) => {
     INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) values (?,?,?,?,?)
   `;
   const { cep, logradouro, bairro, localidade, uf } = cepData;
-  const [{ inserId }] = await connection
-    .execute(query, [cep, logradouro, bairro, localidade, uf]);
-  return inserId;
+  await connection.execute(query, [cep, logradouro, bairro, localidade, uf]);
 };
 
 module.exports = { getByCep, add };
