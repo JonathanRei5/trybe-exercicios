@@ -1,4 +1,5 @@
 const joi = require('joi');
+const bairroModel = require('../models/bairroModel');
 const cepModel = require('../models/cepModel');
 const getCepInfo = require('../models/cepAPI');
 const customError = require('../errors/customError');
@@ -31,11 +32,12 @@ const extractInfoFromCep = (cepData) => {
   return { cep, logradouro, bairro, localidade, uf };
 };
 
-const add = async (cepData) => {
-  const newCepData = removeHyphenFromCep(cepData);
-  const result = await cepModel.getByCep(newCepData.cep);
+const add = async (data) => {
+  const newData = removeHyphenFromCep(data);
+  const result = await cepModel.getByCep(newData.cep);
   if (result) throw new customError(409, 'alreadyExists', 'CEP já existente');
-  await cepModel.add(newCepData);
+  const id = await bairroModel.add(newData);
+  await cepModel.add(newData, id);
 }
 
 const getAndAddCep = async (cep) => {
