@@ -1,5 +1,6 @@
 const joi = require('joi');
 const cepModel = require('../models/cepModel');
+const getCepInfo = require('../models/cepAPI');
 const customError = require('../errors/customError');
 const validateSchema = require('./validateSchema');
 
@@ -25,16 +26,33 @@ const addHyphenToCep = (cepData) => ({
   cep: cepData.cep.slice(0, 5).concat('-', cepData.cep.slice(5, 8))
 });
 
-const getByCep = async (cep) => {
-  const result = await cepModel.getByCep(cep.replace('-', ''));
-  if (!result) throw new customError(404, 'notFound', 'CEP não encontrado');
-  return addHyphenToCep(result);
+const extractInfoFromCep = (cepData) => {
+  const { cep, logradouro, bairro, localidade, uf } = cepData;
+  return { cep, logradouro, bairro, localidade, uf };
 };
 
 const add = async (cepData) => {
-  const result = await cepModel.getByCep(cepData.cep.replace('-', ''));
+  const newCepData = removeHyphenFromCep(cepData);
+  const result = await cepModel.getByCep(newCepData.cep);
   if (result) throw new customError(409, 'alreadyExists', 'CEP já existente');
-  await cepModel.add(removeHyphenFromCep(cepData));
+  await cepModel.add(newCepData);
 }
+
+const getAndAddCep = async (cep) => {
+  const result = await getCepInfo(cep);
+  if (result) {
+    const cepInfo = extractInfoFromCep(result);
+    await add(cepInfo);
+    return removeHyphenFromCep(cepInfo);
+  }
+  return undefined;
+}
+
+const getByCep = async (cep) => {
+  const result = await cepModel.getByCep(cep.replace('-', ''))
+    || await getAndAddCep(cep.replace('-', ''));
+  if (!result) throw new customError(404, 'notFound', 'CEP não encontrado');
+  return addHyphenToCep(result);
+};
 
 module.exports = { validateCep, validateCepData, getByCep, add };
