@@ -4,7 +4,7 @@ const customError = require('../errors/customError');
 const validateSchema = require('./validateSchema');
 
 const cepDataSchema = joi.object({
-  cep: joi.string().not().empty().required().pattern(/\d{5}-\d{3}/),
+  cep: joi.string().not().empty().required().pattern(/^\d{5}-\d{3}$/),
   logradouro: joi.string().not().empty().required(),
   bairro: joi.string().not().empty().required(),
   localidade: joi.string().not().empty().required(),
@@ -12,7 +12,7 @@ const cepDataSchema = joi.object({
 });
 
 const validateCep = (cep) => {
-  if (!cep.match(/\d{5}-?\d{3}/g)) {
+  if (!cep.match(/^\d{5}-?\d{3}$/g)) {
     throw new customError(400, 'invalidData', 'CEP inválido');
   }
 };
