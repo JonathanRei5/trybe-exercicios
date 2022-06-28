@@ -43,7 +43,6 @@ const updateProduct = async (id, name, brand) => {
       'UPDATE products SET name = ?, brand = ? WHERE id = ?',
       [name, brand, id],
     );
-    return result;
   } catch (err) {
     console.error(err);
     return process.exit(1);
