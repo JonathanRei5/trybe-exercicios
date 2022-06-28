@@ -12,8 +12,8 @@ module.exports = {
   },
 
   async addProduct({ name, brand }) {
-    const product = await productModel.addProduct(name, brand);
-    return product;
+    const id = await productModel.addProduct({ name, brand });
+    return { id, name, brand };
   },
 
   async deleteProduct(id) {
@@ -21,7 +21,7 @@ module.exports = {
   },
 
   async updateProduct(id, { name, brand }) {
-    await productModel.updateProduct(id, name, brand);
-    return { id, name, brand };
+    await productModel.updateProduct(id, { name, brand });
+    return { id: Number(id), name, brand };
   },
 };
