@@ -1,6 +1,6 @@
 const connection = require('./connection');
 
-const add = async (name, brand) => {
+const addProduct = async (name, brand) => {
   try {
     const [
       result,
@@ -16,7 +16,7 @@ const add = async (name, brand) => {
   }
 };
 
-const getAll = async () => {
+const listProducts = async () => {
   try {
     const [rows] = await connection.query('SELECT * FROM products');
     return rows;
@@ -26,7 +26,7 @@ const getAll = async () => {
   }
 };
 
-const getById = async (id) => {
+const getProduct = async (id) => {
   try {
     const [result] = await connection.query('SELECT * FROM products WHERE id = ?', [id]);
     if (!result.length) return null;
@@ -37,7 +37,7 @@ const getById = async (id) => {
   }
 };
 
-const update = async (id, name, brand) => {
+const updateProduct = async (id, name, brand) => {
   try {
     const [result] = await connection.query(
       'UPDATE products SET name = ?, brand = ? WHERE id = ?',
@@ -50,9 +50,9 @@ const update = async (id, name, brand) => {
   }
 };
 
-const exclude = async (id) => {
+const deleteProduct = async (id) => {
   try {
-    const product = await getById(id);
+    const product = await getProduct(id);
     if (!product) return {};
     await connection.query('DELETE FROM products WHERE id = ?', [id]);
   } catch (err) {
@@ -61,4 +61,4 @@ const exclude = async (id) => {
   }
 };
 
-module.exports = { add, getAll, getById, update, exclude };
+module.exports = { addProduct, listProducts, getProduct, updateProduct, deleteProduct };
