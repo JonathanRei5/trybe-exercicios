@@ -173,7 +173,8 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 23.1: _Arquitetura de Software - Camada de Model_
 - [X] 23.2: _Arquitetura de Software - Camada de Controller e Service_
 - [X] 23.3: _Arquitetura Web - Rest e Restful_
-- [ ] 23.4: _[Projeto - Commerce]()_
+- [X] 23.4: _Arquitetura de Software - Testando as Camadas_
+- [ ] 23.5: _[Projeto - Commerce]()_
 
 ##### Bloco 24: Aggregation Framework
 
