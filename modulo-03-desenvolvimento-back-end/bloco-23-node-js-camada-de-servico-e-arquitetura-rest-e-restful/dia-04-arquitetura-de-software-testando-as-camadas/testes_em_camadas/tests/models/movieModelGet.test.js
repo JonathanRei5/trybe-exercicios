@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const connection = require('../../models/connection');
 const movieModel = require('../../models/movieModel');
 
-describe('Busca um filme por ID', () => {
+describe('Busca um filme por ID na camada model', () => {
   describe('quando o filme existe', async () => {
 
     afterEach(async () => {

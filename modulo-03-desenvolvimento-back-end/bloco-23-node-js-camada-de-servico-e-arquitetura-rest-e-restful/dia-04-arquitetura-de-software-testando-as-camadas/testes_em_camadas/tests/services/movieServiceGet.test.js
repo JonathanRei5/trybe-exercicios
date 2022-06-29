@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const movieService = require('../../services/movieService');
 const movieModel = require('../../models/movieModel');
 
-describe('Busca um filme por ID', () => {
+describe('Busca um filme por ID na camada service', () => {
   afterEach(() => {
     sinon.restore();
   });
