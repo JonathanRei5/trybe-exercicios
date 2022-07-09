@@ -10,4 +10,9 @@ module.exports = {
     const book = await Book.findByPk(id);
     return book;
   },
+
+  create: async (book) => {
+    const createdBook = await Book.create(book);
+    return createdBook;
+  },
 };

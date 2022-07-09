@@ -12,4 +12,10 @@ module.exports = {
     if (book) return res.status(200).json(book);
     res.status(404).json({ "message": "Book not found" });
   },
+
+  create: async (req, res) => {
+    const { body: book } = req;
+    const createdBook = await BooksService.create(book);
+    res.status(201).json(createdBook);
+  },
 };
