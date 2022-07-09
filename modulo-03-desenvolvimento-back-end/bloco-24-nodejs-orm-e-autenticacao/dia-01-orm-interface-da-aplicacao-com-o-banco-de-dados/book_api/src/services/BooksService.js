@@ -20,4 +20,9 @@ module.exports = {
     const [totalBooksUpdated] = await Book.update(book, { where: { id } });
     return Boolean(totalBooksUpdated);
   },
+
+  remove: async (id) => {
+    const totalBooksDestroyed = await Book.destroy({ where: { id } });
+    return Boolean(totalBooksDestroyed);
+  },
 };

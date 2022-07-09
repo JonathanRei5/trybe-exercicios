@@ -26,4 +26,11 @@ module.exports = {
     if (updated) return res.status(200).json({ "message": "Book updated!" });
     res.status(404).json({ "message": "Book not found!" });
   },
+
+  remove: async (req, res) => {
+    const { id } = req.params;
+    const removed = await BooksService.remove(id);
+    if (removed) return res.status(200).json({ "message": "Book removed!" });
+    res.status(404).json({ "message": "Book not found!" });
+  },
 };
