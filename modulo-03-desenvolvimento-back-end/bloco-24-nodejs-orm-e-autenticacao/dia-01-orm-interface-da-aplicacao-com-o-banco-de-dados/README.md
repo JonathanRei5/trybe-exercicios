@@ -110,4 +110,20 @@ Em caso de erro, os endpoints devem retornar status code 500 com a mensagem: 'Al
 
 Dica: Para testar suas requisições você pode utilizar o [Postman](https://www.postman.com/) ou o [Insomnia](https://insomnia.rest/).
 
+# Bônus
+
+* Crie um seeder usando o Sequelize-CLI, populando a sua base com pelo menos um livro;
+
+* Crie um método getByAuthor em BooksService para buscar uma lista de livros por author.
+
+* Refatore o método getAll de forma que ser for enviado uma query string author ele seja capaz de pegar a lista usando o método getByAuthor de BooksService.
+
+* Refatore os métodos getAll e getByAuthor para que a lista de livros seja ordenada pelo título em ordem alfabética.
+
+* Crie uma migration para adicionar a coluna publisher (editora) na tabela Books. Modifique as camadas de serviço para que esse campo seja utilizado no cadastro e na edição.
+
+* Escreva testes unitários para o model;
+
+* Escreva testes unitários para o service criado, isolando a camada de models;
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
