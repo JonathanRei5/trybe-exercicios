@@ -15,4 +15,9 @@ module.exports = {
     const createdBook = await Book.create(book);
     return createdBook;
   },
+
+  update: async (id, book) => {
+    const [totalBooksUpdated] = await Book.update(book, { where: { id } });
+    return Boolean(totalBooksUpdated);
+  },
 };
