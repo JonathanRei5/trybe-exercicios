@@ -2,7 +2,7 @@ const { Book } = require('../database/models');
 
 module.exports = {
   getAll: async () => {
-    const books = await Book.findAll();
+    const books = await Book.findAll({ order: ['title'] });
     return books;
   },
 
@@ -12,7 +12,10 @@ module.exports = {
   },
 
   getByAuthor: async (author) => {
-    const book = await Book.findAll({ where: { author } });
+    const book = await Book.findAll({
+      where: { author },
+      order: ['title'],
+    });
     return book;
   },
 
