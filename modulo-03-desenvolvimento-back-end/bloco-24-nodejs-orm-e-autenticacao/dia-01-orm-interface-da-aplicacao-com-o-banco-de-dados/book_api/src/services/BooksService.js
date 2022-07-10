@@ -11,6 +11,11 @@ module.exports = {
     return book;
   },
 
+  getByAuthor: async (author) => {
+    const book = await Book.findAll({ where: { author } });
+    return book;
+  },
+
   create: async (book) => {
     const createdBook = await Book.create(book);
     return createdBook;
