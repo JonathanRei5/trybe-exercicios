@@ -174,11 +174,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 23.2: _Arquitetura de Software - Camada de Controller e Service_
 - [X] 23.3: _Arquitetura Web - Rest e Restful_
 - [X] 23.4: _Arquitetura de Software - Testando as Camadas_
-- [ ] 23.5: _[Projeto - Commerce]()_
+- [X] 23.5: _Projeto - Store Manager_
 
-##### Bloco 24: Aggregation Framework
+##### [Bloco 24: Node.js: ORM e Autenticação](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-24-nodejs-orm-e-autenticacao)
 
-- [ ] 24.1: _Aggregation Framework - Part 1_
+- [X] 24.1: _ORM - Interface da aplicação com o banco de dados_
 - [ ] 24.2: _Aggregation Framework - Part 2_
 - [ ] 24.3: _[Projeto - Aggregations]()_
 
