@@ -10,4 +10,9 @@ module.exports = {
     const patients = await Patient.listPatients(withPlan, withSurgeries, filter, options);
     res.status(200).json(patients);
   },
+
+  createPatient: async (req, res) => {
+    const createdPatient = await Patient.createPatient(req.body);
+    res.status(201).json(createdPatient);
+  },
 };

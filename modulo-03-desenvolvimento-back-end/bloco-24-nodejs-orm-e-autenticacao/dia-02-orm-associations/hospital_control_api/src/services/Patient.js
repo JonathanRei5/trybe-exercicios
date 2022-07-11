@@ -23,4 +23,9 @@ module.exports = {
 
     return patients;
   },
+
+  createPatient: async (patient) => {
+    const createdPatient = await Patient.create(patient);
+    return createdPatient;
+  },
 };
