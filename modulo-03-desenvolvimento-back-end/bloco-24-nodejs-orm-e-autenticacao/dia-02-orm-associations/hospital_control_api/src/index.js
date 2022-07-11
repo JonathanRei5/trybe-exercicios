@@ -1,10 +1,13 @@
 const bodyParser = require('body-parser');
+const patientsRouter = require('./routers/patientsRouter');
 
 const express = require('express');
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/patients', patientsRouter);
 
 const PORT = 3000;
 
