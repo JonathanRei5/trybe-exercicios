@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const { loginRouter } = require('./routers');
 
 const { PORT } = process.env;
 
@@ -22,6 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ping', controllers.ping);
+
+app.use('/login', loginRouter);
 
 app.use(middlewares.error);
 
