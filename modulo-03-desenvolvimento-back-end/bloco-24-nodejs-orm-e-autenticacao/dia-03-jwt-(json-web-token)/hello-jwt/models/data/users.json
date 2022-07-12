@@ -1,6 +1,12 @@
 [
   {
     "id": 1,
+    "username": "admin",
+    "password": "s3nh4S3gur4???",
+    "admin": true
+  },
+  {
+    "id": 2,
     "username": "Fulano123",
     "password": "SenhaMuitoSegura",
     "admin": false
