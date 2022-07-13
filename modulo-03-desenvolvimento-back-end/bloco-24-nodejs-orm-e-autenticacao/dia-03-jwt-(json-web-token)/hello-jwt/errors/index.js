@@ -7,4 +7,7 @@ module.exports = {
   forbidden: (message) => {
     return new CustomError(403, message || 'Acesso restrito');
   },
+  conflict: (message) => {
+    return new CustomError(409, message || 'Usuário já existe');
+  },
 };
