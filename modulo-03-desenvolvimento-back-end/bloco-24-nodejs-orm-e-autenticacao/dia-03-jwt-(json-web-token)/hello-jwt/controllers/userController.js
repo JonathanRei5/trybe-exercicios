@@ -1,6 +1,7 @@
 const { userService } = require("../services");
 const { createToken } = require("../services/jwtService");
 const { usernameAlreadyExists } = require("../services/userService");
+const { validateUser } = require("../services/validations");
 
 module.exports = {
   getUserAuthorization: (req, res) => {
@@ -9,9 +10,9 @@ module.exports = {
   },
 
   create: async (req, res) => {
-    const { body } = req;
-    await usernameAlreadyExists(body.username);
-    const createdUser = userService.create(body);
+    validateUser(req.body);
+    await usernameAlreadyExists(req.body.username);
+    const createdUser = userService.create(req.body);
     const { username, admin } = createdUser;
     const token = createToken({ username, admin });
     res.status(201).json({ token });
