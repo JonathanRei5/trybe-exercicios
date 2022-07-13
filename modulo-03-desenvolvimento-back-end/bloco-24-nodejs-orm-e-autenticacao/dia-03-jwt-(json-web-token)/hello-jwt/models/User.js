@@ -9,4 +9,13 @@ module.exports = {
     const foundUser = data.find((user) => username === user.username);
     return foundUser || null;
   },
+
+  create: async (user) => {
+    const users = JSON.parse(await fs.readFile(USERS_PATH));
+    users.lastId += 1;
+    const newUser = { id: users.lastId, ...user };
+    users.data.push(newUser);
+    await fs.writeFile(USERS_PATH, JSON.stringify(users));
+    return newUser;
+  },
 };
