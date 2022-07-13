@@ -180,7 +180,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 24.1: _ORM - Interface da aplicação com o banco de dados_
 - [X] 24.2: _ORM - Associations_
-- [ ] 24.3: _[Projeto - Aggregations]()_
+- [X] 24.3: _JWT - (JSON Web Token)_
 
 ##### Bloco 25: Intro - NodeJS
 
