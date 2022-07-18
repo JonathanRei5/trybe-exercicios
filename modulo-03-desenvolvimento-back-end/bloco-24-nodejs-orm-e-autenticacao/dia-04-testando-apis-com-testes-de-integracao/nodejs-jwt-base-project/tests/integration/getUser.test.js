@@ -14,6 +14,7 @@ describe('Rota GET /api/users/:userId', () => {
 
   before(() => {
     sinon.stub(User, 'findByPk').callsFake(userMock.findByPk);
+    sinon.stub(User, 'findOne').callsFake(userMock.findOne);
   });
 
   after(() => {
@@ -36,6 +37,32 @@ describe('Rota GET /api/users/:userId', () => {
 
     it('Deve retornar o código de status 400', () => {
       expect(response).to.have.status(400);
+    });
+  });
+
+  describe('Ao tentar obter os dados de outro usuário', () => {
+    let response;
+
+    before(async () => {
+      const { token } = await chai
+        .request(server)
+        .post('/api/login')
+        .send({ username: 'Fulano', password: 'SenhaSeguraConfia' })
+        .then(({ body }) => body);
+
+      response = await chai
+        .request(server)
+        .get('/api/users/2')
+        .set('authorization', token);
+    });
+
+    it('Deve retornar a mensagem "Acesso negado"', () => {
+      expect(response.body).to.be.an('object')
+        .that.contains({ message: 'Acesso negado' });
+    });
+
+    it('Deve retornar o código de status 401', () => {
+      expect(response).to.have.status(401);
     });
   });
 
