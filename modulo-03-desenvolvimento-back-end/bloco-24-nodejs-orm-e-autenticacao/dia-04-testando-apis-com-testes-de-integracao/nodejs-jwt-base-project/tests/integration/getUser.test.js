@@ -5,6 +5,7 @@ const server = require('../../api/app');
 
 const { User } = require('../../models');
 const { User: userMock } = require('../mock/models');
+const users = require('../mock/models/users.json');
 
 const { expect } = chai;
 
@@ -63,6 +64,31 @@ describe('Rota GET /api/users/:userId', () => {
 
     it('Deve retornar o código de status 401', () => {
       expect(response).to.have.status(401);
+    });
+  });
+
+  describe('Ao tentar obter os dados do próprio usuário', () => {
+    let response;
+
+    before(async () => {
+      const { token } = await chai
+        .request(server)
+        .post('/api/login')
+        .send({ username: 'Fulano', password: 'SenhaSeguraConfia' })
+        .then(({ body }) => body);
+
+      response = await chai
+        .request(server)
+        .get('/api/users/1')
+        .set('authorization', token);
+    });
+
+    it('Deve retornar os dados do usuário', () => {
+      expect(response.body).to.be.an('object').eqls(users[0]);
+    });
+
+    it('Deve retornar o código de status 200', () => {
+      expect(response).to.have.status(200);
     });
   });
 
