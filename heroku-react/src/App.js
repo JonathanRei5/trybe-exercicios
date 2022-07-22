@@ -1,11 +1,15 @@
 import logo from './logo.svg';
+import herokuLogo from './herokuLogo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="logos">
+          <img src={herokuLogo} className="App-heroku-logo" alt="Heroku logo" />
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
         <p>
           Heroku/React
         </p>
