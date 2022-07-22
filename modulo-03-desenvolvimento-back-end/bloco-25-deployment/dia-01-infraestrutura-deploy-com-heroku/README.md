@@ -18,4 +18,10 @@ __Exercício 4:__ Faça deploy de uma aplicação React.
    2. Crie um novo app utilizando o buildpack [mars/create-react-app](https://github.com/mars/create-react-app-buildpack#quick-start);
    3. Então, faça o deploy do app no Heroku.
 
+_Exercícios feitos em outras branches_
+
+[heroku-express](https://github.com/JonathanRei5/trybe-exercicios/tree/heroku-express)
+
+[heroku-react](https://github.com/JonathanRei5/trybe-exercicios/tree/heroku-react)
+
 ### Esses exercícios foram feitos por [min](https://www.linkedin.com/in/jonathanrei5/) na [Trybe](https://www.betrybe.com/)
