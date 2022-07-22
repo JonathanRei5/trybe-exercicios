@@ -184,9 +184,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 24.4: _Testando APIs com Testes de Integração_
 - [X] 24.5: _Projeto - API de Blogs_
 
-##### Bloco 25: Intro - NodeJS
+##### [Bloco 25: Deployment](https://github.com/JonathanRei5/trybe-exercicios/tree/main/modulo-03-desenvolvimento-back-end/bloco-25-deployment)
 
-- [ ] 25.1: _NodeJS - Introdução_
+- [X] 25.1: _Introdução - Deploy_
 - [ ] 25.2: _NodeJS - Fluxo Assíncrono_
 - [ ] 25.3: _NodeJS - Arquitetura_
 - [ ] 25.4: _[Projeto - A CLI of Ice and Fire]()_
